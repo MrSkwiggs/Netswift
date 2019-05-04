@@ -16,7 +16,7 @@ protocol NetworkPerformer {
     /**
      Performs all the necessary work a NetworkRequest defines in order to generate a NetworkResult that either succeeds or fails.
      - parameter request: NetworkRequest of specific type
-     - parameter completion: A completion block that takes in a NetworkResult that either contains a value of type NetworkRequest.Response or an error of type NetworkError
+     - parameter handler: A completion block that takes in a NetworkResult that either contains a value of type NetworkRequest.Response or an error of type NetworkError
      */
     func perform<T: NetworkRequest>(_ request: T, handler: @escaping NetworkHandler<T.Response>)
 }

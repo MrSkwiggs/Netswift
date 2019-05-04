@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Main NetworkRequest performer. For detailed doc please refer to NetworkPerformer protocol
+/// Generic NetworkRequest performer. For detailed doc please refer to NetworkPerformer protocol
 struct Network: NetworkPerformer {
 
     let requestPerformer: HTTPPerformer

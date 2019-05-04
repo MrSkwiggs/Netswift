@@ -1,6 +1,0 @@
-framework module Netswift {
-  umbrella header "Netswift-umbrella.h"
-
-  export *
-  module * { export * }
-}

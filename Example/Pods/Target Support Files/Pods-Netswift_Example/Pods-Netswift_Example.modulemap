@@ -1,6 +1,0 @@
-framework module Pods_Netswift_Example {
-  umbrella header "Pods-Netswift_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
