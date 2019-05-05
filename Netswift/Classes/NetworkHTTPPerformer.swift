@@ -12,16 +12,16 @@ import UIKit
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
 struct NetworkHTTPPerformer: HTTPPerformer {
     
-    let session: URLSession
+    private let session: NetworkSession
     
-    init(session: URLSession = .init(configuration: .default)) {
+    init(session: NetworkSession = URLSession(configuration: .default)) {
         self.session = session
     }
     
     func perform(_ request: URLRequest, completion: @escaping (NetworkResult<Data?, NetworkError>) -> Void) {
         setNetworkActivityIndicatorVisible(true)
         
-        session.dataTask(with: request) { (data, response, error) in
+        session.loadData(from: request) { (data, response, error) in
             self.setNetworkActivityIndicatorVisible(false)
             
             if error != nil {
@@ -29,7 +29,7 @@ struct NetworkHTTPPerformer: HTTPPerformer {
             } else {
                 completion(self.validate(HTTPResponse(data: data, response: response, error: error)))
             }
-        }.resume()
+        }
     }
     
     func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetworkResult<Data?, NetworkError>) -> Void) {
