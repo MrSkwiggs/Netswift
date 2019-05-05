@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B961FF41227F43BC00DEFB5F /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961FF40227F43BC00DEFB5F /* NetworkSession.swift */; };
 		E760BE35227DD9C4004FF7E4 /* Netswift.h in Headers */ = {isa = PBXBuildFile; fileRef = E760BE33227DD9C4004FF7E4 /* Netswift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E760BE53227DDA30004FF7E4 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE3E227DDA30004FF7E4 /* JSONDecodable.swift */; };
 		E760BE54227DDA30004FF7E4 /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE3F227DDA30004FF7E4 /* JSONCodable.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B961FF40227F43BC00DEFB5F /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		E760BE30227DD9C4004FF7E4 /* Netswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Netswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E760BE33227DD9C4004FF7E4 /* Netswift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Netswift.h; sourceTree = "<group>"; };
 		E760BE34227DD9C4004FF7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				E760BE4D227DDA30004FF7E4 /* NetworkRequest.swift */,
 				E760BE4E227DDA30004FF7E4 /* StandardNetworkRouteScheme.swift */,
 				E760BE4F227DDA30004FF7E4 /* NetworkError.swift */,
+				B961FF40227F43BC00DEFB5F /* NetworkSession.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				E760BE56227DDA30004FF7E4 /* NetworkRequestParameter.swift in Sources */,
 				E760BE54227DDA30004FF7E4 /* JSONCodable.swift in Sources */,
 				E760BE63227DDA30004FF7E4 /* StandardNetworkRouteScheme.swift in Sources */,
+				B961FF41227F43BC00DEFB5F /* NetworkSession.swift in Sources */,
 				E760BE67227DDA30004FF7E4 /* NetworkPerformer.swift in Sources */,
 				E760BE62227DDA30004FF7E4 /* NetworkRequest.swift in Sources */,
 				E760BE61227DDA30004FF7E4 /* HTTPType.swift in Sources */,
