@@ -1,0 +1,16 @@
+PODS:
+  - Netswift (0.1.0)
+
+DEPENDENCIES:
+  - Netswift (from `../`)
+
+EXTERNAL SOURCES:
+  Netswift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Netswift: ac39b0b4e5bd93bb91c4fe403e07638655c6e67f
+
+PODFILE CHECKSUM: 4eb69b318cd16e4ceec6d488b43092fea369b5a1
+
+COCOAPODS: 1.6.1

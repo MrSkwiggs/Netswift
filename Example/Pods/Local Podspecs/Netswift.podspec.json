@@ -1,0 +1,22 @@
+{
+  "name": "Netswift",
+  "version": "0.1.0",
+  "summary": "A short description of Netswift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/MrSkwiggs/Netswift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "MrSkwiggs": "6209874+MrSkwiggs@users.noreply.github.com"
+  },
+  "source": {
+    "git": "https://github.com/MrSkwiggs/Netswift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Netswift/Classes/**/*"
+}
