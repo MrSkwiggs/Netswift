@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import UIKit
 
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
-public struct NetswiftHTTPPerformer: HTTPPerformer {
+public final class NetswiftHTTPPerformer: HTTPPerformer {
     
     private let session: NetswiftSession
     
@@ -19,10 +18,7 @@ public struct NetswiftHTTPPerformer: HTTPPerformer {
     }
     
     public func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?, NetswiftError>) -> Void) {
-        setNetworkActivityIndicatorVisible(true)
-        
         session.perform(request) { response in
-            self.setNetworkActivityIndicatorVisible(false)
             
             guard response.error == nil else {
                 return completion(.failure(NetswiftError.requestError))
@@ -79,14 +75,6 @@ public struct NetswiftHTTPPerformer: HTTPPerformer {
             
         default:
             return .failure(NetswiftError.serverError)
-        }
-    }
-}
-
-extension NetswiftHTTPPerformer {
-    private func setNetworkActivityIndicatorVisible(_ visible: Bool) {
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = visible
         }
     }
 }
