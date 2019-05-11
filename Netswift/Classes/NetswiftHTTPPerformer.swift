@@ -1,16 +1,16 @@
 //
-//  NetworkHTTPPerformer.swift
-//  Network
+//  NetswiftHTTPPerformer.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 02/07/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
-struct NetworkHTTPPerformer: HTTPPerformer {
+public struct NetswiftHTTPPerformer: HTTPPerformer {
     
     let session: URLSession
     
@@ -18,21 +18,21 @@ struct NetworkHTTPPerformer: HTTPPerformer {
         self.session = session
     }
     
-    func perform(_ request: URLRequest, completion: @escaping (NetworkResult<Data?, NetworkError>) -> Void) {
+    func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?, NetswiftError>) -> Void) {
         setNetworkActivityIndicatorVisible(true)
         
         session.dataTask(with: request) { (data, response, error) in
             self.setNetworkActivityIndicatorVisible(false)
             
             if error != nil {
-                completion(.failure(NetworkError.requestError))
+                completion(.failure(NetswiftError.requestError))
             } else {
-                completion(self.validate(HTTPResponse(data: data, response: response, error: error)))
+                completion(self.validate(NetswiftHTTPResponse(data: data, response: response, error: error)))
             }
         }.resume()
     }
     
-    func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetworkResult<Data?, NetworkError>) -> Void) {
+    func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?, NetswiftError>) -> Void) {
         let dispatchGroup = DispatchGroup()
         
         DispatchQueue.main.async {
@@ -50,40 +50,40 @@ struct NetworkHTTPPerformer: HTTPPerformer {
         }
     }
     
-    private func validate(_ response: HTTPResponse) -> NetworkResult<Data?, NetworkError> {
+    private func validate(_ response: NetswiftHTTPResponse) -> NetswiftResult<Data?, NetswiftError> {
         
         switch response.statusCode {
         case 200...299:
             return .success(response.data)
             
         case 400:
-            return .failure(NetworkError.requestError)
+            return .failure(NetswiftError.requestError)
             
         case 401, 403:
-            return .failure(NetworkError.notAuthenticated)
+            return .failure(NetswiftError.notAuthenticated)
             
         case 402:
-            return .failure(NetworkError.notPermitted)
+            return .failure(NetswiftError.notPermitted)
             
         case 404:
-            return .failure(NetworkError.resourceNotFound(error: response.error, payload: response.data))
+            return .failure(NetswiftError.resourceNotFound(error: response.error, payload: response.data))
             
         case 405:
-            return .failure(NetworkError.methodNotAllowed)
+            return .failure(NetswiftError.methodNotAllowed)
             
         case 412:
-            return .failure(NetworkError.preconditionFailed)
+            return .failure(NetswiftError.preconditionFailed)
             
         case 429:
-            return .failure(NetworkError.tooManyRequests)
+            return .failure(NetswiftError.tooManyRequests)
             
         default:
-            return .failure(NetworkError.serverError)
+            return .failure(NetswiftError.serverError)
         }
     }
 }
 
-extension NetworkHTTPPerformer {
+extension NetswiftHTTPPerformer {
     private func setNetworkActivityIndicatorVisible(_ visible: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = visible

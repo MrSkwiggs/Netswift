@@ -1,15 +1,15 @@
 //
-//  NetworkRequest.swift
-//  Network
+//  NetswiftRequest.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 27/06/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 
 import Foundation
 
 /// Generic structure that defines its own Response type. Comes with a few convenience extensions for common types such as JSON
-protocol NetworkRequest {
+public protocol NetswiftRequest {
     
     /// Defines the data type of the request's response (if it succeeeded)
     associatedtype Response = JSONDecodable
@@ -18,38 +18,38 @@ protocol NetworkRequest {
     associatedtype IncomingType = Data
     
     /**
-     Tries to generate a URLRequest given the specific internals of the NetworkRequest. Might fail.
-     - parameter completion: A completion block that takes in a NetworkResult that either succeeds with a useable URLRequest, or fails with a NetworkError
+     Tries to generate a URLRequest given the specific internals of the NetswiftRequest. Might fail.
+     - parameter completion: A completion block that takes in a NetswiftResult that either succeeds with a useable URLRequest, or fails with a NetswiftError
      */
-    func serialise(_ handler: @escaping NetworkHandler<URLRequest>)
+    func serialise(_ handler: @escaping NetswiftHandler<URLRequest>)
     
     /**
      Tries to decode raw Data into a Foundation Any object.
      - parameter data: Encoded raw data
-     - returns: A NetworkResult that either succeeds with Any object, or fails with a NetworkError.
+     - returns: A NetswiftResult that either succeeds with Any object, or fails with a NetswiftError.
      */
-    func decode(_ data: Data?) -> NetworkResult<Any, NetworkError>
+    func decode(_ data: Data?) -> NetswiftResult<Any, NetswiftError>
     
     /**
      Tries to cast a Foundation Any object to the request's expected IncomingType
      - parameter any: A Foundation object of Any type
-     - returns: A NetworkResult that either succeeds with an object of IncomingType, or fails with a NetworkError.
+     - returns: A NetswiftResult that either succeeds with an object of IncomingType, or fails with a NetswiftError.
      */
-    func cast(_ any: Any) -> NetworkResult<IncomingType, NetworkError>
+    func cast(_ any: Any) -> NetswiftResult<IncomingType, NetswiftError>
     
     /**
      Tries to interpret any incoming data to build a fully-fledged Response object.
      - parameter incomingData: freeform data of the expected IncomingType
-     - returns: A NetworkResult that either succeeds with a Response object, or fails with a NetworkError.
+     - returns: A NetswiftResult that either succeeds with a Response object, or fails with a NetswiftError.
      */
-    func deserialise(_ incomingData: IncomingType) -> NetworkResult<Response, NetworkError>
+    func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response, NetswiftError>
 }
 
 // MARK: - Convenience Deserialising
 
 /// Deserialising JSONDecodable objects
-extension NetworkRequest where IncomingType == Data, Response: JSONDecodable {
-    func deserialise(_ incomingData: Data) -> NetworkResult<Response, NetworkError> {
+public extension NetswiftRequest where IncomingType == Data, Response: JSONDecodable {
+    func deserialise(_ incomingData: Data) -> NetswiftResult<Response, NetswiftError> {
         do {
             let decodedResponse = try JSONDecoder().decode(Response.self, from: incomingData)
             return .success(decodedResponse)
@@ -63,8 +63,8 @@ extension NetworkRequest where IncomingType == Data, Response: JSONDecodable {
 }
 
 /// Deserialising Images
-extension NetworkRequest where IncomingType == Data, Response: UIImage {
-    func deserialise(_ incomingData: Data) -> NetworkResult<Response, NetworkError> {
+public extension NetswiftRequest where IncomingType == Data, Response: UIImage {
+    func deserialise(_ incomingData: Data) -> NetswiftResult<Response, NetswiftError> {
         if let image = Response(data: incomingData) {
             return .success(image)
         } else {
@@ -77,8 +77,8 @@ extension NetworkRequest where IncomingType == Data, Response: UIImage {
 // MARK: - Convenience Decoding for common types
 
 /// When the request expects freeform data, decoding is done during deserialisation
-extension NetworkRequest where IncomingType == Data {
-    func decode(_ data: Data?) -> NetworkResult<Any, NetworkError> {
+public extension NetswiftRequest where IncomingType == Data {
+    func decode(_ data: Data?) -> NetswiftResult<Any, NetswiftError> {
         guard let data = data else {
             return .failure(.noResponseError)
         }
@@ -90,8 +90,8 @@ extension NetworkRequest where IncomingType == Data {
 // MARK: - Convenience Casting
 
 /// Generic casting
-extension NetworkRequest {
-    func cast(_ any: Any) -> NetworkResult<IncomingType, NetworkError> {
+public extension NetswiftRequest {
+    func cast(_ any: Any) -> NetswiftResult<IncomingType, NetswiftError> {
         if let castedObject = any as? IncomingType {
             return .success(castedObject)
         }

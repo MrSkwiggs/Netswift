@@ -1,15 +1,15 @@
 //
-//  Network.swift
-//  Network
+//  Netswift.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 27/06/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 
 import Foundation
 
-/// Generic NetworkRequest performer. For detailed doc please refer to NetworkPerformer protocol
-struct Network: NetworkPerformer {
+/// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftPerformer protocol
+public struct Netswift: NetworkPerformer {
 
     let requestPerformer: HTTPPerformer
 

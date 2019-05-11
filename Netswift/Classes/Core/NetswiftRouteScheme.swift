@@ -1,14 +1,14 @@
 //
-//  NetworkRouteScheme.swift
-//  Network
+//  NetswiftRouteScheme.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 10/10/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 
 import Foundation
 
 /// Generic protocol to return URL Schemes as String
-protocol NetworkRouteScheme {
+public protocol NetswiftRouteScheme {
     var string: String { get }
 }
