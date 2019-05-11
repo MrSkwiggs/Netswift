@@ -1,12 +1,12 @@
 //
 //  JSONEncodable.swift
-//  OneFit
+//  Netswift
 //
 //  Created by Dorian Grolaux on 01/05/2019.
-//  Copyright © 2019 OneFit. All rights reserved.
+//  Copyright © 2019 Skwiggs. All rights reserved.
 //
 
 import Foundation
 
 /// Specific Encodable, should only be used in conjunction with JSONEncoder
-protocol JSONEncodable: Encodable {}
+public protocol JSONEncodable: Encodable {}

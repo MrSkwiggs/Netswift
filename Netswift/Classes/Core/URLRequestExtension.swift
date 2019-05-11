@@ -3,7 +3,7 @@
 //  Microservices
 //
 //  Created by Dorian Grolaux on 29/06/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ extension URLRequest {
         self.httpMethod = method.rawValue
     }
 
-    mutating func setHTTPTypes(_ types: Set<HTTPType>) {
+    mutating func setHTTPTypes(_ types: Set<NetswiftHTTPType>) {
         for type in types {
             setHTTPType(type)
         }
@@ -32,7 +32,7 @@ extension URLRequest {
         }
     }
 
-    mutating func setHTTPType(_ type: HTTPType) {
+    mutating func setHTTPType(_ type: NetswiftHTTPType) {
         guard !(self.allHTTPHeaderFields?.contains(where: { return $0.key == "Content-Type" && $0.value == type.rawValue }) ?? false) else {
             return
         }

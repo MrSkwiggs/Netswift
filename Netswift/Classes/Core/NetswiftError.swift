@@ -1,15 +1,15 @@
 //
-//  NetworkError.swift
-//  Network
+//  NetswiftError.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 27/06/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 
 import Foundation
 
 /// All the errors that can be raised while performing HTTP requests
-enum NetworkError: Error {
+public enum NetswiftError: Error {
     
     /// The request couldn't be serialised before being sent out
     case requestSerialisationError

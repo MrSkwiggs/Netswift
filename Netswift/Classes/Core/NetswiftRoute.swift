@@ -1,9 +1,9 @@
 //
-//  NetworkRoute.swift
-//  Network
+//  NetswiftRoute.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 02/07/2018.
-//  Copyright © 2018 Dorian Grolaux. All rights reserved.
+//  Copyright © 2018 Skwiggs. All rights reserved.
 //
 //  swiftlint:disable force_unwrapping
 
@@ -18,12 +18,12 @@ import Foundation
 
  This allows for less verbose implementations of NetworkRoutes
  */
-protocol NetworkRoute {
+public protocol NetswiftRoute {
     /**
      Which scheme to use
      - important: HTTPS by default
      */
-    var scheme: NetworkRouteScheme { get }
+    var scheme: NetswiftRouteScheme { get }
 
     /// The common base URL (eg. www.someurl.com)
     var host: String { get }
@@ -40,10 +40,10 @@ protocol NetworkRoute {
 
 // MARK: - Default Functions
 
-extension NetworkRoute {
+public extension NetswiftRoute {
 
-    var scheme: NetworkRouteScheme {
-        get { return StandardNetworkRouteScheme.https }
+    var scheme: NetswiftRouteScheme {
+        get { return GenericNetswiftRouteScheme.https }
     }
 
     var query: String? {
