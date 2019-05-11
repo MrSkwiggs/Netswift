@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- A generic, all-purpose network scheme provider.
+ A generic, all-purpose scheme provider.
  */
 public enum GenericNetswiftRouteScheme {
     case http

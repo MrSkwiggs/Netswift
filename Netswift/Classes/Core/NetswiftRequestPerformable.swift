@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Convenience protocol for allowing NetworkRequests to be called directly
+/// Convenience protocol for allowing NetswiftRequests to be called directly
 public protocol NetswiftRequestPerformable: NetswiftRequest {
     
     /**
