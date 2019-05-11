@@ -1,5 +1,5 @@
 //
-//  HTTPMethod.swift
+//  NetswiftHTTPMethod.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 29/06/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Standard HTTP methods
-public enum HTTPMethod: String, CustomStringConvertible {
+public enum NetswiftHTTPMethod: String, CustomStringConvertible {
     case get = "GET"
     case post = "POST"
     case delete = "DELETE"

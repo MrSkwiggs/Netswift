@@ -16,7 +16,7 @@ extension URLRequest {
         self.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
 
-    mutating func setHTTPMethod(_ method: HTTPMethod) {
+    mutating func setHTTPMethod(_ method: NetswiftHTTPMethod) {
         self.httpMethod = method.rawValue
     }
 

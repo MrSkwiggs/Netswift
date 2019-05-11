@@ -1,5 +1,5 @@
 //
-//  NetswiftPerformer.swift
+//  NetswiftNetworkPerformer.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 29/06/2018.
@@ -9,9 +9,9 @@
 import Foundation
 
 /**
- A `NetswiftPerformer` is the link between low-level url requests and high-level api requests
+ A `NetswiftNetworkPerformer` is the link between low-level url requests and high-level api requests
  */
-public protocol NetswiftPerformer {
+public protocol NetswiftNetworkPerformer {
     
     /**
      Performs all the necessary work a NetswiftRequest defines in order to generate a `NetswiftResult` that either succeeds or fails.

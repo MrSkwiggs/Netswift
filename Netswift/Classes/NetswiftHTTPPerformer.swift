@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
-public final class NetswiftHTTPPerformer: HTTPPerformer {
+/// A generic HTTP Performer. For detailed doc please refer to NetswiftNetworkHTTPPerformer protocol
+public final class NetswiftHTTPPerformer: NetswiftNetworkHTTPPerformer {
     
     private let session: NetswiftSession
     
@@ -20,8 +20,8 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
     public func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?, NetswiftError>) -> Void) {
         session.perform(request) { response in
             
-            guard response.error == nil else {
-                return completion(.failure(NetswiftError.requestError))
+            if let error = response.error {
+                return completion(.failure(NetswiftError.requestError(with: error)))
             }
             
             completion(self.validate(response))
@@ -53,7 +53,7 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
             return .success(response.data)
             
         case 400:
-            return .failure(NetswiftError.requestError)
+            return .failure(NetswiftError.badRequest)
             
         case 401, 403:
             return .failure(NetswiftError.notAuthenticated)
@@ -62,7 +62,7 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
             return .failure(NetswiftError.notPermitted)
             
         case 404:
-            return .failure(NetswiftError.resourceNotFound(error: response.error, payload: response.data))
+            return .failure(NetswiftError.resourceNotFound(with: response.error, payload: response.data))
             
         case 405:
             return .failure(NetswiftError.methodNotAllowed)

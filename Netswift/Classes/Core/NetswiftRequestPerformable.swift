@@ -12,7 +12,7 @@ import Foundation
 public protocol NetswiftRequestPerformable: NetswiftRequest {
     
     /**
-     Performs the request with its own, self-defined NetswiftPerformer
+     Performs the request with its own, self-defined NetswiftNetworkPerformer
      - parameter handler: Called when the request returns
      */
     func perform(_ handler: @escaping NetswiftHandler<Self.Response>)

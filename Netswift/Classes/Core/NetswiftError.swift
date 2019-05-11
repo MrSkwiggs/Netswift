@@ -14,14 +14,17 @@ public enum NetswiftError: Error {
     /// The request couldn't be serialised before being sent out
     case requestSerialisationError
     
-    ///	The request couldn't be processed by the server
-    case requestError
+    /// Something went wrong while performing a request
+    case requestError(with: Swift.Error)
+    
+    /// The request doesn't conform to server expectations
+    case badRequest
     
     /// The server encountered an internal error while processing the request
     case serverError
     
-    /// The specified resource could not be found on the server (404)
-    case resourceNotFound(error: Swift.Error?, payload: Data?)
+    /// The specified resource could not be found on the server
+    case resourceNotFound(with: Swift.Error?, payload: Data?)
     
     /// The response returned by the server does not conform to expected type
     case unexpectedResponseError

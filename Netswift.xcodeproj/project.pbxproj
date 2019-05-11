@@ -20,15 +20,15 @@
 		E760BE56227DDA30004FF7E4 /* NetswiftRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE41227DDA30004FF7E4 /* NetswiftRequestParameter.swift */; };
 		E760BE58227DDA30004FF7E4 /* NetswiftRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE43227DDA30004FF7E4 /* NetswiftRoute.swift */; };
 		E760BE5A227DDA30004FF7E4 /* NetswiftHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE45227DDA30004FF7E4 /* NetswiftHTTPResponse.swift */; };
-		E760BE5B227DDA30004FF7E4 /* HTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE46227DDA30004FF7E4 /* HTTPPerformer.swift */; };
+		E760BE5B227DDA30004FF7E4 /* NetswiftNetworkHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE46227DDA30004FF7E4 /* NetswiftNetworkHTTPPerformer.swift */; };
 		E760BE5C227DDA30004FF7E4 /* NetswiftRouteScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE47227DDA30004FF7E4 /* NetswiftRouteScheme.swift */; };
-		E760BE5D227DDA30004FF7E4 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE48227DDA30004FF7E4 /* HTTPMethod.swift */; };
+		E760BE5D227DDA30004FF7E4 /* NetswiftHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE48227DDA30004FF7E4 /* NetswiftHTTPMethod.swift */; };
 		E760BE5E227DDA30004FF7E4 /* NetswiftResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE49227DDA30004FF7E4 /* NetswiftResult.swift */; };
 		E760BE60227DDA30004FF7E4 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE4B227DDA30004FF7E4 /* URLRequestExtension.swift */; };
 		E760BE61227DDA30004FF7E4 /* NetswiftHTTPType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE4C227DDA30004FF7E4 /* NetswiftHTTPType.swift */; };
 		E760BE63227DDA30004FF7E4 /* GenericNetswiftRouteScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE4E227DDA30004FF7E4 /* GenericNetswiftRouteScheme.swift */; };
 		E760BE64227DDA30004FF7E4 /* NetswiftError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE4F227DDA30004FF7E4 /* NetswiftError.swift */; };
-		E760BE67227DDA30004FF7E4 /* NetswiftPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE52227DDA30004FF7E4 /* NetswiftPerformer.swift */; };
+		E760BE67227DDA30004FF7E4 /* NetswiftNetworkPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760BE52227DDA30004FF7E4 /* NetswiftNetworkPerformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,15 +47,15 @@
 		E760BE41227DDA30004FF7E4 /* NetswiftRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftRequestParameter.swift; sourceTree = "<group>"; };
 		E760BE43227DDA30004FF7E4 /* NetswiftRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftRoute.swift; sourceTree = "<group>"; };
 		E760BE45227DDA30004FF7E4 /* NetswiftHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPResponse.swift; sourceTree = "<group>"; };
-		E760BE46227DDA30004FF7E4 /* HTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
+		E760BE46227DDA30004FF7E4 /* NetswiftNetworkHTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftNetworkHTTPPerformer.swift; sourceTree = "<group>"; };
 		E760BE47227DDA30004FF7E4 /* NetswiftRouteScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftRouteScheme.swift; sourceTree = "<group>"; };
-		E760BE48227DDA30004FF7E4 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E760BE48227DDA30004FF7E4 /* NetswiftHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPMethod.swift; sourceTree = "<group>"; };
 		E760BE49227DDA30004FF7E4 /* NetswiftResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftResult.swift; sourceTree = "<group>"; };
 		E760BE4B227DDA30004FF7E4 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
 		E760BE4C227DDA30004FF7E4 /* NetswiftHTTPType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPType.swift; sourceTree = "<group>"; };
 		E760BE4E227DDA30004FF7E4 /* GenericNetswiftRouteScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNetswiftRouteScheme.swift; sourceTree = "<group>"; };
 		E760BE4F227DDA30004FF7E4 /* NetswiftError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftError.swift; sourceTree = "<group>"; };
-		E760BE52227DDA30004FF7E4 /* NetswiftPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftPerformer.swift; sourceTree = "<group>"; };
+		E760BE52227DDA30004FF7E4 /* NetswiftNetworkPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftNetworkPerformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +108,13 @@
 			children = (
 				E760BE3D227DDA30004FF7E4 /* Codables */,
 				E760BE4E227DDA30004FF7E4 /* GenericNetswiftRouteScheme.swift */,
-				E760BE48227DDA30004FF7E4 /* HTTPMethod.swift */,
-				E760BE46227DDA30004FF7E4 /* HTTPPerformer.swift */,
 				E760BE4F227DDA30004FF7E4 /* NetswiftError.swift */,
 				E74A827B2286D1670040A59E /* NetswiftHandler.swift */,
+				E760BE48227DDA30004FF7E4 /* NetswiftHTTPMethod.swift */,
 				E760BE45227DDA30004FF7E4 /* NetswiftHTTPResponse.swift */,
 				E760BE4C227DDA30004FF7E4 /* NetswiftHTTPType.swift */,
+				E760BE46227DDA30004FF7E4 /* NetswiftNetworkHTTPPerformer.swift */,
+				E760BE52227DDA30004FF7E4 /* NetswiftNetworkPerformer.swift */,
 				E74A827D2286D1B10040A59E /* NetswiftRequest.swift */,
 				E74A827F2286D1F00040A59E /* NetswiftRequestPerformable.swift */,
 				E760BE49227DDA30004FF7E4 /* NetswiftResult.swift */,
@@ -142,7 +143,6 @@
 				E760BE3C227DDA30004FF7E4 /* Core */,
 				E74A82752286CF9C0040A59E /* Netswift.swift */,
 				E74A82792286D03E0040A59E /* NetswiftHTTPPerformer.swift */,
-				E760BE52227DDA30004FF7E4 /* NetswiftPerformer.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -231,13 +231,13 @@
 				E760BE63227DDA30004FF7E4 /* GenericNetswiftRouteScheme.swift in Sources */,
 				E74A82862286D57E0040A59E /* NetswiftSession.swift in Sources */,
 				E74A827C2286D1680040A59E /* NetswiftHandler.swift in Sources */,
-				E760BE67227DDA30004FF7E4 /* NetswiftPerformer.swift in Sources */,
+				E760BE67227DDA30004FF7E4 /* NetswiftNetworkPerformer.swift in Sources */,
 				E74A82762286CF9C0040A59E /* Netswift.swift in Sources */,
 				E760BE61227DDA30004FF7E4 /* NetswiftHTTPType.swift in Sources */,
 				E760BE5E227DDA30004FF7E4 /* NetswiftResult.swift in Sources */,
 				E74A82802286D1F00040A59E /* NetswiftRequestPerformable.swift in Sources */,
-				E760BE5D227DDA30004FF7E4 /* HTTPMethod.swift in Sources */,
-				E760BE5B227DDA30004FF7E4 /* HTTPPerformer.swift in Sources */,
+				E760BE5D227DDA30004FF7E4 /* NetswiftHTTPMethod.swift in Sources */,
+				E760BE5B227DDA30004FF7E4 /* NetswiftNetworkHTTPPerformer.swift in Sources */,
 				E760BE53227DDA30004FF7E4 /* JSONDecodable.swift in Sources */,
 				E760BE5A227DDA30004FF7E4 /* NetswiftHTTPResponse.swift in Sources */,
 				E760BE5C227DDA30004FF7E4 /* NetswiftRouteScheme.swift in Sources */,

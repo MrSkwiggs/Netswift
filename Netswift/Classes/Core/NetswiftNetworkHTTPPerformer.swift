@@ -1,5 +1,5 @@
 //
-//  HTTPPerformer.swift
+//  NetswiftNetworkHTTPPerformer.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 03/07/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// An HTTP Performer works with low-level URLRequests and validates the response's status code
-public protocol HTTPPerformer {
+public protocol NetswiftNetworkHTTPPerformer {
     /**
      Performs a standard URL request and returns the results.
      - note: Potentially long wait times if something goes wrong.

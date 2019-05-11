@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-/// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftPerformer protocol
-public final class Netswift: NetswiftPerformer {
+/// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftNetworkPerformer protocol
+public final class Netswift: NetswiftNetworkPerformer {
     
     private var concurrentRequests: Int {
         didSet {
@@ -22,9 +22,9 @@ public final class Netswift: NetswiftPerformer {
     /// - note: `true` by default
     var shouldHandleNetworkActivityIndicator: Bool = true
 
-    let requestPerformer: HTTPPerformer
+    let requestPerformer: NetswiftNetworkHTTPPerformer
 
-    init(requestPerformer: HTTPPerformer = NetswiftHTTPPerformer()) {
+    init(requestPerformer: NetswiftNetworkHTTPPerformer = NetswiftHTTPPerformer()) {
         self.requestPerformer = requestPerformer
         self.concurrentRequests = 0
     }
