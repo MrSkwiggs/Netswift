@@ -33,7 +33,7 @@ public enum NetswiftError: Error {
     case noResponseError
     
     /// The response's raw data could not be understood
-    case responseDecodingError(error: DecodingError)
+    case responseDecodingError(error: DecodingError?)
     
     /// The response could not be casted to the Request's IncomingType
     case responseCastingError

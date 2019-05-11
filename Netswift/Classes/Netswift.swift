@@ -24,7 +24,7 @@ public final class Netswift: NetswiftNetworkPerformer {
 
     let requestPerformer: NetswiftNetworkHTTPPerformer
 
-    init(requestPerformer: NetswiftNetworkHTTPPerformer = NetswiftHTTPPerformer()) {
+    public init(requestPerformer: NetswiftNetworkHTTPPerformer = NetswiftHTTPPerformer()) {
         self.requestPerformer = requestPerformer
         self.concurrentRequests = 0
     }

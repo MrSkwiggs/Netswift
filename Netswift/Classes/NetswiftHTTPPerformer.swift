@@ -13,7 +13,7 @@ public final class NetswiftHTTPPerformer: NetswiftNetworkHTTPPerformer {
     
     private let session: NetswiftSession
     
-    init(session: NetswiftSession = URLSession(configuration: .default)) {
+    public init(session: NetswiftSession = URLSession(configuration: .default)) {
         self.session = session
     }
     

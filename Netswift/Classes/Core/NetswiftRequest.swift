@@ -12,7 +12,7 @@ import Foundation
 public protocol NetswiftRequest {
     
     /// Defines the data type of the request's response (if it succeeeded)
-    associatedtype Response = JSONDecodable
+    associatedtype Response = Decodable
     
     /// Defines the expected raw type the request expects from the back end. Data by default
     associatedtype IncomingType = Data
@@ -59,6 +59,17 @@ public extension NetswiftRequest where IncomingType == Data, Response: JSONDecod
         } catch {
             return .failure(.unexpectedResponseError)
         }
+    }
+}
+
+/// Deserialising Decodables
+public extension NetswiftRequest where IncomingType == Data, Response == String {
+    func deserialise(_ incomingData: Data) -> NetswiftResult<Response, NetswiftError> {
+        guard let decodedResponse = String(data: incomingData, encoding: .utf8) else {
+            return .failure(.responseDecodingError(error: nil))
+        }
+        return .success(decodedResponse)
+        
     }
 }
 
