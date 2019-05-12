@@ -122,7 +122,7 @@ Alright what's all that, now ? Well, the `serialise` function lets `Netswift` ge
 
 This convenience computed variable comes from the `NetswiftRequest` protocol. All it does is to simply format all the URLComponents you've defined into a `String`, which it then uses to instantiate & return a `URL` object. 
 
-Again, a lot of default implementation there, but all you need to know is that, for our current `.helloWorld` case, `self.url` will be using https://my-json-server.typicode.com/MrSkwiggs/Netswift-HelloWorld. You will also notice how it added a `/` between the host & the path.
+Again, a lot of default implementation there, but all you need to know is that, for our current `.helloWorld` case, `self.url` will be using <scheme><host>/<path><query>.
 
 Great, that's us pretty much done now!
 
@@ -144,9 +144,11 @@ Netswift().perform(MyAPI.helloWorld) { result in
 }
 ```
 
+And that's our first request done with `Netswift`! From here, you can take it further and start defining more complex requests. I'd also suggest reading up the documentation and overriding default implementations to see what this library can really achieve 👌
+
 ## Example Project
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `pod install` from the Example directory first. It contains the full implementation of the tutorial above, along as a few other examples.
 
 ## Installation
 
