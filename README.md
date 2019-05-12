@@ -49,19 +49,19 @@ enum MyAPI {
 }
 ```
 
-And that's pretty much it. Now, since our API only has one endpoint, there's really nothing more to this enum. 
-The great thing about Swift's enum is that they can also have associated values. This comes in very handy when you need to pass any additional data to your endpoint, all while keeping it type safe & structured. Neat 👌
+And that's pretty much it. Now, since our API only has one endpoint, there's really nothing more to this. 
+The great thing about Swift's `enum` is that they can also have associated values. This comes in very handy when you need to pass additional data to your endpoint, all while keeping it type-safe & structured. Neat 👌
 
 ### Step 2
-So we have our enum. Great. But it doesn't do much. Less great.
+So we have our enum. Great. But it doesn't do much. Let's fix that.
 
-Go ahead and define an extension for it, which implements `NetswiftRoute`:
+Go ahead and define an extension for it which implements the `NetswiftRoute` protocol:
 ```
 extension MyAPI: NetswiftRoute {
 }
 ```
 
-Immediately, the compiler will complain. Pressing 'Add protocol stubs' will make it happy again. This will add two variables:
+Immediately, the compiler starts complaining. Pressing 'Add protocol stubs' will make it happy again. This will add two variables:
 - `host`: This defines the domain of our API, usually something like www.example.com.
 - `path`: A specific resource on our API. Unless you're just GET-ing a website, you'll need to define a path.
 
@@ -80,22 +80,69 @@ var path: String {
 
 What did we just do ?
 
-Our container is an `enum`, which means we can very easily define different return values given each case. For the host, we always want to return the same value. 
+Our container is an `enum`, which means we can very easily define different return values given each case. For the `host`, we always want to return the same value. 
 
-For the path however, we are taking advantage of this. We set it up in a future-proof way so that we can always add paths later. When that time comes, the compiler will yell at us for not covering all cases of our `enum` 👍
+For the `path` however, we are taking advantage of this feature. We set it up in a future-proof way so that we can always add paths later (as new enum cases). When that time comes, the compiler will yell at us for not covering all cases of our `enum` 👍
 
-And that's pretty much everything we need for now. A lot of work is done under the hood by default; it's accessible and we can it if we need it, but in the context of this tutorial we don't need to anything else!
+And that's pretty much everything we need for now. A lot of work is done under the hood by default; we can always define more information such as scheme (http or https) and query it if we need it, but in the context of this tutorial we can just skip ahead!
 
 ### Step 3
-Now that we have our route setup, all we need to do is implement the `NetswiftRequest` protocol. Let us do just that in another extension.
+Now that we have our route setup, all we need to do is implement the `NetswiftRequest` protocol. Let us do just that in another extension:
 ```
 extension MyAPI: NetswiftRequest {
 }
 ```
 
-This time, we don't want to let the compiler add protocol stubs for us just yet. Before we do that, let me explain what other information we need to provide to `Netswift` for it to be able to perform our request;
-- A `Response` type. Since Netswift is generic, it doesn't know what kind of data you want from your API's endpoint. If our request defines a type called `Response`, we're good to go. Best part is, you could also just use a typealias, and it would just work 👍
+This time, we don't want to let the compiler add protocol stubs for us just yet. Before we do that, let me explain what other information we need to provide to `Netswift`;
+- A `Response` type. Since Netswift is generic, it doesn't know what kind of data we want from our API's endpoint. If our request defines a type called `Response`, we're good to go. And the best part is, we could also use a `typealias`, and it would just work 👍
 
+So for now, let's just add an internal type named `Response` in our extension:
+```
+struct Response: JSONDecodable {
+  let title: String
+}
+```
+
+Again, what did we just write? 
+
+Well, first of all, we define a type that mimics our endpoint's response structure. That is, an object that contains a member named `title`, which is of type `String`.
+
+Then, we told the compiler that our `Response` type implements the JSONDecodable protocol. This is important for `Netswift`, as it tells it that we expect a JSON object back, for which we can use Swift's generic `JSONDecoder`. This is all done behind the scenes by default implementations. 
+
+Yet, the compiler is still unhappy. Now's however a good time to let it 'Add protocol stubs'. We're now given a new function called `serialise`. This is the last part we need to define before we are good to go.
+
+So let us implement our `URLRequest` serialisation then, shall we ?
+```
+func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
+  handler(.success(URLRequest(url: self.url)))
+}
+```
+
+Alright what's all that, now ? Well, the `serialise` function lets `Netswift` get a useable `URLRequest` that it can send out. Since our implementation is so basic, though, all we need to do is instantiate a `URLRequest` with a given `URL`. But wait. Where's `self.url` coming from ?
+
+This convenience computed variable comes from the `NetswiftRequest` protocol. All it does is to simply format all the URLComponents you've defined into a `String`, which it then uses to instantiate & return a `URL` object. 
+
+Again, a lot of default implementation there, but all you need to know is that, for our current `.helloWorld` case, `self.url` will be using https://my-json-server.typicode.com/MrSkwiggs/Netswift-HelloWorld. You will also notice how it added a `/` between the host & the path.
+
+Great, that's us pretty much done now!
+
+### Step 4
+Now's the moment we've been waiting for: sending out our request!
+
+All we need to do is to actually perform our request. To do so, we can use an instance of the default `Netswift` class. All we need to do is call this:
+```
+Netswift().perform(MyAPI.helloWorld) { result in 
+  guard let response = result.value else {
+    if let error = result.error {
+      print(error)
+    }
+    return
+  }
+  
+  // Our request succeeded: we now have an object of type MyAPI.Response available to use
+  print(response.title)
+}
+```
 
 ## Example Project
 
