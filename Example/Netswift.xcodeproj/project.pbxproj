@@ -24,6 +24,7 @@
 		E74A82FA228728790040A59E /* JSONPlaceholder+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82F9228728790040A59E /* JSONPlaceholder+Request.swift */; };
 		E74A82FC228728CA0040A59E /* JSONTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82FB228728CA0040A59E /* JSONTodo.swift */; };
 		E74A82FE22872BBF0040A59E /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82FD22872BBF0040A59E /* TodoTableViewCell.swift */; };
+		E759D1982288C585000C1817 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759D1972288C585000C1817 /* Tutorial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		E74A82F9228728790040A59E /* JSONPlaceholder+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONPlaceholder+Request.swift"; sourceTree = "<group>"; };
 		E74A82FB228728CA0040A59E /* JSONTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTodo.swift; sourceTree = "<group>"; };
 		E74A82FD22872BBF0040A59E /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		E759D1972288C585000C1817 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		EED2A6FB6CCE4DA245DE64AB /* Pods-Netswift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netswift_Example.debug.xcconfig"; path = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				E74A82F2228727630040A59E /* JSONPlaceholder.com */,
 				E74A82F1228727560040A59E /* Your Endpoint */,
 				E74A82E722871B2B0040A59E /* API.swift */,
+				E759D1972288C585000C1817 /* Tutorial.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				E74A82FC228728CA0040A59E /* JSONTodo.swift in Sources */,
 				E74A82FA228728790040A59E /* JSONPlaceholder+Request.swift in Sources */,
 				E74A82FE22872BBF0040A59E /* TodoTableViewCell.swift in Sources */,
+				E759D1982288C585000C1817 /* Tutorial.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E74A82F42287279C0040A59E /* YourEndpoint+Request.swift in Sources */,
 				E74A82E822871B2B0040A59E /* API.swift in Sources */,

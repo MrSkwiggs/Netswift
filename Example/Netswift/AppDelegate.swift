@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Netswift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Netswift().perform(MyAPI.helloWorld) { result in
+            guard let response = result.value else {
+                if let error = result.error {
+                    print(error)
+                }
+                return
+            }
+            
+            // Our request succeeded: we now have an object of type MyAPI.Response available to use
+            print(response.title)
+        }
+        
         return true
     }
 
