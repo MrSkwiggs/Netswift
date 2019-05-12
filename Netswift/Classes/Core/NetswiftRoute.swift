@@ -51,7 +51,7 @@ public protocol NetswiftRoute {
 public extension NetswiftRoute {
     
     var scheme: NetswiftRouteScheme {
-        get { return GenericNetswiftRouteScheme.https }
+        get { return NetswiftGenericRouteScheme.https }
     }
     
     var query: String? {

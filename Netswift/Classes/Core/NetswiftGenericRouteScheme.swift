@@ -1,5 +1,5 @@
 //
-//  GenericNetworkRouteScheme.swift
+//  NetswiftGenericRouteScheme.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 03/04/2019.
@@ -11,13 +11,13 @@ import Foundation
 /**
  A generic, all-purpose scheme provider.
  */
-public enum GenericNetswiftRouteScheme {
+public enum NetswiftGenericRouteScheme {
     case http
     case https
     case ftp
 }
 
-extension GenericNetswiftRouteScheme: NetswiftRouteScheme {
+extension NetswiftGenericRouteScheme: NetswiftRouteScheme {
     public var string: String {
         switch self {
         case .http:
