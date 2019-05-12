@@ -18,6 +18,7 @@ struct API {
         self.performer = performer
     }
     
+    /// Convenience bridge function between NetswiftRequestPerformable & NetswiftPerformer
     fileprivate func perform<T: NetswiftRequest>(_ request: T, _ handler: @escaping NetswiftHandler<T.Response>) {
         performer.perform(request, handler: handler)
     }
@@ -31,6 +32,7 @@ extension NetswiftRequestPerformable where Self: NetswiftRequest {
 
 extension API {
     enum YourEndpoint: NetswiftRequestPerformable {
+        /// Fetches example.com as HTML
         case example
     }
     
