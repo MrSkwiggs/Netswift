@@ -73,7 +73,7 @@ var host: String {
 
 var path: String {
   switch self {
-    case .helloWorld: return "MrSkwiggs/Netswift-HelloWorld"
+    case .helloWorld: return "MrSkwiggs/Netswift-HelloWorld/Netswift"
   }
 }
 ```
