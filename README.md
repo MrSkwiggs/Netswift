@@ -120,7 +120,7 @@ func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
 
 Alright what's all that, now ? Well, the `serialise` function lets `Netswift` get a useable `URLRequest` that it can send out. Since our implementation is so basic, though, all we need to do is instantiate a `URLRequest` with a given `URL`. But wait. Where's `self.url` coming from ?
 
-This convenience computed variable comes from the `NetswiftRequest` protocol. All it does is to simply format all the URLComponents you've defined into a `String`, which it then uses to instantiate & return a `URL` object. 
+This convenience computed variable comes from the `NetswiftRoute` protocol. All it does is to simply format all the URLComponents you've defined into a `String`, which it then uses to instantiate & return a `URL` object. 
 
 Again, a lot of default implementation there, but all you need to know is that, for our current `.helloWorld` case, `self.url` will be using <scheme><host>/<path><query>.
 
