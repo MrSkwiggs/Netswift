@@ -148,7 +148,7 @@ And that's our first request done with `Netswift`! From here, you can take it fu
 
 ## Example Project
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first. It contains the full implementation of the tutorial above, along as a few other examples.
+To run the example project, clone the repo, and run `pod install` from the Example directory first. It contains the full implementation of the tutorial above, along a few other examples.
 
 ## Installation
 
