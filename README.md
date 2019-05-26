@@ -122,7 +122,7 @@ Alright what's all that, now ? Well, the `serialise` function lets `Netswift` ge
 
 This convenience computed variable comes from the `NetswiftRoute` protocol. All it does is to simply format all the URLComponents you've defined into a `String`, which it then uses to instantiate & return a `URL` object. 
 
-Again, a lot of default implementation there, but all you need to know is that, for our current `.helloWorld` case, `self.url` will be using <scheme><host>/<path><query>.
+Again, a lot of default implementation there, but all you need to know is that, for our current `.helloWorld` case, `self.url` will be using `<scheme><host>/<path><query>`.
 
 Great, that's us pretty much done now!
 
