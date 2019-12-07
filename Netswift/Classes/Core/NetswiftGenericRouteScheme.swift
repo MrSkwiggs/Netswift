@@ -15,6 +15,8 @@ public enum NetswiftGenericRouteScheme {
     case http
     case https
     case ftp
+    case ldap
+    case mailto
 }
 
 extension NetswiftGenericRouteScheme: NetswiftRouteScheme {
@@ -28,6 +30,12 @@ extension NetswiftGenericRouteScheme: NetswiftRouteScheme {
             
         case .ftp:
             return "ftp://"
+            
+        case .ldap:
+            return "ldap://"
+            
+        case .mailto:
+            return "mailto:"
         }
     }
 }
