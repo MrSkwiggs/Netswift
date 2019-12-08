@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
     s.name              = 'Netswift'
     s.version           = '0.0.3'
-    s.summary           = 'A high-level networking solution for Swift apps'
+    s.summary           = 'A high-level, type-safe networking solution for Swift apps'
     s.swift_version     = '5.0'
     
     # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/MrSkwiggs/Netswift'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'MrSkwiggs' => '6209874+MrSkwiggs@users.noreply.github.com' }
+    s.author           = { 'MrSkwiggs' => 'dorian@skwiggs.dev' }
     s.source           = { :git => 'https://github.com/MrSkwiggs/Netswift.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
     
