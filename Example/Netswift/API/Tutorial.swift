@@ -14,13 +14,13 @@ enum MyAPI {
 }
 
 extension MyAPI: NetswiftRoute {
-    var host: String {
+    var host: String? {
         return "my-json-server.typicode.com"
     }
     
-    var path: String {
+    var path: String? {
         switch self {
-        case .helloWorld: return "MrSkwiggs/Netswift-HelloWorld/Netswift"
+        case .helloWorld: return "/MrSkwiggs/Netswift-HelloWorld/Netswift"
         }
     }
 }

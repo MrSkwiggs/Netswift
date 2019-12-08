@@ -10,11 +10,7 @@ import Foundation
 import Netswift
 
 extension API.YourEndpoint: NetswiftRoute {
-    var host: String {
+    var host: String? {
         return "example.com"
-    }
-    
-    var path: String {
-        return ""
     }
 }
