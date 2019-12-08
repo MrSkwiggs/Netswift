@@ -7,7 +7,7 @@
 
 ## What
 This library takes care of the heavy lifting required to have a reusable & maintainable networking layer in your Swift apps.
-It currently allows you to (somewhat) easily write simple network calls in a very structured way. It does so by using protocols with associated types & generic classes & structs very extensively.
+It currently allows you to easily write network calls in a very structured and type-safe way. It does so by using protocols with associated types & generic classes & structs very extensively.
 
 ## Why
 Networking in Swift can be tedious from the get go if you're not too experienced. This is where Netswift aims to shine!
