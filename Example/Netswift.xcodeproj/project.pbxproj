@@ -20,8 +20,7 @@
 		E74A82EF228726CB0040A59E /* JSONTodosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82EE228726CB0040A59E /* JSONTodosTableViewController.swift */; };
 		E74A82F42287279C0040A59E /* YourEndpoint+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82F32287279C0040A59E /* YourEndpoint+Request.swift */; };
 		E74A82F6228727B40040A59E /* YourEndpoint+Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82F5228727B40040A59E /* YourEndpoint+Route.swift */; };
-		E74A82F8228728070040A59E /* JSPlaceholder+Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82F7228728070040A59E /* JSPlaceholder+Route.swift */; };
-		E74A82FA228728790040A59E /* JSONPlaceholder+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82F9228728790040A59E /* JSONPlaceholder+Request.swift */; };
+		E74A82F8228728070040A59E /* JSONPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82F7228728070040A59E /* JSONPlaceholder.swift */; };
 		E74A82FC228728CA0040A59E /* JSONTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82FB228728CA0040A59E /* JSONTodo.swift */; };
 		E74A82FE22872BBF0040A59E /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82FD22872BBF0040A59E /* TodoTableViewCell.swift */; };
 		E759D1982288C585000C1817 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759D1972288C585000C1817 /* Tutorial.swift */; };
@@ -61,8 +60,7 @@
 		E74A82EE228726CB0040A59E /* JSONTodosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTodosTableViewController.swift; sourceTree = "<group>"; };
 		E74A82F32287279C0040A59E /* YourEndpoint+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YourEndpoint+Request.swift"; sourceTree = "<group>"; };
 		E74A82F5228727B40040A59E /* YourEndpoint+Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YourEndpoint+Route.swift"; sourceTree = "<group>"; };
-		E74A82F7228728070040A59E /* JSPlaceholder+Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSPlaceholder+Route.swift"; sourceTree = "<group>"; };
-		E74A82F9228728790040A59E /* JSONPlaceholder+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONPlaceholder+Request.swift"; sourceTree = "<group>"; };
+		E74A82F7228728070040A59E /* JSONPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceholder.swift; sourceTree = "<group>"; };
 		E74A82FB228728CA0040A59E /* JSONTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTodo.swift; sourceTree = "<group>"; };
 		E74A82FD22872BBF0040A59E /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		E759D1972288C585000C1817 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
@@ -207,8 +205,7 @@
 		E74A82F2228727630040A59E /* JSONPlaceholder.com */ = {
 			isa = PBXGroup;
 			children = (
-				E74A82F7228728070040A59E /* JSPlaceholder+Route.swift */,
-				E74A82F9228728790040A59E /* JSONPlaceholder+Request.swift */,
+				E74A82F7228728070040A59E /* JSONPlaceholder.swift */,
 				E74A82FB228728CA0040A59E /* JSONTodo.swift */,
 			);
 			path = JSONPlaceholder.com;
@@ -391,13 +388,12 @@
 			files = (
 				E74A82EA2287250F0040A59E /* ViewController.swift in Sources */,
 				E74A82FC228728CA0040A59E /* JSONTodo.swift in Sources */,
-				E74A82FA228728790040A59E /* JSONPlaceholder+Request.swift in Sources */,
 				E74A82FE22872BBF0040A59E /* TodoTableViewCell.swift in Sources */,
 				E759D1982288C585000C1817 /* Tutorial.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E74A82F42287279C0040A59E /* YourEndpoint+Request.swift in Sources */,
 				E74A82E822871B2B0040A59E /* API.swift in Sources */,
-				E74A82F8228728070040A59E /* JSPlaceholder+Route.swift in Sources */,
+				E74A82F8228728070040A59E /* JSONPlaceholder.swift in Sources */,
 				E74A82EF228726CB0040A59E /* JSONTodosTableViewController.swift in Sources */,
 				E74A82F6228727B40040A59E /* YourEndpoint+Route.swift in Sources */,
 			);
