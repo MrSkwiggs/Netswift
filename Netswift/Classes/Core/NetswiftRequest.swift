@@ -45,6 +45,17 @@ public protocol NetswiftRequest {
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response, NetswiftError>
 }
 
+// MARK: - Convenience Serialising
+
+public extension NetswiftRequest where Self: NetswiftRoute {
+    func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
+        var request = URLRequest(url: self.url)
+        request.setHTTPMethod(self.method)
+        
+        handler(.success(request))
+    }
+}
+
 // MARK: - Convenience Deserialising
 
 /// Deserialising JSONDecodable objects
