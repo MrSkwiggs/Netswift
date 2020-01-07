@@ -67,7 +67,7 @@ public enum NetswiftError: Error {
 }
 
 extension NetswiftError {
-    var payload: Data? {
+    public var payload: Data? {
         switch self {
         case let .resourceNotFound(_, payload), let .resourceRemoved(_, payload):
             return payload
