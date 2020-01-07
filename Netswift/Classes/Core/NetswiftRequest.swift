@@ -48,18 +48,18 @@ public protocol NetswiftRequest {
 // MARK: - Convenience Serialising
 
 public extension NetswiftRequest where Self: NetswiftRoute {
-    func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
+    func serialise() -> NetswiftResult<URLRequest> {
         var request = URLRequest(url: self.url)
         request.setHTTPMethod(self.method)
         
-        handler(.success(request))
+        return .success(request)
     }
 }
 
 // MARK: - Convenience Deserialising
 
 /// Deserialising JSONDecodable objects
-public extension NetswiftRequest where IncomingType == Data, Response: JSONDecodable {
+public extension NetswiftRequest where IncomingType == Data, Response: Decodable {
     func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
         do {
             let decodedResponse = try JSONDecoder().decode(Response.self, from: incomingData)
@@ -72,29 +72,6 @@ public extension NetswiftRequest where IncomingType == Data, Response: JSONDecod
         }
     }
 }
-
-/// Deserialising String
-public extension NetswiftRequest where IncomingType == Data, Response == String {
-    func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
-        guard let decodedResponse = String(data: incomingData, encoding: .utf8) else {
-            return .failure(.unexpectedResponseError)
-        }
-        return .success(decodedResponse)
-        
-    }
-}
-
-/// Deserialising Images
-public extension NetswiftRequest where IncomingType == Data, Response: UIImage {
-    func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
-        if let image = Response(data: incomingData) {
-            return .success(image)
-        } else {
-            return .failure(.unexpectedResponseError)
-        }
-    }
-}
-
 
 // MARK: - Convenience Decoding for common types
 
