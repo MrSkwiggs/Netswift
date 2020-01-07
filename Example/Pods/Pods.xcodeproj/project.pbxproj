@@ -36,6 +36,7 @@
 		E74A82B12287108E0040A59E /* NetswiftHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829C2287108E0040A59E /* NetswiftHTTPMethod.swift */; };
 		E74A82B22287108E0040A59E /* NetswiftGenericRouteScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829D2287108E0040A59E /* NetswiftGenericRouteScheme.swift */; };
 		E74A82B32287108E0040A59E /* NetswiftHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829E2287108E0040A59E /* NetswiftHTTPPerformer.swift */; };
+		E7AB1D28239D5EA9005A36F1 /* NetswiftTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */; };
 		F8F1C9E58FC701AC26EF3941C06D35E4 /* Netswift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0473048342FD69E2BBBDFAE46BA59EFF /* Netswift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		E74A829C2287108E0040A59E /* NetswiftHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPMethod.swift; sourceTree = "<group>"; };
 		E74A829D2287108E0040A59E /* NetswiftGenericRouteScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftGenericRouteScheme.swift; sourceTree = "<group>"; };
 		E74A829E2287108E0040A59E /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
+		E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetswiftTask.swift; sourceTree = "<group>"; };
 		E92295EC279A5C7E7BD369AC34E248CE /* Pods-Netswift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBC866AC592A020FC47C0421541ABE9A /* Pods-Netswift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +267,7 @@
 				E74A82922287108E0040A59E /* NetswiftRouteScheme.swift */,
 				E74A82912287108E0040A59E /* NetswiftSession.swift */,
 				E74A829A2287108E0040A59E /* URLRequestExtension.swift */,
+				E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */,
 			);
 			name = Core;
 			path = Netswift/Classes/Core;
@@ -485,6 +488,7 @@
 				E74A82A92287108E0040A59E /* NetswiftNetworkPerformer.swift in Sources */,
 				E74A82A32287108E0040A59E /* JSONEncodable.swift in Sources */,
 				E74A82A82287108E0040A59E /* NetswiftError.swift in Sources */,
+				E7AB1D28239D5EA9005A36F1 /* NetswiftTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
