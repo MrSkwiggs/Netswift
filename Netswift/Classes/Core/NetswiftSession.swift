@@ -8,21 +8,23 @@
 
 import Foundation
 
-///Protocol that enables us to Mock URLSession
+/// Protocol that enables us to Mock URLSession
 public protocol NetswiftSession {
     typealias RequestHandler = (NetswiftHTTPResponse) -> Void
     
-    func perform(_ urlRequest: URLRequest, handler: @escaping RequestHandler)
+    func perform(_ urlRequest: URLRequest, handler: @escaping RequestHandler) -> NetswiftTask
 }
 
-///Extension to make URLSession compliant with NetswiftSession
+/// Extension to make URLSession compliant with NetswiftSession
 extension URLSession: NetswiftSession {
     
     ///DataTask call made via NetswiftSession Protocol
-    public func perform(_ urlRequest: URLRequest, handler: @escaping RequestHandler) {
+    public func perform(_ urlRequest: URLRequest, handler: @escaping RequestHandler) -> NetswiftTask {
         let task = dataTask(with: urlRequest) { data, response, error in
             handler(.init(data: data, response: response, error: error))
         }
         task.resume()
+        
+        return task
     }
 }

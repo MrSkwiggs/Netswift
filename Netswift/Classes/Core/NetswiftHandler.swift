@@ -9,4 +9,4 @@
 import Foundation
 
 /// Convenience alias for Netswift handlers
-public typealias NetswiftHandler<Value> = (NetswiftResult<Value, NetswiftError>) -> Void
+public typealias NetswiftHandler<Value> = (NetswiftResult<Value>) -> Void

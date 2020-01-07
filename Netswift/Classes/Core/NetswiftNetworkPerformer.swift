@@ -18,5 +18,5 @@ public protocol NetswiftNetworkPerformer {
      - parameter request: `NetswiftRequest` of specific type
      - parameter handler: A completion block that takes in a `NetswiftResult` that either contains a value of type `NetswiftRequest.Response` or an error of type `NetswiftError`
      */
-    func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>)
+    func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask?
 }

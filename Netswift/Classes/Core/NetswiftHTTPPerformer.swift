@@ -17,64 +17,61 @@ public final class NetswiftHTTPPerformer: NetswiftNetworkHTTPPerformer {
         self.session = session
     }
     
-    public func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?, NetswiftError>) -> Void) {
-        session.perform(request) { response in
-            
-            if let error = response.error {
-                return completion(.failure(NetswiftError.requestError(with: error)))
-            }
-            
+    public func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
+        return session.perform(request) { response in
             completion(self.validate(response))
         }
     }
     
-    public func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?, NetswiftError>) -> Void) {
+    public func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         let dispatchGroup = DispatchGroup()
         
-        DispatchQueue.main.async {
-            dispatchGroup.enter()
+        if dispatchGroup.wait(timeout: timeOut) == .timedOut {
+            completion(.failure(.timedOut))
+        }
+        
+        dispatchGroup.enter()
+        return self.perform(request) { result in
+            dispatchGroup.leave()
             
-            self.perform(request) { result in
-                dispatchGroup.leave()
-                
-                completion(result)
-            }
-            
-            if dispatchGroup.wait(timeout: timeOut) == .timedOut {
-                completion(.failure(.timedOut))
-            }
+            completion(result)
         }
     }
     
-    private func validate(_ response: NetswiftHTTPResponse) -> NetswiftResult<Data?, NetswiftError> {
-        
+    private func validate(_ response: NetswiftHTTPResponse) -> NetswiftResult<Data?> {
         switch response.statusCode {
         case 200...299:
             return .success(response.data)
-            
+
         case 400:
-            return .failure(NetswiftError.badRequest)
-            
-        case 401, 403:
-            return .failure(NetswiftError.notAuthenticated)
-            
+            return .failure(.requestError)
+
+        case 401:
+            return .failure(.notAuthenticated)
+
         case 402:
-            return .failure(NetswiftError.notPermitted)
-            
+            return .failure(.paymentRequired(payload: response.data))
+
+        case 403:
+            return .failure(.notPermitted)
+
         case 404:
-            return .failure(NetswiftError.resourceNotFound(with: response.error, payload: response.data))
-            
+            return .failure(.resourceNotFound(error: response.error, payload: response.data))
+
         case 405:
-            return .failure(NetswiftError.methodNotAllowed)
-            
+            return .failure(.methodNotAllowed)
+
         case 412:
-            return .failure(NetswiftError.preconditionFailed)
-            
+            return .failure(.preconditionFailed)
+
         case 429:
-            return .failure(NetswiftError.tooManyRequests)
-            
+            return .failure(.tooManyRequests)
+
+        case 500:
+            return .failure(.serverError(payload: response.data))
+
         default:
-            return .failure(NetswiftError.serverError)
-        }
-    }
+            return .failure(.unknown(payload: response.data))
+
+        }    }
 }
