@@ -26,11 +26,7 @@ extension MyAPI: NetswiftRoute {
 }
 
 extension MyAPI: NetswiftRequest {
-    func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
-        handler(.success(URLRequest(url: self.url)))
-    }
-    
-    struct Response: JSONDecodable {
+    struct Response: Decodable {
         let title: String
     }
 }

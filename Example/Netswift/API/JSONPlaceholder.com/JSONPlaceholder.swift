@@ -24,20 +24,4 @@ extension API.JSONPlaceholder: NetswiftRoute {
 
 extension API.JSONPlaceholder: NetswiftRequest {
     typealias Response = [JSONTodo]
-    
-    func deserialise(_ incomingData: Data) -> NetswiftResult<[JSONTodo], NetswiftError> {
-        do {
-            let decoder = JSONDecoder()
-            let decodedResponse = try decoder.decode([JSONTodo].self, from: incomingData)
-            return .success(decodedResponse)
-        } catch {
-            return .failure(.responseDecodingError(error: nil))
-        }
-    }
-    
-    func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
-        let request = URLRequest(url: self.url)
-        
-        handler(.success(request))
-    }
 }

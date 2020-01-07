@@ -11,10 +11,4 @@ import Netswift
 
 extension API.YourEndpoint: NetswiftRequest {
     typealias Response = String
-    
-    func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
-        let request = URLRequest(url: self.url)
-        
-        handler(.success(request))
-    }
 }

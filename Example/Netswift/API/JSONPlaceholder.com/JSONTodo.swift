@@ -9,7 +9,7 @@
 import Foundation
 import Netswift
 
-struct JSONTodo: JSONDecodable {
+struct JSONTodo: Decodable {
     let userId: Int
     let id: Int
     let title: String

@@ -19,14 +19,14 @@ struct API {
     }
     
     /// Convenience bridge function between NetswiftRequestPerformable & NetswiftPerformer
-    fileprivate func perform<T: NetswiftRequest>(_ request: T, _ handler: @escaping NetswiftHandler<T.Response>) {
-        performer.perform(request, handler: handler)
+    fileprivate func perform<T: NetswiftRequest>(_ request: T, _ handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
+        return performer.perform(request, handler: handler)
     }
 }
 
 extension NetswiftRequestPerformable where Self: NetswiftRequest {
-    func perform(_ handler: @escaping NetswiftHandler<Self.Response>) {
-        API.shared.perform(self, handler)
+    @discardableResult func perform(_ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask? {
+        return API.shared.perform(self, handler)
     }
 }
 
