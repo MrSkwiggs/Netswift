@@ -10,7 +10,7 @@ This library takes care of the heavy lifting required to have a reusable & maint
 It currently allows you to easily write network calls in a very structured and type-safe way. It does so by using protocols with associated types & generic classes & structs very extensively.
 
 ## Why
-Networking in Swift can be tedious from the get go if you're not too experienced. This is where Netswift aims to shine!
+Networking in Swift can be tedious from the get go. Type safety & reusability are often overlooked for the sake of getting up to speed. This is where Netswift aims to shine!
 
 Over the past years, my team & I struggled with spaghetti code & an unmaintainable codebase when it came to performing network requests. Due to the nature of api calls, it is quite tough to find a single solution that accommodates most of your needs, all the while remaining flexible & future-proof.
 
