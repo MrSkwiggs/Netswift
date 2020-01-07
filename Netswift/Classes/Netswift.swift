@@ -16,7 +16,7 @@ public final class Netswift: NetswiftNetworkPerformer {
         self.requestPerformer = requestPerformer
     }
     
-    public func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
+    @discardableResult public func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
         switch request.serialise() {
         case .success(let url):
             return self.requestPerformer.perform(url) { response in
