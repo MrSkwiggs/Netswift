@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name              = 'Netswift'
-    s.version           = '0.0.3'
+    s.version           = '0.1.0'
     s.summary           = 'A high-level, type-safe networking solution for Swift apps'
     s.swift_version     = '5.0'
     
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     #   * Finally, don't worry about the indent, CocoaPods strips it!
     
     s.description      = <<-DESC
-    Networking in Swift can be tedious from the get go if you're not too experienced. This is where Netswift aims to shine!
+    Networking in Swift can be tedious from the get go. Type safety & reusability are often overlooked for the sake of getting up to speed. This is where Netswift aims to shine!
     
     This framework was highly inspired by blog posts written by the brilliant John Sundell (https://www.swiftbysundell.com) and Ray Wenderlich (https://www.raywenderlich.com/).
     
