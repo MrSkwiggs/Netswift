@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        Netswift().perform(MyAPI.helloWorld) { result in
+        NetswiftPerformer().perform(MyAPI.helloWorld) { result in
             guard let response = result.value else {
                 if let error = result.error {
                     print(error)

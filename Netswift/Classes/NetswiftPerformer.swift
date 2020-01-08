@@ -1,5 +1,5 @@
 //
-//  Netswift.swift
+//  NetswiftPerformer.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 27/06/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftNetworkPerformer protocol
-public final class Netswift: NetswiftNetworkPerformer {
+public final class NetswiftPerformer: NetswiftNetworkPerformer {
     let requestPerformer: HTTPPerformer
     
     public init(requestPerformer: HTTPPerformer = NetswiftHTTPPerformer()) {

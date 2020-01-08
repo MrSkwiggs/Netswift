@@ -18,7 +18,7 @@
 		E71FAF8D23C5CD18006D3415 /* RequestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71FAF8C23C5CD18006D3415 /* RequestHeader.swift */; };
 		E71FAF8F23C5CD79006D3415 /* NetswiftAuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */; };
 		E71FAF9523C61BB7006D3415 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71FAF9423C61BB7006D3415 /* MimeType.swift */; };
-		E74A829F2287108E0040A59E /* Netswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82872287108E0040A59E /* Netswift.swift */; };
+		E74A829F2287108E0040A59E /* NetswiftPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82872287108E0040A59E /* NetswiftPerformer.swift */; };
 		E74A82A42287108E0040A59E /* NetswiftResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A828F2287108E0040A59E /* NetswiftResult.swift */; };
 		E74A82A52287108E0040A59E /* HTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82902287108E0040A59E /* HTTPPerformer.swift */; };
 		E74A82A62287108E0040A59E /* NetswiftSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82912287108E0040A59E /* NetswiftSession.swift */; };
@@ -87,7 +87,7 @@
 		E71FAF8C23C5CD18006D3415 /* RequestHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
 		E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetswiftAuthorizationType.swift; sourceTree = "<group>"; };
 		E71FAF9423C61BB7006D3415 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
-		E74A82872287108E0040A59E /* Netswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Netswift.swift; path = Netswift/Classes/Netswift.swift; sourceTree = "<group>"; };
+		E74A82872287108E0040A59E /* NetswiftPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetswiftPerformer.swift; path = Netswift/Classes/NetswiftPerformer.swift; sourceTree = "<group>"; };
 		E74A828F2287108E0040A59E /* NetswiftResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftResult.swift; sourceTree = "<group>"; };
 		E74A82902287108E0040A59E /* HTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
 		E74A82912287108E0040A59E /* NetswiftSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftSession.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				E74A82882287108E0040A59E /* Core */,
-				E74A82872287108E0040A59E /* Netswift.swift */,
+				E74A82872287108E0040A59E /* NetswiftPerformer.swift */,
 				628B00FC99A84F32F1403283C99422F2 /* Pod */,
 				52C82954B39C6621A1F757B001C15EAB /* Support Files */,
 			);
@@ -450,7 +450,7 @@
 				E74A82AA2287108E0040A59E /* NetswiftRequestPerformable.swift in Sources */,
 				982DC8B4B323AC59305828AF88C0FF05 /* Netswift-dummy.m in Sources */,
 				E74A82AF2287108E0040A59E /* URLRequestExtension.swift in Sources */,
-				E74A829F2287108E0040A59E /* Netswift.swift in Sources */,
+				E74A829F2287108E0040A59E /* NetswiftPerformer.swift in Sources */,
 				E74A82A62287108E0040A59E /* NetswiftSession.swift in Sources */,
 				E74A82B22287108E0040A59E /* GenericScheme.swift in Sources */,
 				E74A82B32287108E0040A59E /* NetswiftHTTPPerformer.swift in Sources */,

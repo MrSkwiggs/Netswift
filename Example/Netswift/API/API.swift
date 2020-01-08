@@ -14,7 +14,7 @@ struct API {
     private let performer: NetswiftNetworkPerformer
     fileprivate static let shared = API()
     
-    private init(performer: NetswiftNetworkPerformer = Netswift()) {
+    private init(performer: NetswiftNetworkPerformer = NetswiftPerformer()) {
         self.performer = performer
     }
     
