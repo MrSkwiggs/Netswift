@@ -9,7 +9,7 @@
 import Foundation
 
 /// Convenience wrapper functions
-extension URLRequest {
+public extension URLRequest {
 
     /// Adds an Authorization header with given bearer token
     mutating func authenticate(withBearer token: String) {
