@@ -1,5 +1,5 @@
 //
-//  NetswiftHTTPType.swift
+//  NetswiftMIMEType.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 02/07/2018.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// Standard and custom HTTP Types
-public enum NetswiftHTTPType: Hashable {
+/// Standard and custom HTTP MIME Types
+public enum NetswiftMIMEType: Hashable {
     // MARK: - Text
     
     /// text/plain
