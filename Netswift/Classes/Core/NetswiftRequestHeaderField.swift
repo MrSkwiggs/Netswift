@@ -27,7 +27,7 @@ public enum NetswiftRequestHeaderField {
     case custom(identifier: String, value: String)
     
     /// The name of this header field.
-    var identifier: String {
+    public var identifier: String {
         switch self {
         case .accept: return "Accept"
         case .authorization: return "Authorizationn"
@@ -38,7 +38,7 @@ public enum NetswiftRequestHeaderField {
     }
     
     /// The value of this header field.
-    var value: String {
+    public var value: String {
         switch self {
         case .accept(let type): return type.rawValue
         case .authorization(let secret): return secret.rawValue
