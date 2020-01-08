@@ -19,4 +19,10 @@ public extension URLRequest {
             setValue($0.value, forHTTPHeaderField: $0.identifier)
         }
     }
+    
+    mutating func addHeaders(_ headers: [NetswiftRequestHeaderField]) {
+        headers.forEach {
+            addValue($0.value, forHTTPHeaderField: $0.identifier)
+        }
+    }
 }
