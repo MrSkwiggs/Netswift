@@ -24,10 +24,10 @@ public enum NetswiftRequestHeaderField {
     case userAgent(String)
     
     /// A custom header field
-    case custom(identifier: String, value: String)
+    case custom(key: String, value: String)
     
     /// The name of this header field.
-    public var identifier: String {
+    public var key: String {
         switch self {
         case .accept: return "Accept"
         case .authorization: return "Authorizationn"

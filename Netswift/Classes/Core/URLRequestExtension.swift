@@ -16,13 +16,13 @@ public extension URLRequest {
     
     mutating func setHeaders(_ headers: [NetswiftRequestHeaderField]) {
         headers.forEach {
-            setValue($0.value, forHTTPHeaderField: $0.identifier)
+            setValue($0.value, forHTTPHeaderField: $0.key)
         }
     }
     
     mutating func addHeaders(_ headers: [NetswiftRequestHeaderField]) {
         headers.forEach {
-            addValue($0.value, forHTTPHeaderField: $0.identifier)
+            addValue($0.value, forHTTPHeaderField: $0.key)
         }
     }
 }
