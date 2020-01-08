@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias NetswiftResult<Success> = Result<Success, NetswiftError>
+public typealias NetswiftResult<Success> = Result<Success, Error>
 
 public extension NetswiftResult {
     init(value: Success) {

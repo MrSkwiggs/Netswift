@@ -1,5 +1,5 @@
 //
-//  NetswiftRequestHeaderField.swift
+//  RequestHeader.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 08/01/2020.
@@ -10,12 +10,12 @@ import Foundation
 /**
  An HTTP Request header field. Defines its identifier & its value.
  */
-public enum NetswiftRequestHeaderField {
+public enum RequestHeader {
     /// Content-Type
-    case contentType(NetswiftMIMEType)
+    case contentType(MimeType)
     
     /// Accept
-    case accept(NetswiftMIMEType)
+    case accept(MimeType)
     
     /// Authorization
     case authorization(NetswiftAuthorizationType)

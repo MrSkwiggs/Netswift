@@ -20,7 +20,7 @@ public protocol NetswiftRoute {
      Which scheme to use
      - note: HTTPS by default
      */
-    var scheme: NetswiftRouteScheme { get }
+    var scheme: String { get }
     
     /**
      The host
@@ -67,8 +67,8 @@ public protocol NetswiftRoute {
 
 public extension NetswiftRoute {
     
-    var scheme: NetswiftRouteScheme {
-        return NetswiftGenericRouteScheme.https
+    var scheme: String {
+        return GenericScheme.https.rawValue
     }
     
     var path: String? {
@@ -88,7 +88,7 @@ public extension NetswiftRoute {
     }
     
     var url: URL {
-        let scheme = self.scheme.string
+        let scheme = self.scheme
         let host = (self.host ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let path = (self.path ?? "").addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
         let query = (self.query ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

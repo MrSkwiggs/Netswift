@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Protocol that enables us to Mock URLSession
+/// Protocol that allows to mock URLSessions
 public protocol NetswiftSession {
     typealias RequestHandler = (NetswiftHTTPResponse) -> Void
     

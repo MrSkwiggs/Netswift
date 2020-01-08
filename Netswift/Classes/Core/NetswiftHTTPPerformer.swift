@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// A generic HTTP Performer. For detailed doc please refer to NetswiftNetworkHTTPPerformer protocol
-public final class NetswiftHTTPPerformer: NetswiftNetworkHTTPPerformer {
+/// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
+public final class NetswiftHTTPPerformer: HTTPPerformer {
     
     private let session: NetswiftSession
     
@@ -72,6 +72,6 @@ public final class NetswiftHTTPPerformer: NetswiftNetworkHTTPPerformer {
 
         default:
             return .failure(.unknown(payload: response.data))
-
-        }    }
+        }
+    }
 }

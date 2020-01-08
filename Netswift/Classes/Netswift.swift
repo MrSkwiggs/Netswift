@@ -10,9 +10,9 @@ import Foundation
 
 /// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftNetworkPerformer protocol
 public final class Netswift: NetswiftNetworkPerformer {
-    let requestPerformer: NetswiftNetworkHTTPPerformer
+    let requestPerformer: HTTPPerformer
     
-    public init(requestPerformer: NetswiftNetworkHTTPPerformer = NetswiftHTTPPerformer()) {
+    public init(requestPerformer: HTTPPerformer = NetswiftHTTPPerformer()) {
         self.requestPerformer = requestPerformer
     }
     

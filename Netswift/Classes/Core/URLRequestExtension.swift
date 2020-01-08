@@ -14,13 +14,13 @@ public extension URLRequest {
         self.httpMethod = method.rawValue
     }
     
-    mutating func setHeaders(_ headers: [NetswiftRequestHeaderField]) {
+    mutating func setHeaders(_ headers: [RequestHeader]) {
         headers.forEach {
             setValue($0.value, forHTTPHeaderField: $0.key)
         }
     }
     
-    mutating func addHeaders(_ headers: [NetswiftRequestHeaderField]) {
+    mutating func addHeaders(_ headers: [RequestHeader]) {
         headers.forEach {
             addValue($0.value, forHTTPHeaderField: $0.key)
         }

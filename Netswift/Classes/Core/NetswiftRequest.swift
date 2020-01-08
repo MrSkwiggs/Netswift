@@ -21,38 +21,38 @@ public protocol NetswiftRequest {
      Specifies which HTTP headers to use for this request
      - important: Defaults to empty array.
      */
-    var headers: [NetswiftRequestHeaderField] { get }
+    var headers: [RequestHeader] { get }
     
     /**
      Tries to generate a URLRequest given the specific internals of the NetswiftRequest. Might fail.
-     - parameter completion: A completion block that takes in a NetswiftResult that either succeeds with a useable URLRequest, or fails with a NetswiftError
+     - parameter completion: A completion block that takes in a NetswiftResult that either succeeds with a useable URLRequest, or fails with a Netswift.Error
      */
     func serialise() -> NetswiftResult<URLRequest>
     
     /**
      Tries to decode raw Data into a Foundation Any object.
      - parameter data: Encoded raw data
-     - returns: A NetswiftResult that either succeeds with Any object, or fails with a NetswiftError.
+     - returns: A NetswiftResult that either succeeds with Any object, or fails with a Netswift.Error.
      */
     func decode(_ data: Data?) -> NetswiftResult<Any>
     
     /**
      Tries to cast a Foundation Any object to the request's expected IncomingType
      - parameter any: A Foundation object of Any type
-     - returns: A NetswiftResult that either succeeds with an object of IncomingType, or fails with a NetswiftError.
+     - returns: A NetswiftResult that either succeeds with an object of IncomingType, or fails with a Netswift.Error.
      */
     func cast(_ any: Any) -> NetswiftResult<IncomingType>
     
     /**
      Tries to interpret any incoming data to build a fully-fledged Response object.
      - parameter incomingData: freeform data of the expected IncomingType
-     - returns: A NetswiftResult that either succeeds with a Response object, or fails with a NetswiftError.
+     - returns: A NetswiftResult that either succeeds with a Response object, or fails with a Netswift.Error.
      */
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response>
 }
 
 public extension NetswiftRequest {
-    var headers: [NetswiftRequestHeaderField] {
+    var headers: [RequestHeader] {
         return []
     }
 }

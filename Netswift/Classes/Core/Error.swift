@@ -1,5 +1,5 @@
 //
-//  NetswiftError.swift
+//  Error.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 27/06/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// All the errors that can be raised while performing HTTP requests
-public enum NetswiftError: Error {
+public enum Error: Swift.Error {
     
     /// The request couldn't be serialised before being sent out
     case requestSerialisationError
@@ -21,10 +21,10 @@ public enum NetswiftError: Error {
     case serverError(payload: Data?)
 
     /// The specified resource could not be found on the server (404)
-    case resourceNotFound(error: Error?, payload: Data?)
+    case resourceNotFound(error: Swift.Error?, payload: Data?)
     
     /// The specified resource has been permanently removed
-    case resourceRemoved(error: Error?, payload: Data?)
+    case resourceRemoved(error: Swift.Error?, payload: Data?)
     
     /// The response returned by the server does not conform to expected type
     case unexpectedResponseError
@@ -60,13 +60,13 @@ public enum NetswiftError: Error {
     case tooManyRequests
 
     /// A generic error with a provided error object
-    case generic(error: Error)
+    case generic(error: Swift.Error)
 
     /// Fallback error
     case unknown(payload: Data?)
 }
 
-extension NetswiftError {
+extension Error {
     public var payload: Data? {
         switch self {
         case let .resourceNotFound(_, payload), let .resourceRemoved(_, payload):
@@ -97,7 +97,7 @@ extension NetswiftError {
     }
 }
 
-extension NetswiftError: CustomDebugStringConvertible {
+extension Error: CustomDebugStringConvertible {
     public var debugDescription: String {
         switch self {
         case .requestSerialisationError:
