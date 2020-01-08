@@ -18,6 +18,12 @@ public protocol NetswiftRequest {
     associatedtype IncomingType = Data
     
     /**
+     Specifies which HTTP headers to use for this request
+     - important: Defaults to empty array.
+     */
+    var headers: [NetswiftRequestHeaderField] { get }
+    
+    /**
      Tries to generate a URLRequest given the specific internals of the NetswiftRequest. Might fail.
      - parameter completion: A completion block that takes in a NetswiftResult that either succeeds with a useable URLRequest, or fails with a NetswiftError
      */
@@ -45,12 +51,19 @@ public protocol NetswiftRequest {
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response>
 }
 
+public extension NetswiftRequest {
+    var headers: [NetswiftRequestHeaderField] {
+        return []
+    }
+}
+
 // MARK: - Convenience Serialising
 
 public extension NetswiftRequest where Self: NetswiftRoute {
     func serialise() -> NetswiftResult<URLRequest> {
         var request = URLRequest(url: self.url)
         request.setHTTPMethod(self.method)
+        request.setHeaders(self.headers)
         
         return .success(request)
     }
