@@ -246,6 +246,7 @@
 		E74A82882287108E0040A59E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */,
 				E74A82932287108E0040A59E /* NetswiftError.swift */,
 				E74A829D2287108E0040A59E /* NetswiftGenericRouteScheme.swift */,
 				E74A82982287108E0040A59E /* NetswiftHandler.swift */,
@@ -253,18 +254,17 @@
 				E74A829E2287108E0040A59E /* NetswiftHTTPPerformer.swift */,
 				E74A829B2287108E0040A59E /* NetswiftHTTPResponse.swift */,
 				E74A82972287108E0040A59E /* NetswiftHTTPType.swift */,
-				E71FAF8C23C5CD18006D3415 /* NetswiftRequestHeaderField.swift */,
-				E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */,
 				E74A82902287108E0040A59E /* NetswiftNetworkHTTPPerformer.swift */,
 				E74A82942287108E0040A59E /* NetswiftNetworkPerformer.swift */,
 				E74A82992287108E0040A59E /* NetswiftRequest.swift */,
+				E71FAF8C23C5CD18006D3415 /* NetswiftRequestHeaderField.swift */,
 				E74A82952287108E0040A59E /* NetswiftRequestPerformable.swift */,
 				E74A828F2287108E0040A59E /* NetswiftResult.swift */,
 				E74A82962287108E0040A59E /* NetswiftRoute.swift */,
 				E74A82922287108E0040A59E /* NetswiftRouteScheme.swift */,
 				E74A82912287108E0040A59E /* NetswiftSession.swift */,
-				E74A829A2287108E0040A59E /* URLRequestExtension.swift */,
 				E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */,
+				E74A829A2287108E0040A59E /* URLRequestExtension.swift */,
 			);
 			name = Core;
 			path = Netswift/Classes/Core;
