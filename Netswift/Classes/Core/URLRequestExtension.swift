@@ -1,6 +1,6 @@
 //
 //  URLRequestExtension.swift
-//  Microservices
+//  Netswift
 //
 //  Created by Dorian Grolaux on 29/06/2018.
 //  Copyright © 2018 Skwiggs. All rights reserved.
