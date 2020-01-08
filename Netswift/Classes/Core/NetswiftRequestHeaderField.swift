@@ -20,6 +20,9 @@ public enum NetswiftRequestHeaderField {
     /// Authorization
     case authorization(secret: NetswiftAuthorizationType)
     
+    /// User-Agent
+    case userAgent(String)
+    
     /// A custom header field
     case custom(identifier: String, value: String)
     
@@ -29,6 +32,7 @@ public enum NetswiftRequestHeaderField {
         case .accept: return "Accept"
         case .authorization: return "Authorizationn"
         case .contentType: return "Content-Type"
+        case .userAgent: return "User-Agent"
         case .custom(let identifier, _): return identifier
         }
     }
@@ -39,6 +43,7 @@ public enum NetswiftRequestHeaderField {
         case .accept(let type): return type.rawValue
         case .authorization(let secret): return secret.rawValue
         case .contentType(let type): return type.rawValue
+        case .userAgent(let value): return value
         case .custom(_, let value): return value
         }
     }
