@@ -43,6 +43,11 @@ public enum NetswiftMIMEType: Hashable {
     /// audio/vorbis
     case vorbis
     
+    // MARK: - Multipart
+    
+    /// multipart/form-data; boundary=\<boundary\>
+    case multipart(Multipart)
+    
     // MARK: - Custom
     
     /// A custom MIME type.
@@ -59,7 +64,34 @@ public enum NetswiftMIMEType: Hashable {
         case .data: return "application/octet-stream"
         case .mpeg: return "audio/mpeg"
         case .vorbis: return "audio/vorbis"
+        case .multipart(let multipart): return multipart.rawValue
         case .custom(let type): return type
+        }
+    }
+}
+
+public extension NetswiftMIMEType {
+    enum Multipart: Hashable {
+        case form(boundary: String)
+        case byteRange(boundary: String)
+        
+        var boundary: String {
+            switch self {
+            case .form(let boundary), .byteRange(let boundary):
+                return boundary
+            }
+        }
+        
+        var rawValue: String {
+            var value: String = "multipart/"
+            
+            switch self {
+            case .byteRange: value += "form-data"
+            case .form: value += "byteranges"
+            }
+            
+            value += "; boundary=\(boundary)"
+            return value
         }
     }
 }
