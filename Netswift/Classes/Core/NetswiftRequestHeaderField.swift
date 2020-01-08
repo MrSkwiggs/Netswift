@@ -12,13 +12,13 @@ import Foundation
  */
 public enum NetswiftRequestHeaderField {
     /// Content-Type
-    case contentType(type: NetswiftMIMEType)
+    case contentType(NetswiftMIMEType)
     
     /// Accept
-    case accept(type: NetswiftMIMEType)
+    case accept(NetswiftMIMEType)
     
     /// Authorization
-    case authorization(secret: NetswiftAuthorizationType)
+    case authorization(NetswiftAuthorizationType)
     
     /// User-Agent
     case userAgent(String)
