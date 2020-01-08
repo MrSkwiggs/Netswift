@@ -1,6 +1,6 @@
 # Netswift
 
-[![CI Status](https://img.shields.io/travis/MrSkwiggs/Netswift.svg?style=flat)](https://travis-ci.org/MrSkwiggs/Netswift)
+[![Build Status](https://travis-ci.org/MrSkwiggs/Netswift.svg?branch=master)](https://travis-ci.org/MrSkwiggs/Netswift)
 [![Version](https://img.shields.io/cocoapods/v/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
 [![License](https://img.shields.io/cocoapods/l/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
 [![Platform](https://img.shields.io/cocoapods/p/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
