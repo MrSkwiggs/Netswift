@@ -9,6 +9,14 @@
 import Foundation
 
 /// Standard and custom HTTP Types
-public enum NetswiftHTTPType: String {
-    case json = "application/json"
+public enum NetswiftHTTPType: Hashable {
+    case json
+    case custom(type: String)
+    
+    var rawValue: String {
+        switch self {
+        case .custom(let type): return type
+        case .json: return "application/json"
+        }
+    }
 }
