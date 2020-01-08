@@ -19,11 +19,9 @@ Pod::Spec.new do |s|
     #   * Finally, don't worry about the indent, CocoaPods strips it!
     
     s.description      = <<-DESC
-    Networking in Swift can be tedious from the get go. Type safety & reusability are often overlooked for the sake of getting up to speed. This is where Netswift aims to shine!
+    Networking in Swift can be tedious from the get go. Type safety & reusability are often overlooked for the sake of getting up to speed. This is where Netswift comes in!
     
-    This framework was highly inspired by blog posts written by the brilliant John Sundell (https://www.swiftbysundell.com) and Ray Wenderlich (https://www.raywenderlich.com/).
-    
-    It currently allows to (somewhat) easily write simple network calls in a very structured and maintainable way. It does so by using protocols with associated types & generic classes very extensively.
+    Netswift allows you to easily write network calls in a very structured and maintainable way. It does so by using protocols with associated types & generic classes very extensively.
     DESC
     
     s.homepage         = 'https://github.com/MrSkwiggs/Netswift'
