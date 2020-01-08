@@ -1,5 +1,5 @@
 //
-//  Error.swift
+//  NetswiftError.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 27/06/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// All the errors that can be raised while performing HTTP requests
-public enum Error: Swift.Error {
+public enum NetswiftError: Swift.Error {
     
     /// The request couldn't be serialised before being sent out
     case requestSerialisationError
@@ -66,7 +66,7 @@ public enum Error: Swift.Error {
     case unknown(payload: Data?)
 }
 
-extension Error {
+extension NetswiftError {
     public var payload: Data? {
         switch self {
         case let .resourceNotFound(_, payload), let .resourceRemoved(_, payload):
@@ -97,7 +97,7 @@ extension Error {
     }
 }
 
-extension Error: CustomDebugStringConvertible {
+extension NetswiftError: CustomDebugStringConvertible {
     public var debugDescription: String {
         switch self {
         case .requestSerialisationError:

@@ -24,7 +24,7 @@ public protocol HTTPPerformer {
      - note: Always returns within defined time-out interval
      
      - parameter request: Any URLRequest that has already been initialised and configured.
-     - parameter timeOut: The maximum amount of seconds before the task is considered as timed-out, forcing a call to completion with a `.timedOut` Error.
+     - parameter timeOut: The maximum amount of seconds before the task is considered as timed-out, forcing a call to completion with a `.timedOut` NetswiftError.
      - parameter completion: A block that will be called when the data task eventually returns
      */
     func perform (_ request: URLRequest, waitUpTo timeOut: DispatchTime, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask
