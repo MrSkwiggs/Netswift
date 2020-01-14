@@ -161,7 +161,7 @@ pod 'Netswift'
 
 ## Author
 
-MrSkwiggs, 6209874+MrSkwiggs@users.noreply.github.com
+Dorian Grolaux, dorian@skwiggs.dev
 
 ## License
 
