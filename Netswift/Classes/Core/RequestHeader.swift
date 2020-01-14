@@ -30,7 +30,7 @@ public enum RequestHeader {
     public var key: String {
         switch self {
         case .accept: return "Accept"
-        case .authorization: return "Authorizationn"
+        case .authorization: return "Authorization"
         case .contentType: return "Content-Type"
         case .userAgent: return "User-Agent"
         case .custom(let identifier, _): return identifier
