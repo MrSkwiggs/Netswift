@@ -11,10 +11,8 @@ import Foundation
 /// Convenience wrapper for URLResponses
 public struct NetswiftHTTPResponse {
     let data: Data?
-    var statusCode: Int {
-        get {
-            return (URLResponse as? HTTPURLResponse)?.statusCode ?? 500
-        }
+    var statusCode: Int? {
+        return (URLResponse as? HTTPURLResponse)?.statusCode
     }
     let URLResponse: URLResponse?
     let error: Swift.Error?
