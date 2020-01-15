@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name              = 'Netswift'
-    s.version           = '0.1.3'
+    s.version           = '0.1.4'
     s.summary           = 'A high-level, type-safe networking solution for Swift apps'
     s.swift_version     = '5.0'
     
