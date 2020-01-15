@@ -18,10 +18,28 @@ public protocol NetswiftRequest {
     associatedtype IncomingType = Data
     
     /**
-     Specifies which HTTP headers to use for this request
+     Specifies additional HTTP headers to use for this request.
+     
+     These headers will be concatenated with any other already specified header (such as Content-Type or Accept).
+     
+     - note: Set Content-Type or Accept headers through `contentType` or `accept` protocol vars.
      - important: Defaults to empty array.
      */
-    var headers: [RequestHeader] { get }
+    var additionalHeaders: [RequestHeader] { get }
+    
+    /**
+     Specifies what type of content this request emits.
+     
+     - important: Defaults to `.json`
+     */
+    var contentType: MimeType { get }
+    
+    /**
+     Specifies what type of content this request expects back.
+     
+     - important: Defaults to `.json`
+     */
+    var accept: MimeType { get }
     
     /**
      Tries to generate a URLRequest given the specific internals of the NetswiftRequest. Might fail.
@@ -52,8 +70,16 @@ public protocol NetswiftRequest {
 }
 
 public extension NetswiftRequest {
-    var headers: [RequestHeader] {
+    var additionalHeaders: [RequestHeader] {
         return []
+    }
+    
+    var contentType: MimeType {
+        return .json
+    }
+    
+    var accept: MimeType {
+        return .json
     }
 }
 
@@ -63,7 +89,11 @@ public extension NetswiftRequest where Self: NetswiftRoute {
     func serialise() -> NetswiftResult<URLRequest> {
         var request = URLRequest(url: self.url)
         request.setHTTPMethod(self.method)
-        request.setHeaders(self.headers)
+        
+        var headers = additionalHeaders
+        
+        headers.append(.contentType(contentType))
+        headers.append(.accept(accept))
         
         return .success(request)
     }
