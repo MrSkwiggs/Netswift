@@ -39,7 +39,14 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
     }
     
     private func validate(_ response: NetswiftHTTPResponse) -> NetswiftResult<Data?> {
-        switch response.statusCode {
+        guard let statusCode = response.statusCode else {
+            guard let error = response.error else {
+                return .failure(.unknown(payload: response.data))
+            }
+            return .failure(.generic(error: error))
+        }
+        
+        switch statusCode {
         case 200...299:
             return .success(response.data)
 
