@@ -86,8 +86,8 @@ public extension MimeType {
             var value: String = "multipart/"
             
             switch self {
-            case .byteRange: value += "form-data"
-            case .form: value += "byteranges"
+            case .byteRange: value += "byteranges"
+            case .form: value += "form-data"
             }
             
             value += "; boundary=\(boundary)"
