@@ -30,8 +30,8 @@
 		D3AC7F49D99AE9CFEC2185FF03F4FC98 /* NetswiftResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFEFC8F331D1CBEA2D795E236A0A316 /* NetswiftResult.swift */; };
 		D4E95839098F0A271D58A38838823B17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		D85D631FCD13BE3C54BD8EEB7D237BA8 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC300223BA8EE5D5F3FB6041B4E7404 /* URLRequestExtension.swift */; };
-		E1387ED40B7C8BB9D4DA7DF8C00871DC /* NetswiftHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A4E4C35CBB39D5C331E65BAA725EE /* NetswiftHTTPPerformer.swift */; };
 		E4E8C824E5F0116A5809291861205360 /* GenericScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A56B6F36611AAF7F74BF14DFC56F5 /* GenericScheme.swift */; };
+		E74F37B223D0ACDA00763ABA /* NetswiftHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */; };
 		E7F5E80944DECE0638ADD88919E15FB8 /* NetswiftHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */; };
 		EF348B8EFE9BFFA7D0734A62FCD271CE /* Pods-Netswift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */; };
 		FEDDFB8DE73EA5C01419C9C6ADEA28E3 /* NetswiftRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */; };
@@ -96,9 +96,9 @@
 		CF58E4CBDFE59202EAEC431E03812C17 /* Pods-Netswift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DB5655BAB32F45EEED0ADCFE5A9B1728 /* HTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
 		E74F37AF23D0A5A000763ABA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetswiftHTTPPerformer.swift; path = Sources/Netswift/NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
 		E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftSession.swift; sourceTree = "<group>"; };
 		E8CF9EAB90625D1CC4EE3246EE5EB0B7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		EA2A4E4C35CBB39D5C331E65BAA725EE /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
 		F4123CF192CC25C62CBA8E6B9C716ABC /* Pods-Netswift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F49E8FA86DE715FE59E734D21642E7DF /* Netswift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Netswift.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHandler.swift; sourceTree = "<group>"; };
@@ -146,7 +146,6 @@
 				55656932E57241359566E58A4C66B7C6 /* NetswiftError.swift */,
 				F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */,
 				88485A8CE65DA81911666A6A4280E99E /* NetswiftHTTPMethod.swift */,
-				EA2A4E4C35CBB39D5C331E65BAA725EE /* NetswiftHTTPPerformer.swift */,
 				FEAAA2757888ABC7B2EF9F57FE9267C4 /* NetswiftHTTPResponse.swift */,
 				F760C9ACE94198054E01D326F3CD6D78 /* NetswiftNetworkPerformer.swift */,
 				77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */,
@@ -222,9 +221,10 @@
 		A134B449D48815EF1B38F2271C0A9DE2 /* Netswift */ = {
 			isa = PBXGroup;
 			children = (
-				E74F37AF23D0A5A000763ABA /* Package.swift */,
-				8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */,
 				0A6D118D2823E0FCF816752E8E149153 /* Core */,
+				E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */,
+				8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */,
+				E74F37AF23D0A5A000763ABA /* Package.swift */,
 				B4243DDF64089C3707A90FDF0A471C93 /* Pod */,
 				71B38C7D5881EFC86C4C769D0F5B0514 /* Support Files */,
 			);
@@ -442,11 +442,11 @@
 				81C449149354B003C94D2EBF3D3FDEE2 /* HTTPPerformer.swift in Sources */,
 				2122E3A5763CCF357F9D78B409D41A8B /* MimeType.swift in Sources */,
 				BDDEF3D46EA2F35805664438C55916D3 /* Netswift-dummy.m in Sources */,
+				E74F37B223D0ACDA00763ABA /* NetswiftHTTPPerformer.swift in Sources */,
 				9B16069BA46E7AA26E828C0131DD88FC /* NetswiftAuthorizationType.swift in Sources */,
 				975C8F309D77709B9E8D5E0078E29137 /* NetswiftError.swift in Sources */,
 				E7F5E80944DECE0638ADD88919E15FB8 /* NetswiftHandler.swift in Sources */,
 				3E6E98B03CF63DD88BD401F58A45DF04 /* NetswiftHTTPMethod.swift in Sources */,
-				E1387ED40B7C8BB9D4DA7DF8C00871DC /* NetswiftHTTPPerformer.swift in Sources */,
 				8B57A1AD77061791FD0CA66B05FB29AC /* NetswiftHTTPResponse.swift in Sources */,
 				54A5E5AFB8CEA54C717AFBF624F33CE7 /* NetswiftNetworkPerformer.swift in Sources */,
 				14F4FBF9E7F02D07199C32DABD839B2D /* NetswiftPerformer.swift in Sources */,
