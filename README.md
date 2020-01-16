@@ -161,7 +161,7 @@ pod 'Netswift'
 
 ## Author
 
-Dorian Grolaux, dorian@skwiggs.dev
+[Dorian Grolaux](mailto:dorian@skwiggs.dev?subject=Netswift%20-%20Cocoapods%3A%20), https://skwiggs.dev
 
 ## License
 

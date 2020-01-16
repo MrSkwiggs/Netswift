@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Netswift
 
 struct JSONTodo: Decodable {
     let userId: Int

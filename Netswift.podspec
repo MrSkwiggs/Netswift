@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name              = 'Netswift'
-    s.version           = '0.1.5'
+    s.version           = '0.1.6'
     s.summary           = 'A high-level, type-safe networking solution for Swift apps'
     s.swift_version     = '5.0'
     
@@ -31,9 +31,9 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/MrSkwiggs/Netswift.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
     
-    s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '12.0'
     
-    s.source_files = 'Netswift/Classes/**/*'
+    s.source_files = 'Sources/**/*.swift'
     
     # s.resource_bundles = {
     #   'Netswift' => ['Netswift/Assets/*.png']
