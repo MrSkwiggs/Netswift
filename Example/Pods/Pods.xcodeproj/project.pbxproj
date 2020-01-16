@@ -7,217 +7,254 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06A7153B7C300C6490A8922137FCA36E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		30A0D116F434CC859BFA40B9DCD1DAEF /* Pods-Netswift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4133C942697DF36B658F5D68E4292B2C /* Pods-Netswift_Tests-dummy.m */; };
-		383E39D17A56A418D466550FA64747BC /* Pods-Netswift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 430607F0186AD80583894A5C421823D9 /* Pods-Netswift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3ECFC4EB81C1347862BEC2D6EF00D4E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		6B2A6FC6159E88E14CD4177BEFE98F55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		748F19DC92B790EDB788D324F9003B12 /* Pods-Netswift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52043DC332BF3FF44CFAF78A8B9C08A4 /* Pods-Netswift_Example-dummy.m */; };
-		969FDCD332C54F54826971279909C689 /* Pods-Netswift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8D01743F96CB20CDAFE75265FEF10F /* Pods-Netswift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		982DC8B4B323AC59305828AF88C0FF05 /* Netswift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2B1C50DAA9E7C3C75B9E32A5F359 /* Netswift-dummy.m */; };
-		E71FAF8D23C5CD18006D3415 /* RequestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71FAF8C23C5CD18006D3415 /* RequestHeader.swift */; };
-		E71FAF8F23C5CD79006D3415 /* NetswiftAuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */; };
-		E71FAF9523C61BB7006D3415 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71FAF9423C61BB7006D3415 /* MimeType.swift */; };
-		E74A829F2287108E0040A59E /* NetswiftPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82872287108E0040A59E /* NetswiftPerformer.swift */; };
-		E74A82A42287108E0040A59E /* NetswiftResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A828F2287108E0040A59E /* NetswiftResult.swift */; };
-		E74A82A52287108E0040A59E /* HTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82902287108E0040A59E /* HTTPPerformer.swift */; };
-		E74A82A62287108E0040A59E /* NetswiftSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82912287108E0040A59E /* NetswiftSession.swift */; };
-		E74A82A82287108E0040A59E /* NetswiftError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82932287108E0040A59E /* NetswiftError.swift */; };
-		E74A82A92287108E0040A59E /* NetswiftNetworkPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82942287108E0040A59E /* NetswiftNetworkPerformer.swift */; };
-		E74A82AA2287108E0040A59E /* NetswiftRequestPerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82952287108E0040A59E /* NetswiftRequestPerformable.swift */; };
-		E74A82AB2287108E0040A59E /* NetswiftRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82962287108E0040A59E /* NetswiftRoute.swift */; };
-		E74A82AD2287108E0040A59E /* NetswiftHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82982287108E0040A59E /* NetswiftHandler.swift */; };
-		E74A82AE2287108E0040A59E /* NetswiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82992287108E0040A59E /* NetswiftRequest.swift */; };
-		E74A82AF2287108E0040A59E /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829A2287108E0040A59E /* URLRequestExtension.swift */; };
-		E74A82B02287108E0040A59E /* NetswiftHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829B2287108E0040A59E /* NetswiftHTTPResponse.swift */; };
-		E74A82B12287108E0040A59E /* NetswiftHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829C2287108E0040A59E /* NetswiftHTTPMethod.swift */; };
-		E74A82B22287108E0040A59E /* GenericScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829D2287108E0040A59E /* GenericScheme.swift */; };
-		E74A82B32287108E0040A59E /* NetswiftHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A829E2287108E0040A59E /* NetswiftHTTPPerformer.swift */; };
-		E7AB1D28239D5EA9005A36F1 /* NetswiftTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */; };
-		F8F1C9E58FC701AC26EF3941C06D35E4 /* Netswift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0473048342FD69E2BBBDFAE46BA59EFF /* Netswift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		117DAB3F2AFCD7326D3317A53866DAE6 /* Pods-Netswift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1254F50CF66FC7AE3CD2E6FFF03D66D5 /* Pods-Netswift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12A5F70663D89721A9244DB0BBFBB098 /* NetswiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */; };
+		14F4FBF9E7F02D07199C32DABD839B2D /* NetswiftPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */; };
+		2122E3A5763CCF357F9D78B409D41A8B /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3221FA77389E456BBFF2D94377780C /* MimeType.swift */; };
+		308E5495AA2E4679749F891D58366A45 /* RequestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615D56E56E6FD9D3C23092460FF0FB4 /* RequestHeader.swift */; };
+		32AC968A16BBFAD6709B561A23F89AAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		39AA17F9F583F277C646976FCA89B9A1 /* NetswiftRequestPerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */; };
+		3C8529AC0FCA5CAD2DE54A90D3443ADB /* Pods-Netswift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 606719ACABEEA98EEDAF961A8A718E04 /* Pods-Netswift_Tests-dummy.m */; };
+		3E6E98B03CF63DD88BD401F58A45DF04 /* NetswiftHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88485A8CE65DA81911666A6A4280E99E /* NetswiftHTTPMethod.swift */; };
+		3F6D172BD16B56BAA19F776C59631580 /* NetswiftSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */; };
+		4DE787A7812FE66242AB3C7BA13AE037 /* NetswiftTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA225221509D6AF4DFCDC9D346A4 /* NetswiftTask.swift */; };
+		54A5E5AFB8CEA54C717AFBF624F33CE7 /* NetswiftNetworkPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760C9ACE94198054E01D326F3CD6D78 /* NetswiftNetworkPerformer.swift */; };
+		5DCEBFCEA1D42371CF0A9874862A6965 /* Pods-Netswift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C0AFE2C07B540962526B2D7479C756 /* Pods-Netswift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81C449149354B003C94D2EBF3D3FDEE2 /* HTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5655BAB32F45EEED0ADCFE5A9B1728 /* HTTPPerformer.swift */; };
+		8B57A1AD77061791FD0CA66B05FB29AC /* NetswiftHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAAA2757888ABC7B2EF9F57FE9267C4 /* NetswiftHTTPResponse.swift */; };
+		975C8F309D77709B9E8D5E0078E29137 /* NetswiftError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55656932E57241359566E58A4C66B7C6 /* NetswiftError.swift */; };
+		9B16069BA46E7AA26E828C0131DD88FC /* NetswiftAuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6E6BEE12D4D32320CA948ACC7F40E /* NetswiftAuthorizationType.swift */; };
+		B501A2374FF75B2B0FA0458911C84B0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		BDDEF3D46EA2F35805664438C55916D3 /* Netswift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F482409849DE51BA547676CAB7BEA87 /* Netswift-dummy.m */; };
+		C082E001CAB4CB4CF356C981831EF150 /* Netswift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2BAD49B045D08EB2AA6D1BA9B5D5FB2 /* Netswift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3AC7F49D99AE9CFEC2185FF03F4FC98 /* NetswiftResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFEFC8F331D1CBEA2D795E236A0A316 /* NetswiftResult.swift */; };
+		D4E95839098F0A271D58A38838823B17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D85D631FCD13BE3C54BD8EEB7D237BA8 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC300223BA8EE5D5F3FB6041B4E7404 /* URLRequestExtension.swift */; };
+		E4E8C824E5F0116A5809291861205360 /* GenericScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A56B6F36611AAF7F74BF14DFC56F5 /* GenericScheme.swift */; };
+		E74F37B223D0ACDA00763ABA /* NetswiftHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */; };
+		E7F5E80944DECE0638ADD88919E15FB8 /* NetswiftHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */; };
+		EF348B8EFE9BFFA7D0734A62FCD271CE /* Pods-Netswift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */; };
+		FEDDFB8DE73EA5C01419C9C6ADEA28E3 /* NetswiftRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7D89E919B82D37155F580221022E94AF /* PBXContainerItemProxy */ = {
+		E06F455017F056F464AEF56792A08D7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BA5B6B4ECAFEF222A3A0B2F9207B1848;
+			remoteGlobalIDString = 816FE442D3ED3E172FACA343FFCBB2F4;
 			remoteInfo = "Pods-Netswift_Example";
 		};
-		BA1FAB34A452758B2D36F67A8C7D12E3 /* PBXContainerItemProxy */ = {
+		E393053B28725E35D268FB5F09FD7207 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 66DA948A751E2C37FCC6A03418619C9C;
+			remoteGlobalIDString = 3839A96ECA6EE307F5011CFA15BB3FCA;
 			remoteInfo = Netswift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0473048342FD69E2BBBDFAE46BA59EFF /* Netswift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Netswift-umbrella.h"; sourceTree = "<group>"; };
-		16A1778C797723AF7321DE75F02E7821 /* Pods-Netswift_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Tests-Info.plist"; sourceTree = "<group>"; };
-		1953911C2585F576A9485088D32EA421 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1A8D01743F96CB20CDAFE75265FEF10F /* Pods-Netswift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Netswift_Example-umbrella.h"; sourceTree = "<group>"; };
-		212D20923BB02247A642CD8CE0F55F16 /* Netswift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Netswift-Info.plist"; sourceTree = "<group>"; };
-		22F67B998B2C7953A8FB1992A6A21DB7 /* Pods-Netswift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Netswift_Tests.modulemap"; sourceTree = "<group>"; };
-		2BC808A27A268FCE8ABAD9678776CA73 /* Netswift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Netswift.modulemap; sourceTree = "<group>"; };
-		317ADFF5E93AB14FA8020297C7E2FA37 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		4061C9ED1E2BF5D90A13FB1DDE0CA7D8 /* Netswift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Netswift.xcconfig; sourceTree = "<group>"; };
-		4133C942697DF36B658F5D68E4292B2C /* Pods-Netswift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Tests-dummy.m"; sourceTree = "<group>"; };
-		430607F0186AD80583894A5C421823D9 /* Pods-Netswift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Netswift_Tests-umbrella.h"; sourceTree = "<group>"; };
-		4487F3A4C84F39949B06A96B25A2445D /* Pods-Netswift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		493BC7566D64255871B3FC510E4097E9 /* Pods-Netswift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Netswift_Example-frameworks.sh"; sourceTree = "<group>"; };
-		52043DC332BF3FF44CFAF78A8B9C08A4 /* Pods-Netswift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Example-dummy.m"; sourceTree = "<group>"; };
-		5B938123EA925E1D2BB331CA128F3C4B /* Netswift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Netswift-prefix.pch"; sourceTree = "<group>"; };
-		7BBCE857B44530FA2705AEA9320BE42D /* Netswift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Netswift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		7E76AE7CCC4CBCAC899D53A26AFE75BB /* Pods-Netswift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Netswift_Example.modulemap"; sourceTree = "<group>"; };
-		7F9C2B1C50DAA9E7C3C75B9E32A5F359 /* Netswift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Netswift-dummy.m"; sourceTree = "<group>"; };
-		7FEF4349B2D21410C4C3F03E10C9D22D /* Pods-Netswift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		965068DF960CA0207223A15C04CD22CA /* Pods-Netswift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Netswift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		10D951F73AD67810B471F4D07EDF88AB /* Pods-Netswift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Netswift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1254F50CF66FC7AE3CD2E6FFF03D66D5 /* Pods-Netswift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Netswift_Tests-umbrella.h"; sourceTree = "<group>"; };
+		17113AFB2879195763CCD713F79375E1 /* Pods-Netswift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1EC300223BA8EE5D5F3FB6041B4E7404 /* URLRequestExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		25A3FAFDB59C1DF53036F845740C79EB /* Pods-Netswift_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Example-Info.plist"; sourceTree = "<group>"; };
+		309A56B6F36611AAF7F74BF14DFC56F5 /* GenericScheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericScheme.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		32744B8AD481D997E4A515F1874B72C4 /* Pods_Netswift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		329BD1AFCCCE116F1D463F34AD071BB6 /* Netswift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Netswift.xcconfig; sourceTree = "<group>"; };
+		3535435BB50281148DFEE7F92A5FF57B /* Pods-Netswift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Netswift_Example.modulemap"; sourceTree = "<group>"; };
+		38824BF109F5987FC79966C75695BECA /* Pods-Netswift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Netswift_Tests.modulemap"; sourceTree = "<group>"; };
+		42D78BD77A3F9A0B0CAB5A99A5D0B280 /* Pods-Netswift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Netswift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		44ED2F2E40D9387D964B9B6D2D159D24 /* Netswift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Netswift-prefix.pch"; sourceTree = "<group>"; };
+		52721522BF2D08E7501FF9509C40648D /* Netswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Netswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55656932E57241359566E58A4C66B7C6 /* NetswiftError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftError.swift; sourceTree = "<group>"; };
+		56957301BE6174428145E3B944BD3C7B /* Netswift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Netswift-Info.plist"; sourceTree = "<group>"; };
+		5B9EFFFCE9B953DEF584C85244FC992B /* Pods-Netswift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5F9B938B56C5F6342C0CBB428F47CF2A /* Pods-Netswift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Netswift_Example-frameworks.sh"; sourceTree = "<group>"; };
+		606719ACABEEA98EEDAF961A8A718E04 /* Pods-Netswift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Tests-dummy.m"; sourceTree = "<group>"; };
+		69EBBB4E2C27C0C504C1ED59217046F3 /* Pods-Netswift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		6D3221FA77389E456BBFF2D94377780C /* MimeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		72EB8100122DF872CC30A08B4FE706B0 /* Pods_Netswift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		758BB4A73FE39A6C6A19A90060A617A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		77A3CA225221509D6AF4DFCDC9D346A4 /* NetswiftTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftTask.swift; sourceTree = "<group>"; };
+		77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequest.swift; sourceTree = "<group>"; };
+		7D7417870D9138D3B98E1AD6F9845523 /* Netswift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Netswift.modulemap; sourceTree = "<group>"; };
+		88485A8CE65DA81911666A6A4280E99E /* NetswiftHTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPMethod.swift; sourceTree = "<group>"; };
+		8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequestPerformable.swift; sourceTree = "<group>"; };
+		8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetswiftPerformer.swift; path = Sources/Netswift/NetswiftPerformer.swift; sourceTree = "<group>"; };
+		9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Example-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BA0617C212EEC25AC0102E181BD9B5AA /* Pods-Netswift_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Example-Info.plist"; sourceTree = "<group>"; };
-		C2EE73ABEDC76EDF08D02758E0B6150C /* Pods_Netswift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAB28657E5601383AB70344DCEF8E8E1 /* Pods-Netswift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF3D1C451A89220FAB86F4AC0496C453 /* Pods-Netswift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Netswift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E2283FC555E65CF31E272F53C476DB34 /* Netswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Netswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2FD7C0CC622813EE6FC1F2F7D3A986C /* Pods-Netswift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E4E35B57F9CCE410A5AED20F0116B658 /* Pods_Netswift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71FAF8C23C5CD18006D3415 /* RequestHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
-		E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetswiftAuthorizationType.swift; sourceTree = "<group>"; };
-		E71FAF9423C61BB7006D3415 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
-		E74A82872287108E0040A59E /* NetswiftPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetswiftPerformer.swift; path = Netswift/Classes/NetswiftPerformer.swift; sourceTree = "<group>"; };
-		E74A828F2287108E0040A59E /* NetswiftResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftResult.swift; sourceTree = "<group>"; };
-		E74A82902287108E0040A59E /* HTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
-		E74A82912287108E0040A59E /* NetswiftSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftSession.swift; sourceTree = "<group>"; };
-		E74A82932287108E0040A59E /* NetswiftError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftError.swift; sourceTree = "<group>"; };
-		E74A82942287108E0040A59E /* NetswiftNetworkPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftNetworkPerformer.swift; sourceTree = "<group>"; };
-		E74A82952287108E0040A59E /* NetswiftRequestPerformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftRequestPerformable.swift; sourceTree = "<group>"; };
-		E74A82962287108E0040A59E /* NetswiftRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftRoute.swift; sourceTree = "<group>"; };
-		E74A82982287108E0040A59E /* NetswiftHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHandler.swift; sourceTree = "<group>"; };
-		E74A82992287108E0040A59E /* NetswiftRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftRequest.swift; sourceTree = "<group>"; };
-		E74A829A2287108E0040A59E /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
-		E74A829B2287108E0040A59E /* NetswiftHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPResponse.swift; sourceTree = "<group>"; };
-		E74A829C2287108E0040A59E /* NetswiftHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPMethod.swift; sourceTree = "<group>"; };
-		E74A829D2287108E0040A59E /* GenericScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericScheme.swift; sourceTree = "<group>"; };
-		E74A829E2287108E0040A59E /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
-		E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetswiftTask.swift; sourceTree = "<group>"; };
-		E92295EC279A5C7E7BD369AC34E248CE /* Pods-Netswift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FBC866AC592A020FC47C0421541ABE9A /* Pods-Netswift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F482409849DE51BA547676CAB7BEA87 /* Netswift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Netswift-dummy.m"; sourceTree = "<group>"; };
+		A0F6E6BEE12D4D32320CA948ACC7F40E /* NetswiftAuthorizationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftAuthorizationType.swift; sourceTree = "<group>"; };
+		A615D56E56E6FD9D3C23092460FF0FB4 /* RequestHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
+		B1C0AFE2C07B540962526B2D7479C756 /* Pods-Netswift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Netswift_Example-umbrella.h"; sourceTree = "<group>"; };
+		C2BAD49B045D08EB2AA6D1BA9B5D5FB2 /* Netswift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Netswift-umbrella.h"; sourceTree = "<group>"; };
+		C71EC5F0A2637CA4A7946790D8C66441 /* Pods-Netswift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRoute.swift; sourceTree = "<group>"; };
+		CF58E4CBDFE59202EAEC431E03812C17 /* Pods-Netswift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DB5655BAB32F45EEED0ADCFE5A9B1728 /* HTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
+		E74F37AF23D0A5A000763ABA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetswiftHTTPPerformer.swift; path = Sources/Netswift/NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
+		E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftSession.swift; sourceTree = "<group>"; };
+		E8CF9EAB90625D1CC4EE3246EE5EB0B7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F4123CF192CC25C62CBA8E6B9C716ABC /* Pods-Netswift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F49E8FA86DE715FE59E734D21642E7DF /* Netswift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Netswift.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHandler.swift; sourceTree = "<group>"; };
+		F760C9ACE94198054E01D326F3CD6D78 /* NetswiftNetworkPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftNetworkPerformer.swift; sourceTree = "<group>"; };
+		FCFEFC8F331D1CBEA2D795E236A0A316 /* NetswiftResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftResult.swift; sourceTree = "<group>"; };
+		FEAAA2757888ABC7B2EF9F57FE9267C4 /* NetswiftHTTPResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPResponse.swift; sourceTree = "<group>"; };
+		FF0281E1D23AB82E21B7486E801C3317 /* Pods-Netswift_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Tests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E3CAFBD35320CB58FAD7674B4D379DF /* Frameworks */ = {
+		3641712C817C162119AC1C12F5C5C947 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ECFC4EB81C1347862BEC2D6EF00D4E5 /* Foundation.framework in Frameworks */,
+				D4E95839098F0A271D58A38838823B17 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4BA9C57A9094F9FD96DAF7A47F80B5C9 /* Frameworks */ = {
+		5AD931D198273F8467F5A532D3BD7DFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B2A6FC6159E88E14CD4177BEFE98F55 /* Foundation.framework in Frameworks */,
+				B501A2374FF75B2B0FA0458911C84B0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F788F8718453B2CB42D3C56A705A3207 /* Frameworks */ = {
+		B6681D85EE512DBFF1080180BDBE7680 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06A7153B7C300C6490A8922137FCA36E /* Foundation.framework in Frameworks */,
+				32AC968A16BBFAD6709B561A23F89AAD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A7DC8CE795E6E65D104C82FD04F03E6 /* Development Pods */ = {
+		0A6D118D2823E0FCF816752E8E149153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BC7EDD16216A8A15D6553E1B51FA3472 /* Netswift */,
+				309A56B6F36611AAF7F74BF14DFC56F5 /* GenericScheme.swift */,
+				DB5655BAB32F45EEED0ADCFE5A9B1728 /* HTTPPerformer.swift */,
+				6D3221FA77389E456BBFF2D94377780C /* MimeType.swift */,
+				A0F6E6BEE12D4D32320CA948ACC7F40E /* NetswiftAuthorizationType.swift */,
+				55656932E57241359566E58A4C66B7C6 /* NetswiftError.swift */,
+				F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */,
+				88485A8CE65DA81911666A6A4280E99E /* NetswiftHTTPMethod.swift */,
+				FEAAA2757888ABC7B2EF9F57FE9267C4 /* NetswiftHTTPResponse.swift */,
+				F760C9ACE94198054E01D326F3CD6D78 /* NetswiftNetworkPerformer.swift */,
+				77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */,
+				8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */,
+				FCFEFC8F331D1CBEA2D795E236A0A316 /* NetswiftResult.swift */,
+				C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */,
+				E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */,
+				77A3CA225221509D6AF4DFCDC9D346A4 /* NetswiftTask.swift */,
+				A615D56E56E6FD9D3C23092460FF0FB4 /* RequestHeader.swift */,
+				1EC300223BA8EE5D5F3FB6041B4E7404 /* URLRequestExtension.swift */,
 			);
-			name = "Development Pods";
+			name = Core;
+			path = Sources/Netswift/Core;
 			sourceTree = "<group>";
 		};
-		52C82954B39C6621A1F757B001C15EAB /* Support Files */ = {
+		4C6D421537B78D17C31A78AE9324DB10 /* Pods-Netswift_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2BC808A27A268FCE8ABAD9678776CA73 /* Netswift.modulemap */,
-				4061C9ED1E2BF5D90A13FB1DDE0CA7D8 /* Netswift.xcconfig */,
-				7F9C2B1C50DAA9E7C3C75B9E32A5F359 /* Netswift-dummy.m */,
-				212D20923BB02247A642CD8CE0F55F16 /* Netswift-Info.plist */,
-				5B938123EA925E1D2BB331CA128F3C4B /* Netswift-prefix.pch */,
-				0473048342FD69E2BBBDFAE46BA59EFF /* Netswift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Netswift";
-			sourceTree = "<group>";
-		};
-		628B00FC99A84F32F1403283C99422F2 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				317ADFF5E93AB14FA8020297C7E2FA37 /* LICENSE */,
-				7BBCE857B44530FA2705AEA9320BE42D /* Netswift.podspec */,
-				1953911C2585F576A9485088D32EA421 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		955AE4A573B6570795C680A0394B8DE6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E2283FC555E65CF31E272F53C476DB34 /* Netswift.framework */,
-				E4E35B57F9CCE410A5AED20F0116B658 /* Pods_Netswift_Example.framework */,
-				C2EE73ABEDC76EDF08D02758E0B6150C /* Pods_Netswift_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		A20DFD3E1435F24266F28F75E69F0F09 /* Pods-Netswift_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				22F67B998B2C7953A8FB1992A6A21DB7 /* Pods-Netswift_Tests.modulemap */,
-				965068DF960CA0207223A15C04CD22CA /* Pods-Netswift_Tests-acknowledgements.markdown */,
-				FBC866AC592A020FC47C0421541ABE9A /* Pods-Netswift_Tests-acknowledgements.plist */,
-				4133C942697DF36B658F5D68E4292B2C /* Pods-Netswift_Tests-dummy.m */,
-				16A1778C797723AF7321DE75F02E7821 /* Pods-Netswift_Tests-Info.plist */,
-				430607F0186AD80583894A5C421823D9 /* Pods-Netswift_Tests-umbrella.h */,
-				E92295EC279A5C7E7BD369AC34E248CE /* Pods-Netswift_Tests.debug.xcconfig */,
-				E2FD7C0CC622813EE6FC1F2F7D3A986C /* Pods-Netswift_Tests.release.xcconfig */,
+				38824BF109F5987FC79966C75695BECA /* Pods-Netswift_Tests.modulemap */,
+				42D78BD77A3F9A0B0CAB5A99A5D0B280 /* Pods-Netswift_Tests-acknowledgements.markdown */,
+				5B9EFFFCE9B953DEF584C85244FC992B /* Pods-Netswift_Tests-acknowledgements.plist */,
+				606719ACABEEA98EEDAF961A8A718E04 /* Pods-Netswift_Tests-dummy.m */,
+				FF0281E1D23AB82E21B7486E801C3317 /* Pods-Netswift_Tests-Info.plist */,
+				1254F50CF66FC7AE3CD2E6FFF03D66D5 /* Pods-Netswift_Tests-umbrella.h */,
+				17113AFB2879195763CCD713F79375E1 /* Pods-Netswift_Tests.debug.xcconfig */,
+				CF58E4CBDFE59202EAEC431E03812C17 /* Pods-Netswift_Tests.release.xcconfig */,
 			);
 			name = "Pods-Netswift_Tests";
 			path = "Target Support Files/Pods-Netswift_Tests";
 			sourceTree = "<group>";
 		};
-		BC7EDD16216A8A15D6553E1B51FA3472 /* Netswift */ = {
+		59F162E80EF3B6CD43121700DA626FE5 /* Pods-Netswift_Example */ = {
 			isa = PBXGroup;
 			children = (
-				E74A82882287108E0040A59E /* Core */,
-				E74A82872287108E0040A59E /* NetswiftPerformer.swift */,
-				628B00FC99A84F32F1403283C99422F2 /* Pod */,
-				52C82954B39C6621A1F757B001C15EAB /* Support Files */,
+				3535435BB50281148DFEE7F92A5FF57B /* Pods-Netswift_Example.modulemap */,
+				10D951F73AD67810B471F4D07EDF88AB /* Pods-Netswift_Example-acknowledgements.markdown */,
+				69EBBB4E2C27C0C504C1ED59217046F3 /* Pods-Netswift_Example-acknowledgements.plist */,
+				9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */,
+				5F9B938B56C5F6342C0CBB428F47CF2A /* Pods-Netswift_Example-frameworks.sh */,
+				25A3FAFDB59C1DF53036F845740C79EB /* Pods-Netswift_Example-Info.plist */,
+				B1C0AFE2C07B540962526B2D7479C756 /* Pods-Netswift_Example-umbrella.h */,
+				F4123CF192CC25C62CBA8E6B9C716ABC /* Pods-Netswift_Example.debug.xcconfig */,
+				C71EC5F0A2637CA4A7946790D8C66441 /* Pods-Netswift_Example.release.xcconfig */,
+			);
+			name = "Pods-Netswift_Example";
+			path = "Target Support Files/Pods-Netswift_Example";
+			sourceTree = "<group>";
+		};
+		71B38C7D5881EFC86C4C769D0F5B0514 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D7417870D9138D3B98E1AD6F9845523 /* Netswift.modulemap */,
+				329BD1AFCCCE116F1D463F34AD071BB6 /* Netswift.xcconfig */,
+				9F482409849DE51BA547676CAB7BEA87 /* Netswift-dummy.m */,
+				56957301BE6174428145E3B944BD3C7B /* Netswift-Info.plist */,
+				44ED2F2E40D9387D964B9B6D2D159D24 /* Netswift-prefix.pch */,
+				C2BAD49B045D08EB2AA6D1BA9B5D5FB2 /* Netswift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Netswift";
+			sourceTree = "<group>";
+		};
+		955AE4A573B6570795C680A0394B8DE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52721522BF2D08E7501FF9509C40648D /* Netswift.framework */,
+				32744B8AD481D997E4A515F1874B72C4 /* Pods_Netswift_Example.framework */,
+				72EB8100122DF872CC30A08B4FE706B0 /* Pods_Netswift_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A134B449D48815EF1B38F2271C0A9DE2 /* Netswift */ = {
+			isa = PBXGroup;
+			children = (
+				0A6D118D2823E0FCF816752E8E149153 /* Core */,
+				E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */,
+				8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */,
+				E74F37AF23D0A5A000763ABA /* Package.swift */,
+				B4243DDF64089C3707A90FDF0A471C93 /* Pod */,
+				71B38C7D5881EFC86C4C769D0F5B0514 /* Support Files */,
 			);
 			name = Netswift;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		B4243DDF64089C3707A90FDF0A471C93 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E8CF9EAB90625D1CC4EE3246EE5EB0B7 /* LICENSE */,
+				F49E8FA86DE715FE59E734D21642E7DF /* Netswift.podspec */,
+				758BB4A73FE39A6C6A19A90060A617A0 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				0A7DC8CE795E6E65D104C82FD04F03E6 /* Development Pods */,
+				E16A907E9EEE0493DB6BBC0F0D27D436 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				955AE4A573B6570795C680A0394B8DE6 /* Products */,
 				E64862C4EC9D738209A483BFBA3B711E /* Targets Support Files */,
@@ -227,101 +264,66 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E16A907E9EEE0493DB6BBC0F0D27D436 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A134B449D48815EF1B38F2271C0A9DE2 /* Netswift */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		E64862C4EC9D738209A483BFBA3B711E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F407108AB774C78CB4F286B58B9EECD1 /* Pods-Netswift_Example */,
-				A20DFD3E1435F24266F28F75E69F0F09 /* Pods-Netswift_Tests */,
+				59F162E80EF3B6CD43121700DA626FE5 /* Pods-Netswift_Example */,
+				4C6D421537B78D17C31A78AE9324DB10 /* Pods-Netswift_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		E74A82882287108E0040A59E /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E74A82932287108E0040A59E /* NetswiftError.swift */,
-				E74A829D2287108E0040A59E /* GenericScheme.swift */,
-				E74A82902287108E0040A59E /* HTTPPerformer.swift */,
-				E71FAF9423C61BB7006D3415 /* MimeType.swift */,
-				E71FAF8E23C5CD79006D3415 /* NetswiftAuthorizationType.swift */,
-				E74A82982287108E0040A59E /* NetswiftHandler.swift */,
-				E74A829C2287108E0040A59E /* NetswiftHTTPMethod.swift */,
-				E74A829E2287108E0040A59E /* NetswiftHTTPPerformer.swift */,
-				E74A829B2287108E0040A59E /* NetswiftHTTPResponse.swift */,
-				E74A82942287108E0040A59E /* NetswiftNetworkPerformer.swift */,
-				E74A82992287108E0040A59E /* NetswiftRequest.swift */,
-				E74A82952287108E0040A59E /* NetswiftRequestPerformable.swift */,
-				E74A828F2287108E0040A59E /* NetswiftResult.swift */,
-				E74A82962287108E0040A59E /* NetswiftRoute.swift */,
-				E74A82912287108E0040A59E /* NetswiftSession.swift */,
-				E7AB1D27239D5EA9005A36F1 /* NetswiftTask.swift */,
-				E71FAF8C23C5CD18006D3415 /* RequestHeader.swift */,
-				E74A829A2287108E0040A59E /* URLRequestExtension.swift */,
-			);
-			name = Core;
-			path = Netswift/Classes/Core;
-			sourceTree = "<group>";
-		};
-		F407108AB774C78CB4F286B58B9EECD1 /* Pods-Netswift_Example */ = {
-			isa = PBXGroup;
-			children = (
-				7E76AE7CCC4CBCAC899D53A26AFE75BB /* Pods-Netswift_Example.modulemap */,
-				CF3D1C451A89220FAB86F4AC0496C453 /* Pods-Netswift_Example-acknowledgements.markdown */,
-				7FEF4349B2D21410C4C3F03E10C9D22D /* Pods-Netswift_Example-acknowledgements.plist */,
-				52043DC332BF3FF44CFAF78A8B9C08A4 /* Pods-Netswift_Example-dummy.m */,
-				493BC7566D64255871B3FC510E4097E9 /* Pods-Netswift_Example-frameworks.sh */,
-				BA0617C212EEC25AC0102E181BD9B5AA /* Pods-Netswift_Example-Info.plist */,
-				1A8D01743F96CB20CDAFE75265FEF10F /* Pods-Netswift_Example-umbrella.h */,
-				CAB28657E5601383AB70344DCEF8E8E1 /* Pods-Netswift_Example.debug.xcconfig */,
-				4487F3A4C84F39949B06A96B25A2445D /* Pods-Netswift_Example.release.xcconfig */,
-			);
-			name = "Pods-Netswift_Example";
-			path = "Target Support Files/Pods-Netswift_Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		871C71A80C1426B3AA2262E8EB19A031 /* Headers */ = {
+		2AD525E8DDBC6BA3FCE42E68C5E59C74 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8F1C9E58FC701AC26EF3941C06D35E4 /* Netswift-umbrella.h in Headers */,
+				5DCEBFCEA1D42371CF0A9874862A6965 /* Pods-Netswift_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		991ED54BF27FADB7A88CB2BB94E7A586 /* Headers */ = {
+		6A0E011F85A1EC156EDBD7160E5C21E8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				383E39D17A56A418D466550FA64747BC /* Pods-Netswift_Tests-umbrella.h in Headers */,
+				C082E001CAB4CB4CF356C981831EF150 /* Netswift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C4DABEBC5C6D9D99A1F1B72BDBACB865 /* Headers */ = {
+		E87D1A4D3EABE63064DA2A11A6146DE4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				969FDCD332C54F54826971279909C689 /* Pods-Netswift_Example-umbrella.h in Headers */,
+				117DAB3F2AFCD7326D3317A53866DAE6 /* Pods-Netswift_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		66DA948A751E2C37FCC6A03418619C9C /* Netswift */ = {
+		3839A96ECA6EE307F5011CFA15BB3FCA /* Netswift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 563BA10442762051633E3601BC1B2028 /* Build configuration list for PBXNativeTarget "Netswift" */;
+			buildConfigurationList = 11B54FBACFD8C2DA7A10A4CD079153B3 /* Build configuration list for PBXNativeTarget "Netswift" */;
 			buildPhases = (
-				871C71A80C1426B3AA2262E8EB19A031 /* Headers */,
-				77C650FA32FA24B621ED3A3BB2AFB2C0 /* Sources */,
-				4BA9C57A9094F9FD96DAF7A47F80B5C9 /* Frameworks */,
-				4CC687A8E6B8734F09C92C905B90E366 /* Resources */,
+				6A0E011F85A1EC156EDBD7160E5C21E8 /* Headers */,
+				5CFD7599E1283BCD9B332730D879276A /* Sources */,
+				5AD931D198273F8467F5A532D3BD7DFE /* Frameworks */,
+				DD6070D2BFC3062F934D2A4D17A50DBC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -329,45 +331,45 @@
 			);
 			name = Netswift;
 			productName = Netswift;
-			productReference = E2283FC555E65CF31E272F53C476DB34 /* Netswift.framework */;
+			productReference = 52721522BF2D08E7501FF9509C40648D /* Netswift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BA5B6B4ECAFEF222A3A0B2F9207B1848 /* Pods-Netswift_Example */ = {
+		816FE442D3ED3E172FACA343FFCBB2F4 /* Pods-Netswift_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 017A65EC21416128DADB7DA2BA48BB49 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Example" */;
+			buildConfigurationList = CAD5850351072D1069BBDC9234B95710 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Example" */;
 			buildPhases = (
-				C4DABEBC5C6D9D99A1F1B72BDBACB865 /* Headers */,
-				219232007D34489A8AAC0A33A36F5BBE /* Sources */,
-				F788F8718453B2CB42D3C56A705A3207 /* Frameworks */,
-				785627B09AC77047726A0C0F7E8BD841 /* Resources */,
+				2AD525E8DDBC6BA3FCE42E68C5E59C74 /* Headers */,
+				00EAE72BCE007A6A351E198CF68BA42F /* Sources */,
+				3641712C817C162119AC1C12F5C5C947 /* Frameworks */,
+				55649E72ADAF8E7363D282EBAE02AABE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DFEB9520BF8364422BD14E4821F41F74 /* PBXTargetDependency */,
+				870908F6C12DC58A9A242932D611F380 /* PBXTargetDependency */,
 			);
 			name = "Pods-Netswift_Example";
 			productName = "Pods-Netswift_Example";
-			productReference = E4E35B57F9CCE410A5AED20F0116B658 /* Pods_Netswift_Example.framework */;
+			productReference = 32744B8AD481D997E4A515F1874B72C4 /* Pods_Netswift_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D7A63A2D6EC633949DC34D194F7EC80A /* Pods-Netswift_Tests */ = {
+		8B9A6D97C56E09B116E677B4B7C68C26 /* Pods-Netswift_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 79F1836DFB85DB4CA2D7969502125C54 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Tests" */;
+			buildConfigurationList = 852BC82373D4A7AA7D3B06087D3419C5 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Tests" */;
 			buildPhases = (
-				991ED54BF27FADB7A88CB2BB94E7A586 /* Headers */,
-				F0237B17C60C8F5B6804C3E41139D904 /* Sources */,
-				0E3CAFBD35320CB58FAD7674B4D379DF /* Frameworks */,
-				2631537022DFB833865222BC42AADAAB /* Resources */,
+				E87D1A4D3EABE63064DA2A11A6146DE4 /* Headers */,
+				CE89D4E02BCC650F1C09250C2B5A7FFD /* Sources */,
+				B6681D85EE512DBFF1080180BDBE7680 /* Frameworks */,
+				058AF913A6C50926788C6F3DECF29531 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5F363DB2A5C94F004A901E2A3E50645B /* PBXTargetDependency */,
+				3805E767F8734A48913F96F539BB85F8 /* PBXTargetDependency */,
 			);
 			name = "Pods-Netswift_Tests";
 			productName = "Pods-Netswift_Tests";
-			productReference = C2EE73ABEDC76EDF08D02758E0B6150C /* Pods_Netswift_Tests.framework */;
+			productReference = 72EB8100122DF872CC30A08B4FE706B0 /* Pods_Netswift_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -376,13 +378,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1020;
-				TargetAttributes = {
-					66DA948A751E2C37FCC6A03418619C9C = {
-						LastSwiftMigration = 1020;
-					};
-				};
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -397,29 +394,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66DA948A751E2C37FCC6A03418619C9C /* Netswift */,
-				BA5B6B4ECAFEF222A3A0B2F9207B1848 /* Pods-Netswift_Example */,
-				D7A63A2D6EC633949DC34D194F7EC80A /* Pods-Netswift_Tests */,
+				3839A96ECA6EE307F5011CFA15BB3FCA /* Netswift */,
+				816FE442D3ED3E172FACA343FFCBB2F4 /* Pods-Netswift_Example */,
+				8B9A6D97C56E09B116E677B4B7C68C26 /* Pods-Netswift_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2631537022DFB833865222BC42AADAAB /* Resources */ = {
+		058AF913A6C50926788C6F3DECF29531 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CC687A8E6B8734F09C92C905B90E366 /* Resources */ = {
+		55649E72ADAF8E7363D282EBAE02AABE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		785627B09AC77047726A0C0F7E8BD841 /* Resources */ = {
+		DD6070D2BFC3062F934D2A4D17A50DBC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -429,274 +426,230 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		219232007D34489A8AAC0A33A36F5BBE /* Sources */ = {
+		00EAE72BCE007A6A351E198CF68BA42F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				748F19DC92B790EDB788D324F9003B12 /* Pods-Netswift_Example-dummy.m in Sources */,
+				EF348B8EFE9BFFA7D0734A62FCD271CE /* Pods-Netswift_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77C650FA32FA24B621ED3A3BB2AFB2C0 /* Sources */ = {
+		5CFD7599E1283BCD9B332730D879276A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E74A82A52287108E0040A59E /* HTTPPerformer.swift in Sources */,
-				E74A82AD2287108E0040A59E /* NetswiftHandler.swift in Sources */,
-				E74A82B12287108E0040A59E /* NetswiftHTTPMethod.swift in Sources */,
-				E71FAF9523C61BB7006D3415 /* MimeType.swift in Sources */,
-				E74A82AB2287108E0040A59E /* NetswiftRoute.swift in Sources */,
-				E71FAF8D23C5CD18006D3415 /* RequestHeader.swift in Sources */,
-				E74A82AA2287108E0040A59E /* NetswiftRequestPerformable.swift in Sources */,
-				982DC8B4B323AC59305828AF88C0FF05 /* Netswift-dummy.m in Sources */,
-				E74A82AF2287108E0040A59E /* URLRequestExtension.swift in Sources */,
-				E74A829F2287108E0040A59E /* NetswiftPerformer.swift in Sources */,
-				E74A82A62287108E0040A59E /* NetswiftSession.swift in Sources */,
-				E74A82B22287108E0040A59E /* GenericScheme.swift in Sources */,
-				E74A82B32287108E0040A59E /* NetswiftHTTPPerformer.swift in Sources */,
-				E71FAF8F23C5CD79006D3415 /* NetswiftAuthorizationType.swift in Sources */,
-				E74A82A42287108E0040A59E /* NetswiftResult.swift in Sources */,
-				E74A82AE2287108E0040A59E /* NetswiftRequest.swift in Sources */,
-				E74A82B02287108E0040A59E /* NetswiftHTTPResponse.swift in Sources */,
-				E74A82A92287108E0040A59E /* NetswiftNetworkPerformer.swift in Sources */,
-				E74A82A82287108E0040A59E /* NetswiftError.swift in Sources */,
-				E7AB1D28239D5EA9005A36F1 /* NetswiftTask.swift in Sources */,
+				E4E8C824E5F0116A5809291861205360 /* GenericScheme.swift in Sources */,
+				81C449149354B003C94D2EBF3D3FDEE2 /* HTTPPerformer.swift in Sources */,
+				2122E3A5763CCF357F9D78B409D41A8B /* MimeType.swift in Sources */,
+				BDDEF3D46EA2F35805664438C55916D3 /* Netswift-dummy.m in Sources */,
+				E74F37B223D0ACDA00763ABA /* NetswiftHTTPPerformer.swift in Sources */,
+				9B16069BA46E7AA26E828C0131DD88FC /* NetswiftAuthorizationType.swift in Sources */,
+				975C8F309D77709B9E8D5E0078E29137 /* NetswiftError.swift in Sources */,
+				E7F5E80944DECE0638ADD88919E15FB8 /* NetswiftHandler.swift in Sources */,
+				3E6E98B03CF63DD88BD401F58A45DF04 /* NetswiftHTTPMethod.swift in Sources */,
+				8B57A1AD77061791FD0CA66B05FB29AC /* NetswiftHTTPResponse.swift in Sources */,
+				54A5E5AFB8CEA54C717AFBF624F33CE7 /* NetswiftNetworkPerformer.swift in Sources */,
+				14F4FBF9E7F02D07199C32DABD839B2D /* NetswiftPerformer.swift in Sources */,
+				12A5F70663D89721A9244DB0BBFBB098 /* NetswiftRequest.swift in Sources */,
+				39AA17F9F583F277C646976FCA89B9A1 /* NetswiftRequestPerformable.swift in Sources */,
+				D3AC7F49D99AE9CFEC2185FF03F4FC98 /* NetswiftResult.swift in Sources */,
+				FEDDFB8DE73EA5C01419C9C6ADEA28E3 /* NetswiftRoute.swift in Sources */,
+				3F6D172BD16B56BAA19F776C59631580 /* NetswiftSession.swift in Sources */,
+				4DE787A7812FE66242AB3C7BA13AE037 /* NetswiftTask.swift in Sources */,
+				308E5495AA2E4679749F891D58366A45 /* RequestHeader.swift in Sources */,
+				D85D631FCD13BE3C54BD8EEB7D237BA8 /* URLRequestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0237B17C60C8F5B6804C3E41139D904 /* Sources */ = {
+		CE89D4E02BCC650F1C09250C2B5A7FFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30A0D116F434CC859BFA40B9DCD1DAEF /* Pods-Netswift_Tests-dummy.m in Sources */,
+				3C8529AC0FCA5CAD2DE54A90D3443ADB /* Pods-Netswift_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5F363DB2A5C94F004A901E2A3E50645B /* PBXTargetDependency */ = {
+		3805E767F8734A48913F96F539BB85F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Netswift_Example";
-			target = BA5B6B4ECAFEF222A3A0B2F9207B1848 /* Pods-Netswift_Example */;
-			targetProxy = 7D89E919B82D37155F580221022E94AF /* PBXContainerItemProxy */;
+			target = 816FE442D3ED3E172FACA343FFCBB2F4 /* Pods-Netswift_Example */;
+			targetProxy = E06F455017F056F464AEF56792A08D7B /* PBXContainerItemProxy */;
 		};
-		DFEB9520BF8364422BD14E4821F41F74 /* PBXTargetDependency */ = {
+		870908F6C12DC58A9A242932D611F380 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Netswift;
-			target = 66DA948A751E2C37FCC6A03418619C9C /* Netswift */;
-			targetProxy = BA1FAB34A452758B2D36F67A8C7D12E3 /* PBXContainerItemProxy */;
+			target = 3839A96ECA6EE307F5011CFA15BB3FCA /* Netswift */;
+			targetProxy = E393053B28725E35D268FB5F09FD7207 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		070A6DC5BDB6885BFD8A4A9AE7F17338 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4061C9ED1E2BF5D90A13FB1DDE0CA7D8 /* Netswift.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 20200115;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Netswift/Netswift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Netswift/Netswift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.5;
-				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
-				PRODUCT_MODULE_NAME = Netswift;
-				PRODUCT_NAME = Netswift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1BA87F2E6F27C55595E3952A93815768 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E92295EC279A5C7E7BD369AC34E248CE /* Pods-Netswift_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		240CC7AD383E99F94AF3545E9C63329C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAB28657E5601383AB70344DCEF8E8E1 /* Pods-Netswift_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2F5276B82E440409211BEEF88C60CFDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4487F3A4C84F39949B06A96B25A2445D /* Pods-Netswift_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		52B7A5036E359392F40F72A673E25579 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2FD7C0CC622813EE6FC1F2F7D3A986C /* Pods-Netswift_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8A169F54F191BC7931CEBB9203801534 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4061C9ED1E2BF5D90A13FB1DDE0CA7D8 /* Netswift.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 20200115;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Netswift/Netswift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Netswift/Netswift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.5;
-				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
-				PRODUCT_MODULE_NAME = Netswift;
-				PRODUCT_NAME = Netswift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */ = {
+		1032B0780CAC3F6CD936DEF37E0E0E5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		247A4C5D9EAB69245857164EA19AD936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17113AFB2879195763CCD713F79375E1 /* Pods-Netswift_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B991095ACE15BB53F48B0F4C24DE610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 329BD1AFCCCE116F1D463F34AD071BB6 /* Netswift.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Netswift/Netswift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Netswift/Netswift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
+				PRODUCT_MODULE_NAME = Netswift;
+				PRODUCT_NAME = Netswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34E3396E885403C976AD5D84022EFD8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 329BD1AFCCCE116F1D463F34AD071BB6 /* Netswift.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Netswift/Netswift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Netswift/Netswift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
+				PRODUCT_MODULE_NAME = Netswift;
+				PRODUCT_NAME = Netswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3DCABF71ABF98C4E186DBF23A89D8D7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -744,7 +697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -752,79 +705,126 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		F232B5ECA11A71BFA199A229B323F454 /* Release */ = {
+		6ADC491B34CAC9D21DF33455938C2875 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4123CF192CC25C62CBA8E6B9C716ABC /* Pods-Netswift_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
-				SYMROOT = "${SRCROOT}/../build";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DABBB9C5E9A3F95D263CD6F1140ACBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C71EC5F0A2637CA4A7946790D8C66441 /* Pods-Netswift_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Example/Pods-Netswift_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F3D97C63A4E99ED167584F5A7E845258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF58E4CBDFE59202EAEC431E03812C17 /* Pods-Netswift_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Netswift_Tests/Pods-Netswift_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		017A65EC21416128DADB7DA2BA48BB49 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Example" */ = {
+		11B54FBACFD8C2DA7A10A4CD079153B3 /* Build configuration list for PBXNativeTarget "Netswift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				240CC7AD383E99F94AF3545E9C63329C /* Debug */,
-				2F5276B82E440409211BEEF88C60CFDD /* Release */,
+				2B991095ACE15BB53F48B0F4C24DE610 /* Debug */,
+				34E3396E885403C976AD5D84022EFD8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -832,26 +832,26 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */,
-				F232B5ECA11A71BFA199A229B323F454 /* Release */,
+				3DCABF71ABF98C4E186DBF23A89D8D7F /* Debug */,
+				1032B0780CAC3F6CD936DEF37E0E0E5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		563BA10442762051633E3601BC1B2028 /* Build configuration list for PBXNativeTarget "Netswift" */ = {
+		852BC82373D4A7AA7D3B06087D3419C5 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				070A6DC5BDB6885BFD8A4A9AE7F17338 /* Debug */,
-				8A169F54F191BC7931CEBB9203801534 /* Release */,
+				247A4C5D9EAB69245857164EA19AD936 /* Debug */,
+				F3D97C63A4E99ED167584F5A7E845258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79F1836DFB85DB4CA2D7969502125C54 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Tests" */ = {
+		CAD5850351072D1069BBDC9234B95710 /* Build configuration list for PBXNativeTarget "Pods-Netswift_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1BA87F2E6F27C55595E3952A93815768 /* Debug */,
-				52B7A5036E359392F40F72A673E25579 /* Release */,
+				6ADC491B34CAC9D21DF33455938C2875 /* Debug */,
+				9DABBB9C5E9A3F95D263CD6F1140ACBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
