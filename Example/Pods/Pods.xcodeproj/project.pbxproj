@@ -62,13 +62,13 @@
 		25A3FAFDB59C1DF53036F845740C79EB /* Pods-Netswift_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Example-Info.plist"; sourceTree = "<group>"; };
 		309A56B6F36611AAF7F74BF14DFC56F5 /* GenericScheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericScheme.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		32744B8AD481D997E4A515F1874B72C4 /* Pods_Netswift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Netswift_Example.framework; path = "Pods-Netswift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32744B8AD481D997E4A515F1874B72C4 /* Pods_Netswift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		329BD1AFCCCE116F1D463F34AD071BB6 /* Netswift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Netswift.xcconfig; sourceTree = "<group>"; };
 		3535435BB50281148DFEE7F92A5FF57B /* Pods-Netswift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Netswift_Example.modulemap"; sourceTree = "<group>"; };
 		38824BF109F5987FC79966C75695BECA /* Pods-Netswift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Netswift_Tests.modulemap"; sourceTree = "<group>"; };
 		42D78BD77A3F9A0B0CAB5A99A5D0B280 /* Pods-Netswift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Netswift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		44ED2F2E40D9387D964B9B6D2D159D24 /* Netswift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Netswift-prefix.pch"; sourceTree = "<group>"; };
-		52721522BF2D08E7501FF9509C40648D /* Netswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Netswift.framework; path = Netswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52721522BF2D08E7501FF9509C40648D /* Netswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Netswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55656932E57241359566E58A4C66B7C6 /* NetswiftError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftError.swift; sourceTree = "<group>"; };
 		56957301BE6174428145E3B944BD3C7B /* Netswift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Netswift-Info.plist"; sourceTree = "<group>"; };
 		5B9EFFFCE9B953DEF584C85244FC992B /* Pods-Netswift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		606719ACABEEA98EEDAF961A8A718E04 /* Pods-Netswift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Tests-dummy.m"; sourceTree = "<group>"; };
 		69EBBB4E2C27C0C504C1ED59217046F3 /* Pods-Netswift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Netswift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6D3221FA77389E456BBFF2D94377780C /* MimeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
-		72EB8100122DF872CC30A08B4FE706B0 /* Pods_Netswift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Netswift_Tests.framework; path = "Pods-Netswift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		758BB4A73FE39A6C6A19A90060A617A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		72EB8100122DF872CC30A08B4FE706B0 /* Pods_Netswift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		758BB4A73FE39A6C6A19A90060A617A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77A3CA225221509D6AF4DFCDC9D346A4 /* NetswiftTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftTask.swift; sourceTree = "<group>"; };
 		77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequest.swift; sourceTree = "<group>"; };
 		7D7417870D9138D3B98E1AD6F9845523 /* Netswift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Netswift.modulemap; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequestPerformable.swift; sourceTree = "<group>"; };
 		8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetswiftPerformer.swift; path = Sources/Netswift/NetswiftPerformer.swift; sourceTree = "<group>"; };
 		9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Example-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F482409849DE51BA547676CAB7BEA87 /* Netswift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Netswift-dummy.m"; sourceTree = "<group>"; };
 		A0F6E6BEE12D4D32320CA948ACC7F40E /* NetswiftAuthorizationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftAuthorizationType.swift; sourceTree = "<group>"; };
 		A615D56E56E6FD9D3C23092460FF0FB4 /* RequestHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
@@ -95,11 +95,12 @@
 		C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRoute.swift; sourceTree = "<group>"; };
 		CF58E4CBDFE59202EAEC431E03812C17 /* Pods-Netswift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DB5655BAB32F45EEED0ADCFE5A9B1728 /* HTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
+		E74F37AF23D0A5A000763ABA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftSession.swift; sourceTree = "<group>"; };
-		E8CF9EAB90625D1CC4EE3246EE5EB0B7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E8CF9EAB90625D1CC4EE3246EE5EB0B7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EA2A4E4C35CBB39D5C331E65BAA725EE /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
 		F4123CF192CC25C62CBA8E6B9C716ABC /* Pods-Netswift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F49E8FA86DE715FE59E734D21642E7DF /* Netswift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Netswift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F49E8FA86DE715FE59E734D21642E7DF /* Netswift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Netswift.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHandler.swift; sourceTree = "<group>"; };
 		F760C9ACE94198054E01D326F3CD6D78 /* NetswiftNetworkPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftNetworkPerformer.swift; sourceTree = "<group>"; };
 		FCFEFC8F331D1CBEA2D795E236A0A316 /* NetswiftResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftResult.swift; sourceTree = "<group>"; };
@@ -221,6 +222,7 @@
 		A134B449D48815EF1B38F2271C0A9DE2 /* Netswift */ = {
 			isa = PBXGroup;
 			children = (
+				E74F37AF23D0A5A000763ABA /* Package.swift */,
 				8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */,
 				0A6D118D2823E0FCF816752E8E149153 /* Core */,
 				B4243DDF64089C3707A90FDF0A471C93 /* Pod */,
@@ -538,8 +540,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
