@@ -85,7 +85,7 @@
 		8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequestPerformable.swift; sourceTree = "<group>"; };
 		8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetswiftPerformer.swift; path = Sources/Netswift/NetswiftPerformer.swift; sourceTree = "<group>"; };
 		9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Example-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		9F482409849DE51BA547676CAB7BEA87 /* Netswift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Netswift-dummy.m"; sourceTree = "<group>"; };
 		A0F6E6BEE12D4D32320CA948ACC7F40E /* NetswiftAuthorizationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftAuthorizationType.swift; sourceTree = "<group>"; };
 		A615D56E56E6FD9D3C23092460FF0FB4 /* RequestHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
@@ -600,7 +600,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.7;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
 				PRODUCT_MODULE_NAME = Netswift;
 				PRODUCT_NAME = Netswift;
@@ -633,7 +633,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.7;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
 				PRODUCT_MODULE_NAME = Netswift;
 				PRODUCT_NAME = Netswift;
