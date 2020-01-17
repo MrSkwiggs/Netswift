@@ -16,8 +16,8 @@ extension API.JSONPlaceholder: NetswiftRoute {
     
     var path: String? {
         switch self {
-        case .getAll: return "todos"
-        case .getById(let id): return "todos/\(id)"
+        case .getAll: return "/todos"
+        case .getById(let id): return "/todos/\(id)"
         }
     }
 }

@@ -11,4 +11,10 @@ import Netswift
 
 extension API.YourEndpoint: NetswiftRequest {
     typealias Response = String
+    
+    var accept: MimeType {
+        switch self {
+        case .example: return .html
+        }
+    }
 }
