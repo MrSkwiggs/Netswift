@@ -116,6 +116,15 @@ public extension NetswiftRequest where IncomingType == Data, Response: Decodable
     }
 }
 
+public extension NetswiftRequest where IncomingType == Data, Response == String {
+    func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
+        guard let string = String(data: incomingData, encoding: .utf8) else {
+            return .failure(.unexpectedResponseError)
+        }
+        return .success(string)
+    }
+}
+
 // MARK: - Convenience Decoding for common types
 
 /// When the request expects freeform data, decoding is done during deserialisation

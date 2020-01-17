@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '13.3'
+platform :ios, '8.0'
 
 target 'Netswift_Example' do
   pod 'Netswift', :path => '../'
