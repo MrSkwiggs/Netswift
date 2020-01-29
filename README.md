@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
 [![License](https://img.shields.io/cocoapods/l/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
 [![Platform](https://img.shields.io/cocoapods/p/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
+[![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightGreen)](https://swift.org/package-manager/)
 
 ## What
 This library takes care of the heavy lifting required to have a reusable & maintainable networking layer in your Swift apps.
