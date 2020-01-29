@@ -58,7 +58,7 @@ public enum MimeType: Hashable {
     /// A custom MIME type.
     case custom(type: String)
     
-    var rawValue: String {
+    public var rawValue: String {
         switch self {
         case .text: return "text/plain"
         case .html: return "text/html"
@@ -81,14 +81,14 @@ public extension MimeType {
         case form(boundary: String)
         case byteRange(boundary: String)
         
-        var boundary: String {
+        public var boundary: String {
             switch self {
             case .form(let boundary), .byteRange(let boundary):
                 return boundary
             }
         }
         
-        var rawValue: String {
+        public var rawValue: String {
             var value: String = "multipart/"
             
             switch self {
