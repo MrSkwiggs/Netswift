@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9FAC014BC6A2251F2634E5D4 /* Pods_Netswift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966D5E0EEF61E8A9FF6FB2FC /* Pods_Netswift_Tests.framework */; };
+		E747194E23E17F0E00DF43A0 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = E747194D23E17F0E00DF43A0 /* CHANGELOG.md */; };
 		E74A82E822871B2B0040A59E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82E722871B2B0040A59E /* API.swift */; };
 		E74A82EA2287250F0040A59E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A82E92287250F0040A59E /* ViewController.swift */; };
 		E74A82ED2287265E0040A59E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74A82EC2287265E0040A59E /* WebKit.framework */; };
@@ -54,6 +55,7 @@
 		966D5E0EEF61E8A9FF6FB2FC /* Pods_Netswift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netswift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D770EE1CEB1ABECE3B0F16 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D6F95FCD2D3839E781A6FA32 /* Netswift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Netswift.podspec; path = ../Netswift.podspec; sourceTree = "<group>"; };
+		E747194D23E17F0E00DF43A0 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		E74A82E722871B2B0040A59E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E74A82E92287250F0040A59E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E74A82EC2287265E0040A59E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -154,6 +156,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				E747194D23E17F0E00DF43A0 /* CHANGELOG.md */,
 				D6F95FCD2D3839E781A6FA32 /* Netswift.podspec */,
 				B3D770EE1CEB1ABECE3B0F16 /* README.md */,
 				4FECBF8721A4EC6125CB0C49 /* LICENSE */,
@@ -300,6 +303,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				E747194E23E17F0E00DF43A0 /* CHANGELOG.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
