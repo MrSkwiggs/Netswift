@@ -10,7 +10,6 @@ import Foundation
 
 /// Convenience protocol for allowing NetswiftRequests to be called directly
 public protocol NetswiftPerformable {
-    associatedtype Response
     
     /**
      Performs the request with its own, self-defined NetswiftNetworkPerformer
