@@ -13,7 +13,7 @@
 		2122E3A5763CCF357F9D78B409D41A8B /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3221FA77389E456BBFF2D94377780C /* MimeType.swift */; };
 		308E5495AA2E4679749F891D58366A45 /* RequestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615D56E56E6FD9D3C23092460FF0FB4 /* RequestHeader.swift */; };
 		32AC968A16BBFAD6709B561A23F89AAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		39AA17F9F583F277C646976FCA89B9A1 /* NetswiftPerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7D669A829C1F08FA95125CE371347 /* NetswiftPerformable.swift */; };
+		39AA17F9F583F277C646976FCA89B9A1 /* NetswiftRequestPerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */; };
 		3C8529AC0FCA5CAD2DE54A90D3443ADB /* Pods-Netswift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 606719ACABEEA98EEDAF961A8A718E04 /* Pods-Netswift_Tests-dummy.m */; };
 		3E6E98B03CF63DD88BD401F58A45DF04 /* NetswiftHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88485A8CE65DA81911666A6A4280E99E /* NetswiftHTTPMethod.swift */; };
 		3F6D172BD16B56BAA19F776C59631580 /* NetswiftSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */; };
@@ -82,7 +82,7 @@
 		77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequest.swift; sourceTree = "<group>"; };
 		7D7417870D9138D3B98E1AD6F9845523 /* Netswift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Netswift.modulemap; sourceTree = "<group>"; };
 		88485A8CE65DA81911666A6A4280E99E /* NetswiftHTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftHTTPMethod.swift; sourceTree = "<group>"; };
-		8EC7D669A829C1F08FA95125CE371347 /* NetswiftPerformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftPerformable.swift; sourceTree = "<group>"; };
+		8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRequestPerformable.swift; sourceTree = "<group>"; };
 		8EEC11F1F34694969A1A8BCCCA3F1B69 /* NetswiftPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetswiftPerformer.swift; path = Sources/Netswift/NetswiftPerformer.swift; sourceTree = "<group>"; };
 		9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Example-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; };
@@ -149,7 +149,7 @@
 				FEAAA2757888ABC7B2EF9F57FE9267C4 /* NetswiftHTTPResponse.swift */,
 				F760C9ACE94198054E01D326F3CD6D78 /* NetswiftNetworkPerformer.swift */,
 				77AF9F90B7680029AA3EFAFE60EED792 /* NetswiftRequest.swift */,
-				8EC7D669A829C1F08FA95125CE371347 /* NetswiftPerformable.swift */,
+				8EC7D669A829C1F08FA95125CE371347 /* NetswiftRequestPerformable.swift */,
 				FCFEFC8F331D1CBEA2D795E236A0A316 /* NetswiftResult.swift */,
 				C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */,
 				E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */,
@@ -451,7 +451,7 @@
 				54A5E5AFB8CEA54C717AFBF624F33CE7 /* NetswiftNetworkPerformer.swift in Sources */,
 				14F4FBF9E7F02D07199C32DABD839B2D /* NetswiftPerformer.swift in Sources */,
 				12A5F70663D89721A9244DB0BBFBB098 /* NetswiftRequest.swift in Sources */,
-				39AA17F9F583F277C646976FCA89B9A1 /* NetswiftPerformable.swift in Sources */,
+				39AA17F9F583F277C646976FCA89B9A1 /* NetswiftRequestPerformable.swift in Sources */,
 				D3AC7F49D99AE9CFEC2185FF03F4FC98 /* NetswiftResult.swift in Sources */,
 				FEDDFB8DE73EA5C01419C9C6ADEA28E3 /* NetswiftRoute.swift in Sources */,
 				3F6D172BD16B56BAA19F776C59631580 /* NetswiftSession.swift in Sources */,

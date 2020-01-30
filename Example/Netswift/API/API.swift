@@ -24,19 +24,19 @@ struct API {
     }
 }
 
-extension NetswiftPerformable where Self: NetswiftRequest {
+extension NetswiftRequestPerformable where Self: NetswiftRequest {
     @discardableResult func perform(_ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask? {
         return API.shared.perform(self, handler)
     }
 }
 
 extension API {
-    enum YourEndpoint: NetswiftPerformable {
+    enum YourEndpoint: NetswiftRequestPerformable {
         /// Fetches example.com as HTML
         case example
     }
     
-    enum JSONPlaceholder: NetswiftPerformable {
+    enum JSONPlaceholder: NetswiftRequestPerformable {
         case getAll
         case getById(Int)
     }

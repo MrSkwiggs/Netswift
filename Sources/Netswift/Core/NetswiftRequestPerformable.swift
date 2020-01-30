@@ -1,5 +1,5 @@
 //
-//  NetswiftPerformable.swift
+//  NetswiftRequestPerformable.swift
 //  Netswift
 //
 //  Created by Dorian Grolaux on 03/05/2019.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Convenience protocol for allowing NetswiftRequests to be called directly
-public protocol NetswiftPerformable {
+public protocol NetswiftRequestPerformable: NetswiftRequest {
     
     /**
      Performs the request with its own, self-defined NetswiftNetworkPerformer
