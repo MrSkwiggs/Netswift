@@ -16,5 +16,5 @@ public enum GenericScheme: String {
     case https = "https://"
     case ftp = "ftp://"
     case ldap = "ldap://"
-    case mailto = "mailto"
+    case mailto = "mailto:"
 }
