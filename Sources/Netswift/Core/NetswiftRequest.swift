@@ -95,6 +95,8 @@ public extension NetswiftRequest where Self: NetswiftRoute {
         headers.append(.contentType(contentType))
         headers.append(.accept(accept))
         
+        request.addHeaders(headers)
+        
         return .success(request)
     }
 }
