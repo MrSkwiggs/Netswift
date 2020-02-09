@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
 [![License](https://img.shields.io/cocoapods/l/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
 [![Platform](https://img.shields.io/cocoapods/p/Netswift.svg?style=flat)](https://cocoapods.org/pods/Netswift)
+[![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightGreen)](https://swift.org/package-manager/)
 
 ## What
 This library takes care of the heavy lifting required to have a reusable & maintainable networking layer in your Swift apps.
@@ -98,7 +99,7 @@ This time, we don't want to let the compiler add protocol stubs for us just yet.
 
 So for now, let's just add an internal type named `Response` in our extension:
 ```
-struct Response: JSONDecodable {
+struct Response: Decodable {
   let title: String
 }
 ```
@@ -107,7 +108,7 @@ Again, what did we just write?
 
 Well, first of all, we define a type that mimics our endpoint's response structure. That is, an object that contains a member named `title`, which is of type `String`.
 
-Then, we told the compiler that our `Response` type implements the JSONDecodable protocol. This is important for `Netswift`, as it tells it that we expect a JSON object back, for which we can use Swift's generic `JSONDecoder`. This is all done behind the scenes by default implementations. 
+Then, we told the compiler that our `Response` type implements the `Decodable` protocol. `Netswift`,  uses Swift's generic `JSONDecoder`. This is all done behind the scenes by default implementations. 
 
 Yet, the compiler is still unhappy. Now's however a good time to let it 'Add protocol stubs'. We're now given a new function called `serialise`. This is the last part we need to define before we are good to go.
 

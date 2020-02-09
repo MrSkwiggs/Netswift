@@ -13,7 +13,7 @@ public enum MimeType: Hashable {
     // MARK: - Text
     
     /// text/plain
-    case plainText
+    case text
     
     /// text/html
     case html
@@ -35,6 +35,11 @@ public enum MimeType: Hashable {
     /// application/octet-stream
     case data
     
+    // MARK: - Image
+    
+    /// image/jpeg
+    case jpg
+    
     // MARK: - Audio
     
     /// audio/mpeg
@@ -53,15 +58,16 @@ public enum MimeType: Hashable {
     /// A custom MIME type.
     case custom(type: String)
     
-    var rawValue: String {
+    public var rawValue: String {
         switch self {
-        case .plainText: return "text/plain"
+        case .text: return "text/plain"
         case .html: return "text/html"
         case .javascript: return "application/javascript"
         case .json: return "application/json"
         case .pdf: return "application/pdf"
         case .zip: return "application/zip"
         case .data: return "application/octet-stream"
+        case .jpg: return "image/jpeg"
         case .mpeg: return "audio/mpeg"
         case .vorbis: return "audio/vorbis"
         case .multipart(let multipart): return multipart.rawValue
@@ -75,14 +81,14 @@ public extension MimeType {
         case form(boundary: String)
         case byteRange(boundary: String)
         
-        var boundary: String {
+        public var boundary: String {
             switch self {
             case .form(let boundary), .byteRange(let boundary):
                 return boundary
             }
         }
         
-        var rawValue: String {
+        public var rawValue: String {
             var value: String = "multipart/"
             
             switch self {
