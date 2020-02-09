@@ -31,6 +31,7 @@
 		D4E95839098F0A271D58A38838823B17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		D85D631FCD13BE3C54BD8EEB7D237BA8 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC300223BA8EE5D5F3FB6041B4E7404 /* URLRequestExtension.swift */; };
 		E4E8C824E5F0116A5809291861205360 /* GenericScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A56B6F36611AAF7F74BF14DFC56F5 /* GenericScheme.swift */; };
+		E721EC8323F064090013B6D9 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = E721EC8223F064090013B6D9 /* CHANGELOG.md */; };
 		E74F37B223D0ACDA00763ABA /* NetswiftHTTPPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */; };
 		E7F5E80944DECE0638ADD88919E15FB8 /* NetswiftHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4757FA773B8AB33933ED57BA098E9 /* NetswiftHandler.swift */; };
 		EF348B8EFE9BFFA7D0734A62FCD271CE /* Pods-Netswift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */; };
@@ -95,6 +96,7 @@
 		C9CADE4B378498B1C6E7416410F71102 /* NetswiftRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRoute.swift; sourceTree = "<group>"; };
 		CF58E4CBDFE59202EAEC431E03812C17 /* Pods-Netswift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Netswift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DB5655BAB32F45EEED0ADCFE5A9B1728 /* HTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
+		E721EC8223F064090013B6D9 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		E74F37AF23D0A5A000763ABA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E74F37B123D0ACDA00763ABA /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetswiftHTTPPerformer.swift; path = Sources/Netswift/NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
 		E8ABA1ECA5F77BFBD5B5E769D377C23B /* NetswiftSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftSession.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		B4243DDF64089C3707A90FDF0A471C93 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				E721EC8223F064090013B6D9 /* CHANGELOG.md */,
 				E8CF9EAB90625D1CC4EE3246EE5EB0B7 /* LICENSE */,
 				F49E8FA86DE715FE59E734D21642E7DF /* Netswift.podspec */,
 				758BB4A73FE39A6C6A19A90060A617A0 /* README.md */,
@@ -420,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E721EC8323F064090013B6D9 /* CHANGELOG.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
