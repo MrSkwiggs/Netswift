@@ -132,16 +132,16 @@ Now's the moment we've been waiting for: sending out our request!
 
 All we need to do is to actually perform our request. To do so, we can use an instance of the default `Netswift` class. All we need to do is call this:
 ```
-Netswift().perform(MyAPI.helloWorld) { result in 
-  guard let response = result.value else {
-    if let error = result.error {
-      print(error)
-    }
-    return
+Netswift().perform(MyAPI.helloWorld) { result in
+  switch result {
+  case .failure(let error):
+    // Our request failed: we can use the error to debug it
+    print(error)
+    
+  case .success(let value):
+    // Our request succeeded: we now have an object of type MyAPI.Response available to use
+    print(value.title)
   }
-  
-  // Our request succeeded: we now have an object of type MyAPI.Response available to use
-  print(response.title)
 }
 ```
 
@@ -153,12 +153,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-Netswift is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
+Netswift is available through:
+- [CocoaPods](https://cocoapods.org): To install it, simply add the following line to your Podfile
 ```ruby
 pod 'Netswift'
 ```
+- [Swift Package Manager](https://github.com/MrSkwiggs/Netswift): To install it, simply search for it throught XCode's integrated package navigator
 
 ## Author
 
