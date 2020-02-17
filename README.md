@@ -158,7 +158,7 @@ Netswift is available through:
 ```ruby
 pod 'Netswift'
 ```
-- [Swift Package Manager](https://github.com/MrSkwiggs/Netswift): To install it, simply search for it throught XCode's integrated package navigator
+- [Swift Package Manager](https://github.com/MrSkwiggs/Netswift): To install it, simply search for it through XCode's integrated package navigator
 
 ## Author
 
