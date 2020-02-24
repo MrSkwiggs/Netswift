@@ -111,9 +111,9 @@ public extension NetswiftRequest where IncomingType == Data, Response: Decodable
             return .success(decodedResponse)
             
         } catch let error as DecodingError {
-            return .failure(.responseDecodingError(error: error, payload: incomingData))
+            return .failure(.init(category: .responseDecodingError(error: error), payload: incomingData))
         } catch {
-            return .failure(.unexpectedResponseError)
+            return .failure(.init(category: .unexpectedResponseError, payload: incomingData))
         }
     }
 }
@@ -121,7 +121,7 @@ public extension NetswiftRequest where IncomingType == Data, Response: Decodable
 public extension NetswiftRequest where IncomingType == Data, Response == String {
     func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
         guard let string = String(data: incomingData, encoding: .utf8) else {
-            return .failure(.unexpectedResponseError)
+            return .failure(.init(category: .unexpectedResponseError, payload: incomingData))
         }
         return .success(string)
     }
@@ -132,11 +132,11 @@ public extension NetswiftRequest where IncomingType == Data, Response == String 
 /// When the request expects freeform data, decoding is done during deserialisation
 public extension NetswiftRequest where IncomingType == Data {
     func decode(_ data: Data?) -> NetswiftResult<Any> {
-        guard let data = data else {
-            return .failure(.noResponseError)
+        guard let incomingData = data else {
+            return .failure(.init(category: .noResponseError, payload: data))
         }
         
-        return .success(data)
+        return .success(incomingData)
     }
 }
 
@@ -149,6 +149,6 @@ public extension NetswiftRequest {
             return .success(castedObject)
         }
         
-        return .failure(.responseCastingError)
+        return .failure(.init(category: .responseCastingError, payload: any as? Data))
     }
 }

@@ -27,7 +27,7 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
         let dispatchGroup = DispatchGroup()
         
         if dispatchGroup.wait(timeout: timeOut) == .timedOut {
-            completion(.failure(.timedOut))
+            completion(.failure(.init(category: .timedOut, payload: nil)))
         }
         
         dispatchGroup.enter()
@@ -41,9 +41,9 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
     private func validate(_ response: NetswiftHTTPResponse) -> NetswiftResult<Data?> {
         guard let statusCode = response.statusCode else {
             guard let error = response.error else {
-                return .failure(.unknown(payload: response.data))
+                return .failure(.init(category: .unknown, payload: response.data))
             }
-            return .failure(.generic(error: error))
+            return .failure(.init(category: .generic(error: error), payload: nil))
         }
         
         switch statusCode {
