@@ -70,7 +70,7 @@ public protocol NetswiftRequest {
     
     
     /**
-     Tries to intercept and handle an error thrown during the Request's performing.
+     Tries to intercept and handle an error thrown while the Request is being performed.
      
      This allows to handle network & related errors directly from within a Request's declaration.
      - parameter error: The error thrown
