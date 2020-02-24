@@ -9,7 +9,7 @@
 import Foundation
 
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
-public final class NetswiftHTTPPerformer: HTTPPerformer {
+open class NetswiftHTTPPerformer: HTTPPerformer {
     
     private let session: NetswiftSession
     
