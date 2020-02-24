@@ -18,71 +18,6 @@ public struct NetswiftError: Swift.Error {
         self.payload = payload
     }
     
-    /**
-     The stage at which the error happened.
-     */
-    public enum Stage {
-        /// The error happened before being performed
-        case send(Send)
-        
-        /// The error happened while being performed
-        case receive(Receive)
-        
-        /// The error happened after it was performed, during internal processing
-        case process(Process)
-        
-        
-        public enum Send {
-            case serialisationFailed
-            
-        }
-        
-        public enum Receive {
-            /// The server encountered an internal error while processing the request
-            case serverError
-            
-            /// The specified resource could not be found on the server (404)
-            case resourceNotFound
-            
-            /// The specified resource has been permanently removed
-            case resourceRemoved
-            
-            /// Cannot authenticate the request; authentication needed
-            case notAuthenticated
-            
-            /// The server requires payment data before it can process the request
-            case paymentRequired
-            
-            /// The server didn't allow this request for this user
-            case notPermitted
-            
-            /// The request took too long to return. Potential causes include bad network and server issues.
-            case timedOut
-            
-            /// The server does not meet one of the preconditions that the requester put on the request
-            case preconditionFailed
-            
-            /// A request method is not supported for the requested resource
-            case methodNotAllowed
-            
-            /// The user has sent too many requests in a given amount of time
-            case tooManyRequests
-        }
-        
-        public enum Process {
-            case decoding(error: DecodingError)
-            
-            /// The response could not be casted to the Request's IncomingType
-            case responseCastingError
-            
-            /// The response returned by the server does not conform to expected type
-            case unexpectedResponse
-            
-            /// The response returned by the server is empty / nil
-            case noResponse
-        }
-    }
-    
     /// All the errors that can be raised while performing HTTP requests
     public enum Category {
         
@@ -96,10 +31,10 @@ public struct NetswiftError: Swift.Error {
         case serverError
         
         /// The specified resource could not be found on the server (404)
-        case resourceNotFound(error: Swift.Error?)
+        case resourceNotFound
         
         /// The specified resource has been permanently removed
-        case resourceRemoved(error: Swift.Error?)
+        case resourceRemoved
         
         /// The response returned by the server does not conform to expected type
         case unexpectedResponseError
@@ -139,43 +74,6 @@ public struct NetswiftError: Swift.Error {
         
         /// Fallback error
         case unknown
-        
-        init?(fromStatusCode statusCode: Int) {
-            switch statusCode {
-            case 200...299:
-                return nil
-                
-            case 400:
-                self = .requestError
-                
-            case 401:
-                self = .notAuthenticated
-                
-            case 402:
-                self = .paymentRequired
-                
-            case 403:
-                self = .notPermitted
-                
-            case 404:
-                self = .resourceNotFound
-                
-            case 405:
-                self = .methodNotAllowed
-                
-            case 412:
-                self = .preconditionFailed
-                
-            case 429:
-                self = .tooManyRequests
-                
-            case 500:
-                self = .serverError
-                
-            default:
-                self = .unknown
-            }
-        }
     }
 }
 
@@ -194,12 +92,10 @@ extension NetswiftError: Equatable {
              (.methodNotAllowed, .methodNotAllowed),
              (.tooManyRequests, .tooManyRequests),
              (.serverError, .serverError),
-             (.paymentRequired, .paymentRequired):
+             (.paymentRequired, .paymentRequired),
+             (.resourceNotFound, .resourceNotFound),
+             (.resourceRemoved, .resourceRemoved):
             return true
-            
-        case (.resourceNotFound(let lhsError), .resourceNotFound(let rhsError)),
-             (.resourceRemoved(let lhsError), .resourceRemoved(let rhsError)):
-            return lhsError?.localizedDescription == rhsError?.localizedDescription
             
         case (.responseDecodingError(let lhsError), .responseDecodingError(let rhsError)):
             return lhsError.localizedDescription == rhsError.localizedDescription
