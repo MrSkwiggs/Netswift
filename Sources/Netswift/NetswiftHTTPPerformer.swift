@@ -9,7 +9,7 @@
 import Foundation
 
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
-public final class NetswiftHTTPPerformer: HTTPPerformer {
+open class NetswiftHTTPPerformer: HTTPPerformer {
     
     private let session: NetswiftSession
     
@@ -17,13 +17,13 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
         self.session = session
     }
     
-    public func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
+    open func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         return session.perform(request) { response in
             completion(self.validate(response))
         }
     }
     
-    public func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
+    open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         let dispatchGroup = DispatchGroup()
         
         if dispatchGroup.wait(timeout: timeOut) == .timedOut {
