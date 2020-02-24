@@ -51,34 +51,34 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
             return .success(response.data)
 
         case 400:
-            return .failure(.requestError)
+            return .failure(.init(category: .requestError, payload: nil))
 
         case 401:
-            return .failure(.notAuthenticated)
+            return .failure(.init(category: .notAuthenticated, payload: nil))
 
         case 402:
-            return .failure(.paymentRequired(payload: response.data))
+            return .failure(.init(category: .paymentRequired, payload: response.data))
 
         case 403:
-            return .failure(.notPermitted)
+            return .failure(.init(category: .notPermitted, payload: nil))
 
         case 404:
-            return .failure(.resourceNotFound(error: response.error, payload: response.data))
+            return .failure(.init(category: .resourceNotFound, payload: response.data))
 
         case 405:
-            return .failure(.methodNotAllowed)
+            return .failure(.init(category: .methodNotAllowed, payload: nil))
 
         case 412:
-            return .failure(.preconditionFailed)
+            return .failure(.init(category: .preconditionFailed, payload: nil))
 
         case 429:
-            return .failure(.tooManyRequests)
+            return .failure(.init(category: .tooManyRequests, payload: nil))
 
         case 500:
-            return .failure(.serverError(payload: response.data))
+            return .failure(.init(category: .serverError, payload: response.data))
 
         default:
-            return .failure(.unknown(payload: response.data))
+            return .failure(.init(category: .unknown, payload: response.data))
         }
     }
 }
