@@ -43,7 +43,7 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
             guard let error = response.error else {
                 return .failure(.init(category: .unknown, payload: response.data))
             }
-            return .failure(.init(category: .generic(error: error), payload: nil))
+            return .failure(.init(category: .generic(error: error), payload: response.data))
         }
         
         switch statusCode {
@@ -51,28 +51,28 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
             return .success(response.data)
 
         case 400:
-            return .failure(.init(category: .requestError, payload: nil))
+            return .failure(.init(category: .requestError, payload: response.data))
 
         case 401:
-            return .failure(.init(category: .notAuthenticated, payload: nil))
+            return .failure(.init(category: .notAuthenticated, payload: response.data))
 
         case 402:
             return .failure(.init(category: .paymentRequired, payload: response.data))
 
         case 403:
-            return .failure(.init(category: .notPermitted, payload: nil))
+            return .failure(.init(category: .notPermitted, payload: response.data))
 
         case 404:
             return .failure(.init(category: .resourceNotFound, payload: response.data))
 
         case 405:
-            return .failure(.init(category: .methodNotAllowed, payload: nil))
+            return .failure(.init(category: .methodNotAllowed, payload: response.data))
 
         case 412:
-            return .failure(.init(category: .preconditionFailed, payload: nil))
+            return .failure(.init(category: .preconditionFailed, payload: response.data))
 
         case 429:
-            return .failure(.init(category: .tooManyRequests, payload: nil))
+            return .failure(.init(category: .tooManyRequests, payload: response.data))
 
         case 500:
             return .failure(.init(category: .serverError, payload: response.data))
