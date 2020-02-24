@@ -18,6 +18,11 @@ public struct NetswiftError: Swift.Error {
         self.payload = payload
     }
     
+    public init(_ category: Category) {
+        self.category = category
+        self.payload = nil
+    }
+    
     /// All the errors that can be raised while performing HTTP requests
     public enum Category {
         
