@@ -67,6 +67,16 @@ public protocol NetswiftRequest {
      - returns: A NetswiftResult that either succeeds with a Response object, or fails with a NetswiftError.
      */
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response>
+    
+    
+    /**
+     Tries to intercept and handle an error thrown during the Request's performing.
+     
+     This allows to handle network & related errors directly from within a Request's declaration.
+     - parameter error: The error thrown
+     - note: Returns `.failure(error)` by default
+     */
+    func intercept(_ error: NetswiftError) -> NetswiftResult<Response>
 }
 
 public extension NetswiftRequest {
