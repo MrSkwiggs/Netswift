@@ -91,6 +91,10 @@ public extension NetswiftRequest {
     var accept: MimeType {
         return .json
     }
+    
+    func intercept(_ error: NetswiftError) -> NetswiftResult<Response> {
+        return .failure(error)
+    }
 }
 
 // MARK: - Convenience Serialising
