@@ -9,22 +9,29 @@
 import Foundation
 
 /// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftNetworkPerformer protocol
-public final class NetswiftPerformer: NetswiftNetworkPerformer {
+open class NetswiftPerformer: NetswiftNetworkPerformer {
     let requestPerformer: HTTPPerformer
     
     public init(requestPerformer: HTTPPerformer = NetswiftHTTPPerformer()) {
         self.requestPerformer = requestPerformer
     }
     
-    @discardableResult public func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
+    @discardableResult open func perform<Request: NetswiftRequest>(_ request: Request, handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask? {
         switch request.serialise() {
         case .success(let url):
             return self.requestPerformer.perform(url) { response in
-                let networkResponse = response
-                    .flatMap(request.decode)
-                    .flatMap(request.cast)
-                    .flatMap(request.deserialise)
-                handler(networkResponse)
+                
+                switch response {
+                case .success:
+                    let networkResponse = response
+                        .flatMap(request.decode)
+                        .flatMap(request.cast)
+                        .flatMap(request.deserialise)
+                    handler(networkResponse)
+                    
+                case .failure(let error):
+                    handler(request.intercept(error))
+                }
             }
             
         case .failure(let error):
