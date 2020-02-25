@@ -3,7 +3,11 @@
 All notable changes to this project will  be documented in this file
 
 ## Unreleased
+### Changed
 
+### Fixed
+
+## [0.3.0 (20200225)]
 ### Changed
 - `NetswiftError` has been refactored to always keep track of a network task's response payload, if any is available.
 - `NetswiftRequest` are now given a chance to intercept and handle a `NetswiftError` when performed.
