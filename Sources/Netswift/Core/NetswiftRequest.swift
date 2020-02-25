@@ -67,6 +67,16 @@ public protocol NetswiftRequest {
      - returns: A NetswiftResult that either succeeds with a Response object, or fails with a NetswiftError.
      */
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response>
+    
+    
+    /**
+     Tries to intercept and handle an error thrown while the Request is being performed.
+     
+     This allows to handle network & related errors directly from within a Request's declaration.
+     - parameter error: The error thrown
+     - note: Returns `.failure(error)` by default
+     */
+    func intercept(_ error: NetswiftError) -> NetswiftResult<Response>
 }
 
 public extension NetswiftRequest {
@@ -80,6 +90,10 @@ public extension NetswiftRequest {
     
     var accept: MimeType {
         return .json
+    }
+    
+    func intercept(_ error: NetswiftError) -> NetswiftResult<Response> {
+        return .failure(error)
     }
 }
 
@@ -111,9 +125,9 @@ public extension NetswiftRequest where IncomingType == Data, Response: Decodable
             return .success(decodedResponse)
             
         } catch let error as DecodingError {
-            return .failure(.responseDecodingError(error: error, payload: incomingData))
+            return .failure(.init(category: .responseDecodingError(error: error), payload: incomingData))
         } catch {
-            return .failure(.unexpectedResponseError)
+            return .failure(.init(category: .unexpectedResponseError, payload: incomingData))
         }
     }
 }
@@ -121,7 +135,7 @@ public extension NetswiftRequest where IncomingType == Data, Response: Decodable
 public extension NetswiftRequest where IncomingType == Data, Response == String {
     func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
         guard let string = String(data: incomingData, encoding: .utf8) else {
-            return .failure(.unexpectedResponseError)
+            return .failure(.init(category: .unexpectedResponseError, payload: incomingData))
         }
         return .success(string)
     }
@@ -132,11 +146,11 @@ public extension NetswiftRequest where IncomingType == Data, Response == String 
 /// When the request expects freeform data, decoding is done during deserialisation
 public extension NetswiftRequest where IncomingType == Data {
     func decode(_ data: Data?) -> NetswiftResult<Any> {
-        guard let data = data else {
-            return .failure(.noResponseError)
+        guard let incomingData = data else {
+            return .failure(.init(category: .noResponseError, payload: data))
         }
         
-        return .success(data)
+        return .success(incomingData)
     }
 }
 
@@ -149,6 +163,6 @@ public extension NetswiftRequest {
             return .success(castedObject)
         }
         
-        return .failure(.responseCastingError)
+        return .failure(.init(category: .responseCastingError, payload: any as? Data))
     }
 }
