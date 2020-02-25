@@ -8,92 +8,102 @@
 
 import Foundation
 
-/// All the errors that can be raised while performing HTTP requests
-public enum NetswiftError: Swift.Error {
+public struct NetswiftError: Swift.Error {
     
-    /// The request couldn't be serialised before being sent out
-    case requestSerialisationError
+    public let category: Category
+    public let payload: Data?
     
-    /// The request couldn't be processed by the server
-    case requestError
+    public init(category: Category, payload: Data?) {
+        self.category = category
+        self.payload = payload
+    }
     
-    /// The server encountered an internal error while processing the request
-    case serverError(payload: Data?)
+    public init(_ category: Category) {
+        self.category = category
+        self.payload = nil
+    }
     
-    /// The specified resource could not be found on the server (404)
-    case resourceNotFound(error: Swift.Error?, payload: Data?)
-    
-    /// The specified resource has been permanently removed
-    case resourceRemoved(error: Swift.Error?, payload: Data?)
-    
-    /// The response returned by the server does not conform to expected type
-    case unexpectedResponseError
-    
-    /// The response returned by the server is empty / nil
-    case noResponseError
-    
-    /// The response's raw data could not be understood
-    case responseDecodingError(error: DecodingError, payload: Data?)
-    
-    /// The response could not be casted to the Request's IncomingType
-    case responseCastingError
-    
-    /// Cannot authenticate the request; authentication needed
-    case notAuthenticated
-    
-    /// The server requires payment data before it can process the request
-    case paymentRequired(payload: Data?)
-    
-    /// The server didn't allow this request for this user
-    case notPermitted
-    
-    /// The request took too long to return. Potential causes include bad network and server issues.
-    case timedOut
-    
-    /// The server does not meet one of the preconditions that the requester put on the request
-    case preconditionFailed
-    
-    /// A request method is not supported for the requested resource
-    case methodNotAllowed
-    
-    /// The user has sent too many requests in a given amount of time
-    case tooManyRequests
-    
-    /// A generic error with a provided error object
-    case generic(error: Swift.Error)
-    
-    /// Fallback error
-    case unknown(payload: Data?)
+    /// All the errors that can be raised while performing HTTP requests
+    public enum Category {
+        
+        /// The request couldn't be serialised before being sent out
+        case requestSerialisationError
+        
+        /// The request couldn't be processed by the server
+        case requestError
+        
+        /// The server encountered an internal error while processing the request
+        case serverError
+        
+        /// The specified resource could not be found on the server (404)
+        case resourceNotFound
+        
+        /// The specified resource has been permanently removed
+        case resourceRemoved
+        
+        /// The response returned by the server does not conform to expected type
+        case unexpectedResponseError
+        
+        /// The response returned by the server is empty / nil
+        case noResponseError
+        
+        /// The response's raw data could not be understood
+        case responseDecodingError(error: DecodingError)
+        
+        /// The response could not be casted to the Request's IncomingType
+        case responseCastingError
+        
+        /// Cannot authenticate the request; authentication needed
+        case notAuthenticated
+        
+        /// The server requires payment data before it can process the request
+        case paymentRequired
+        
+        /// The server didn't allow this request for this user
+        case notPermitted
+        
+        /// The request took too long to return. Potential causes include bad network and server issues.
+        case timedOut
+        
+        /// The server does not meet one of the preconditions that the requester put on the request
+        case preconditionFailed
+        
+        /// A request method is not supported for the requested resource
+        case methodNotAllowed
+        
+        /// The user has sent too many requests in a given amount of time
+        case tooManyRequests
+        
+        /// A generic error with a provided error object
+        case generic(error: Swift.Error)
+        
+        /// Fallback error
+        case unknown
+    }
 }
 
 extension NetswiftError: Equatable {
     public static func == (lhs: NetswiftError, rhs: NetswiftError) -> Bool {
-        switch (lhs, rhs) {
+        switch (lhs.category, rhs.category) {
         case (.requestSerialisationError, .requestSerialisationError),
              (.requestError, .requestError),
              (.unexpectedResponseError, .unexpectedResponseError),
              (.noResponseError, .noResponseError),
-             (.responseCastingError, responseCastingError),
+             (.responseCastingError, .responseCastingError),
              (.notAuthenticated, .notAuthenticated),
              (.notPermitted, .notPermitted),
              (.timedOut, .timedOut),
              (.preconditionFailed, .preconditionFailed),
              (.methodNotAllowed, .methodNotAllowed),
-             (.tooManyRequests, .tooManyRequests):
+             (.tooManyRequests, .tooManyRequests),
+             (.serverError, .serverError),
+             (.paymentRequired, .paymentRequired),
+             (.resourceNotFound, .resourceNotFound),
+             (.resourceRemoved, .resourceRemoved):
             return true
             
-        case (.serverError(let lhsPayload), .serverError(let rhsPayload)):
-            return lhsPayload == rhsPayload
-            
-        case (.resourceNotFound(let lhsError, let lhsPayload), .resourceNotFound(let rhsError, let rhsPayload)),
-             (.resourceRemoved(let lhsError, let lhsPayload), .resourceRemoved(let rhsError, let rhsPayload)):
-            return lhsError?.localizedDescription == rhsError?.localizedDescription && lhsPayload == rhsPayload
-            
-        case (.responseDecodingError(let lhsError, let lhsPayload), .responseDecodingError(let rhsError, let rhsPayload)):
-            return lhsError.localizedDescription == rhsError.localizedDescription && lhsPayload == rhsPayload
-            
-        case (.paymentRequired(let lhsPayload), .paymentRequired(let rhsPayload)):
-            return lhsPayload == rhsPayload
+        case (.responseDecodingError(let lhsError), .responseDecodingError(let rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
             
         default:
             return false
@@ -101,40 +111,9 @@ extension NetswiftError: Equatable {
     }
 }
 
-extension NetswiftError {
-    public var payload: Data? {
-        switch self {
-        case let .resourceNotFound(_, payload), let .resourceRemoved(_, payload):
-            return payload
-        case let .responseDecodingError(_, payload):
-            return payload
-        case let .serverError(payload):
-            return payload
-        case let .paymentRequired(payload):
-            return payload
-        case let .unknown(payload):
-            return payload
-            
-        case .methodNotAllowed,
-             .noResponseError,
-             .notAuthenticated,
-             .notPermitted,
-             .preconditionFailed,
-             .requestError,
-             .requestSerialisationError,
-             .responseCastingError,
-             .timedOut,
-             .tooManyRequests,
-             .unexpectedResponseError,
-             .generic:
-            return nil
-        }
-    }
-}
-
 extension NetswiftError: CustomDebugStringConvertible {
     public var debugDescription: String {
-        switch self {
+        switch self.category {
         case .requestSerialisationError:
             return "The request couldn't be serialised before being sent out"
         case .requestError:

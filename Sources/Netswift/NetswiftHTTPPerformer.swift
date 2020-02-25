@@ -9,7 +9,7 @@
 import Foundation
 
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
-public final class NetswiftHTTPPerformer: HTTPPerformer {
+open class NetswiftHTTPPerformer: HTTPPerformer {
     
     private let session: NetswiftSession
     
@@ -17,17 +17,17 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
         self.session = session
     }
     
-    public func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
+    open func perform(_ request: URLRequest, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         return session.perform(request) { response in
             completion(self.validate(response))
         }
     }
     
-    public func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
+    open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         let dispatchGroup = DispatchGroup()
         
         if dispatchGroup.wait(timeout: timeOut) == .timedOut {
-            completion(.failure(.timedOut))
+            completion(.failure(.init(category: .timedOut, payload: nil)))
         }
         
         dispatchGroup.enter()
@@ -41,9 +41,9 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
     private func validate(_ response: NetswiftHTTPResponse) -> NetswiftResult<Data?> {
         guard let statusCode = response.statusCode else {
             guard let error = response.error else {
-                return .failure(.unknown(payload: response.data))
+                return .failure(.init(category: .unknown, payload: response.data))
             }
-            return .failure(.generic(error: error))
+            return .failure(.init(category: .generic(error: error), payload: response.data))
         }
         
         switch statusCode {
@@ -51,34 +51,34 @@ public final class NetswiftHTTPPerformer: HTTPPerformer {
             return .success(response.data)
 
         case 400:
-            return .failure(.requestError)
+            return .failure(.init(category: .requestError, payload: response.data))
 
         case 401:
-            return .failure(.notAuthenticated)
+            return .failure(.init(category: .notAuthenticated, payload: response.data))
 
         case 402:
-            return .failure(.paymentRequired(payload: response.data))
+            return .failure(.init(category: .paymentRequired, payload: response.data))
 
         case 403:
-            return .failure(.notPermitted)
+            return .failure(.init(category: .notPermitted, payload: response.data))
 
         case 404:
-            return .failure(.resourceNotFound(error: response.error, payload: response.data))
+            return .failure(.init(category: .resourceNotFound, payload: response.data))
 
         case 405:
-            return .failure(.methodNotAllowed)
+            return .failure(.init(category: .methodNotAllowed, payload: response.data))
 
         case 412:
-            return .failure(.preconditionFailed)
+            return .failure(.init(category: .preconditionFailed, payload: response.data))
 
         case 429:
-            return .failure(.tooManyRequests)
+            return .failure(.init(category: .tooManyRequests, payload: response.data))
 
         case 500:
-            return .failure(.serverError(payload: response.data))
+            return .failure(.init(category: .serverError, payload: response.data))
 
         default:
-            return .failure(.unknown(payload: response.data))
+            return .failure(.init(category: .unknown, payload: response.data))
         }
     }
 }
