@@ -4,6 +4,7 @@ All notable changes to this project will  be documented in this file
 
 ## Unreleased
 ### Changed
+- `NetswiftError.Category` now conforms to `CustomDebugStringConvertible`
 
 ### Fixed
 
