@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  NetswiftError+Category.swift
+//  Netswift
 //
 //  Created by Dorian Grolaux on 24/08/2020.
+//  Copyright © 2020 Skwiggs. All rights reserved.
 //
 
 import Foundation
