@@ -1,5 +1,5 @@
 PODS:
-  - Netswift (0.1.5)
+  - Netswift (0.3.0)
 
 DEPENDENCIES:
   - Netswift (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Netswift: 15396e3163f29d7de5555d64ee51b7e3f69bd184
+  Netswift: 18fab9cac3c3bf03d84eb7cc954503cad4dc5896
 
-PODFILE CHECKSUM: 1b86feeadcafbfdd5e60a1ce0c28934e40ab4904
+PODFILE CHECKSUM: 22292e32b33db613b2b3c9b9c1965633bc1528df
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
