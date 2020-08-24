@@ -2,10 +2,9 @@
 # Change Log
 All notable changes to this project will  be documented in this file
 
-## Unreleased
+## [0.3.1 (20200824)]
 ### Changed
-
-### Fixed
+- `NetswiftError.Category` now conforms to `CustomDebugStringConvertible`
 
 ## [0.3.0 (20200225)]
 ### Changed
