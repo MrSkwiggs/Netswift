@@ -3,6 +3,9 @@
 All notable changes to this project will  be documented in this file
 
 ## Unreleased
+### Added
+- `NetswiftTaskGroup`, allows you to chain & group multiple requests and handle errors in one go
+
 ### Changed
 - `NetswiftError.Category` now conforms to `CustomDebugStringConvertible`
 
