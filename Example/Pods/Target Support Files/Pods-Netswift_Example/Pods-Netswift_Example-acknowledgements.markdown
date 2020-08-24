@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## Netswift
 
-Copyright (c) 2019 MrSkwiggs <6209874+MrSkwiggs@users.noreply.github.com>
+Copyright (c) 2019 - 2020 Dorian Grolaux <dorian@skwiggs.dev>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
