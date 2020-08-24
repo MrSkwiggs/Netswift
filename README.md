@@ -7,19 +7,30 @@
 [![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightGreen)](https://swift.org/package-manager/)
 
 ## What
-This library takes care of the heavy lifting required to have a reusable & maintainable networking layer in your Swift apps.
-It currently allows you to easily write network calls in a very structured and type-safe way. It does so by using protocols with associated types & generic classes & structs very extensively.
+**Type-safe network calls made easy**
+
+Netswift offers an easy way to perform network calls in a structured and type-safe way. 
 
 ## Why
-Networking in Swift can be tedious from the get go. Type safety & reusability are often overlooked for the sake of getting up to speed. This is where Netswift aims to shine!
-
-Over the past years, my team & I struggled with spaghetti code & an unmaintainable codebase when it came to performing network requests. Due to the nature of api calls, it is quite tough to find a single solution that accommodates most of your needs, all the while remaining flexible & future-proof.
-
-So as a move to improve my Swift skills and get us out of messy situation, I took it upon myself to research & implement a solution that would alleviate those pain-points.
-
-This framework was heavily inspired by blog posts written by the brilliant [John Sundell](https://www.swiftbysundell.com) and [Ray Wenderlich](https://www.raywenderlich.com/). I highly recommend them if you need to learn & improve your programming skills!.
+Networking in Swift can be tedious from the get go. Type safety & reusability are often overlooked for the sake of getting up to speed. Have a huge file with all your API calls which is getting hard to maintain? This is where Netswift comes in.
 
 # Using Netswift
+
+## TL;DR?
+This is how easy it is to perform network calls with Netswift:
+```swift
+Netswift().peform(StripeAPI.Charges.get(byID: "1234")) { result in
+  switch result {
+  case .failure(let error):
+    // Our request failed: we can use the error to debug it
+    print(error)
+    
+  case .success(let charge):
+    // Our request succeeded: we now have a Charge object from the Stripe API
+    print(charge.amount)
+  }
+}
+```
 
 ## Prerequisites
 I'm assuming you have an available iOS project set up with this cocoapod, ready to go. If not, please follow the [installation steps](#installation).
@@ -42,7 +53,7 @@ To facilitate this tutorial, I went ahead and set up a mock API for you to query
 In this particular case, and to keep things simple, we can go ahead and define a new `enum`. We'll use it to implement the minimum required protocol functions which will allow us to perform our request.
 
 So go ahead; add a new file to your project and name it however you like. I chose `MyAPI`. Then, don't forget to `import Netswift`, and create your API Container like such:
-```
+```swift
 import Netswift
 
 enum MyAPI {
@@ -57,7 +68,7 @@ The great thing about Swift's `enum` is that they can also have associated value
 So we have our enum. Great. But it doesn't do much. Let's fix that.
 
 Go ahead and define an extension for it which implements the `NetswiftRoute` protocol:
-```
+```swift
 extension MyAPI: NetswiftRoute {
 }
 ```
@@ -67,12 +78,12 @@ Immediately, the compiler starts complaining. Pressing 'Add protocol stubs' will
 - `path`: A specific resource on our API. Unless you're just GET-ing a website, you'll need to define a path.
 
 So let's go ahead and implement those two.
-```
+```swift
 var host: String {
   return "my-json-server.typicode.com"
 }
 
-var path: String {
+var path: String? {
   switch self {
     case .helloWorld: return "MrSkwiggs/Netswift-HelloWorld/Netswift"
   }
@@ -89,7 +100,7 @@ And that's pretty much everything we need for now. A lot of work is done under t
 
 ### Step 3
 Now that we have our route setup, all we need to do is implement the `NetswiftRequest` protocol. Let us do just that in another extension:
-```
+```swift
 extension MyAPI: NetswiftRequest {
 }
 ```
@@ -98,7 +109,7 @@ This time, we don't want to let the compiler add protocol stubs for us just yet.
 - A `Response` type. Since Netswift is generic, it doesn't know what kind of data we want from our API's endpoint. If our request defines a type called `Response`, we're good to go. And the best part is, we could also use a `typealias`, and it would just work 👍
 
 So for now, let's just add an internal type named `Response` in our extension:
-```
+```swift
 struct Response: Decodable {
   let title: String
 }
@@ -113,7 +124,7 @@ Then, we told the compiler that our `Response` type implements the `Decodable` p
 Yet, the compiler is still unhappy. Now's however a good time to let it 'Add protocol stubs'. We're now given a new function called `serialise`. This is the last part we need to define before we are good to go.
 
 So let us implement our `URLRequest` serialisation then, shall we ?
-```
+```swift
 func serialise(_ handler: @escaping NetswiftHandler<URLRequest>) {
   handler(.success(URLRequest(url: self.url)))
 }
@@ -131,7 +142,7 @@ Great, that's us pretty much done now!
 Now's the moment we've been waiting for: sending out our request!
 
 All we need to do is to actually perform our request. To do so, we can use an instance of the default `Netswift` class. All we need to do is call this:
-```
+```swift
 Netswift().perform(MyAPI.helloWorld) { result in
   switch result {
   case .failure(let error):
