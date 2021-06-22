@@ -10,15 +10,21 @@ import Foundation
 
 public struct NetswiftError: Swift.Error {
     
+    /// The HTTP status code of the error if applicable
+    public let code: Int?
+    /// The category for the error
     public let category: Category
+    /// Additonal information about the error
     public let payload: Data?
     
-    public init(category: Category, payload: Data?) {
+    public init(httpStatusCode: Int? = nil, category: Category, payload: Data?) {
+        self.code = httpStatusCode
         self.category = category
         self.payload = payload
     }
     
     public init(_ category: Category) {
+        self.code = nil
         self.category = category
         self.payload = nil
     }

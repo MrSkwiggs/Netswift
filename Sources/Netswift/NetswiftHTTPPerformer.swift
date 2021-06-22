@@ -51,34 +51,34 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
             return .success(response.data)
 
         case 400:
-            return .failure(.init(category: .requestError, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .requestError, payload: response.data))
 
         case 401:
-            return .failure(.init(category: .notAuthenticated, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .notAuthenticated, payload: response.data))
 
         case 402:
-            return .failure(.init(category: .paymentRequired, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .paymentRequired, payload: response.data))
 
         case 403:
-            return .failure(.init(category: .notPermitted, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .notPermitted, payload: response.data))
 
         case 404:
-            return .failure(.init(category: .resourceNotFound, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .resourceNotFound, payload: response.data))
 
         case 405:
-            return .failure(.init(category: .methodNotAllowed, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .methodNotAllowed, payload: response.data))
 
         case 412:
-            return .failure(.init(category: .preconditionFailed, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .preconditionFailed, payload: response.data))
 
         case 429:
-            return .failure(.init(category: .tooManyRequests, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .tooManyRequests, payload: response.data))
 
         case 500:
-            return .failure(.init(category: .serverError, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .serverError, payload: response.data))
 
         default:
-            return .failure(.init(category: .unknown, payload: response.data))
+            return .failure(.init(httpStatusCode: statusCode, category: .unknown, payload: response.data))
         }
     }
 }
