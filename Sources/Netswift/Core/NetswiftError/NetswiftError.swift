@@ -15,7 +15,7 @@ public struct NetswiftError: Swift.Error {
     /// Additonal information about the error
     public let payload: Data?
     
-    public init(category: Category, payload: Data? = nil) {
+    public init(category: Category, payload: Data?) {
         self.category = category
         self.payload = payload
     }
