@@ -141,10 +141,18 @@ extension NetswiftError.Category {
              .responseCastingError,
              .responseDecodingError,
              .timedOut,
-             .unexpectedResponseError: return nil
+             .unexpectedResponseError:
+            return nil
         }
     }
     
+    /**
+     Matches a HTTP status code to a NetswiftError.Category
+     
+     - Parameter httpStatusCode: The HTTP status code received with the network response
+     
+     - returns the error category if successfully matched
+     */
     static func from(httpStatusCode: Int) -> Self? {
         switch httpStatusCode {
         case 200...299:
