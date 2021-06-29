@@ -64,7 +64,7 @@ public extension NetswiftError {
         case generic(error: Swift.Error)
         
         /// Fallback error
-        case unknown
+        case unknown(httpStatusCode: Int?)
         
         public var debugDescription: String {
             switch self {
@@ -105,6 +105,70 @@ public extension NetswiftError {
             case .unknown:
                 return "Unknown"
             }
+        }
+    }
+}
+
+extension NetswiftError.Category {
+    /// The corresponding HTTP status code if applicable
+    public var httpStatusCode: Int? {
+        switch self {
+        case .requestError:
+            return 400
+        case .notAuthenticated:
+            return 401
+        case .paymentRequired:
+            return 402
+        case .notPermitted:
+            return 403
+        case .resourceNotFound:
+            return 404
+        case .methodNotAllowed:
+            return 405
+        case .preconditionFailed:
+            return 412
+        case .tooManyRequests:
+            return 429
+        case .serverError:
+            return 500
+        case .unknown(let statusCode):
+            return statusCode
+            
+        case .generic,
+             .noResponseError,
+             .requestSerialisationError,
+             .resourceRemoved,
+             .responseCastingError,
+             .responseDecodingError,
+             .timedOut,
+             .unexpectedResponseError: return nil
+        }
+    }
+    
+    static func from(httpStatusCode: Int) -> Self? {
+        switch httpStatusCode {
+        case 200...299:
+            return nil
+        case 400:
+            return .requestError
+        case 401:
+            return .notAuthenticated
+        case 402:
+            return .paymentRequired
+        case 403:
+            return .notPermitted
+        case 404:
+            return .resourceNotFound
+        case 405:
+            return .methodNotAllowed
+        case 412:
+            return .preconditionFailed
+        case 429:
+            return .tooManyRequests
+        case 500:
+            return .serverError
+        default:
+            return .unknown(httpStatusCode: httpStatusCode)
         }
     }
 }
