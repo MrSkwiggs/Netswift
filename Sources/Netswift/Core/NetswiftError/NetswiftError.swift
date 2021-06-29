@@ -10,7 +10,9 @@ import Foundation
 
 public struct NetswiftError: Swift.Error {
     
+    /// The category for the error
     public let category: Category
+    /// Additonal information about the error
     public let payload: Data?
     
     public init(category: Category, payload: Data?) {
