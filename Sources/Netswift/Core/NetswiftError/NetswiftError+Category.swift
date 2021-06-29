@@ -151,7 +151,7 @@ extension NetswiftError.Category {
      
      - Parameter httpStatusCode: The HTTP status code received with the network response
      
-     - returns the error category if successfully matched
+     - returns: The error category if successfully matched
      */
     static func from(httpStatusCode: Int) -> Self? {
         switch httpStatusCode {
