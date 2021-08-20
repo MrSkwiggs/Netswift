@@ -35,6 +35,13 @@ public protocol NetswiftRequest {
     var contentType: MimeType { get }
     
     /**
+     Specifies any content to be sent out with the request.
+     
+     - important: Defaults to `nil`
+     */
+    var body: Data? { get }
+    
+    /**
      Specifies what type of content this request expects back.
      
      - important: Defaults to `.json`
@@ -68,7 +75,6 @@ public protocol NetswiftRequest {
      */
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response>
     
-    
     /**
      Tries to intercept and handle an error thrown while the Request is being performed.
      
@@ -86,6 +92,10 @@ public extension NetswiftRequest {
     
     var contentType: MimeType {
         return .json
+    }
+    
+    var body: Data? {
+        return nil
     }
     
     var accept: MimeType {
@@ -108,6 +118,8 @@ public extension NetswiftRequest where Self: NetswiftRoute {
         
         headers.append(.contentType(contentType))
         headers.append(.accept(accept))
+        
+        request.httpBody = body
         
         request.addHeaders(headers)
         
