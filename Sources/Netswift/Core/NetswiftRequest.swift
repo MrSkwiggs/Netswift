@@ -35,11 +35,18 @@ public protocol NetswiftRequest {
     var contentType: MimeType { get }
     
     /**
-     Specifies any content to be sent out with the request.
+     Specifies which encoder should be used for encoding this request's body
      
-     - important: Defaults to `nil`
+     - important: Defaults to `JSONEncoder()`
      */
-    var body: Data? { get }
+    var bodyEncoder: NetswiftEncoder? { get }
+    
+    /**
+     Encodes any arbitrary data defined by this request with the given encoder to be used as the request's body.
+     
+     - important: Returns `nil` by default
+     */
+    func body(encodedBy encoder: NetswiftEncoder?) -> Data?
     
     /**
      Specifies what type of content this request expects back.
@@ -94,7 +101,11 @@ public extension NetswiftRequest {
         return .json
     }
     
-    var body: Data? {
+    var bodyEncoder: NetswiftEncoder? {
+        return JSONEncoder()
+    }
+    
+    func body(encodedBy encoder: NetswiftEncoder?) -> Data? {
         return nil
     }
     
