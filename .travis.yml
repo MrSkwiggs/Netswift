@@ -10,5 +10,5 @@ language: swift
 #    - gem install cocoapods # Since Travis is not always on latest version
 #    - pod install --project-directory=Netswift
 script:
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Netswift.xcworkspace -scheme Netswift-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Netswift.xcworkspace -scheme Netswift-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' ONLY_ACTIVE_ARCH=NO | xcpretty
     - pod lib lint
