@@ -2,7 +2,7 @@
 # Change Log
 All notable changes to this project will  be documented in this file
 
-## [0.5.0]
+## [0.5.0 (20210820)]
 ### Added
 - New `NetswiftEncoder` wrapper protocol for types such as `JSONEncoder` or `PropertyListEncoder` (those 2 are already made to conform to `NetswiftEncoder`)
 
