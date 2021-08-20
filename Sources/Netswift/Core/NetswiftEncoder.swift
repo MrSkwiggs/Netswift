@@ -1,6 +1,6 @@
 //
 //  NetswiftEncoder.swift
-//  
+//  Netswift
 //
 //  Created by Dorian Grolaux on 20/08/2021.
 //
