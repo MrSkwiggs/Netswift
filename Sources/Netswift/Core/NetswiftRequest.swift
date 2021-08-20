@@ -46,7 +46,7 @@ public protocol NetswiftRequest {
      
      - important: Returns `nil` by default
      */
-    func body(encodedBy encoder: NetswiftEncoder?) -> Data?
+    func body(encodedBy encoder: NetswiftEncoder?) throws -> Data?
     
     /**
      Specifies what type of content this request expects back.
@@ -130,8 +130,12 @@ public extension NetswiftRequest where Self: NetswiftRoute {
         headers.append(.contentType(contentType))
         headers.append(.accept(accept))
         
-        if let encoder = bodyEncoder {
-            request.httpBody = body(encodedBy: encoder)
+        do {
+            if let encoder = bodyEncoder {
+                request.httpBody = try body(encodedBy: encoder)
+            }
+        } catch {
+            return .failure(.init(.requestSerialisationError))
         }
         
         request.addHeaders(headers)
