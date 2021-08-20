@@ -2,6 +2,19 @@
 # Change Log
 All notable changes to this project will  be documented in this file
 
+## [0.5.0]
+### Added
+- New `NetswiftEncoder` wrapper protocol for types such as `JSONEncoder` or `PropertyListEncoder` (those 2 are already made to conform to `NetswiftEncoder`)
+
+### Changed
+- `NetswiftRequest` now has new requirements: 
+    - A `bodyEncoder: NetswiftEncoder?` var, which can be used to encode any data into the request's `httpBody`;
+    - A `body(encodedBy encoder: NetswiftEncoder?) -> Data?` function that uses the given encoder to return `Data?`, if applicable.
+
+## [0.4.0]
+### Changed
+- HTTP Status Codes are now included in `NetswiftError.Category`
+
 ## [0.3.1 (20200824)]
 ### Changed
 - `NetswiftError.Category` now conforms to `CustomDebugStringConvertible`
