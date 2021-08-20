@@ -24,7 +24,7 @@ struct API {
     }
 }
 
-extension NetswiftRequestPerformable where Self: NetswiftRequest {
+extension NetswiftRequestPerformable {
     @discardableResult func perform(_ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask? {
         return API.shared.perform(self, handler)
     }
