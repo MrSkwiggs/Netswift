@@ -26,6 +26,7 @@
 		828558AD04A72DD5919CBE80DC02C3BA /* NetswiftHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F12C04402B60ED432F8EE557110CE6E /* NetswiftHTTPMethod.swift */; };
 		8323ACDC1F8865F9D80E81F10A88F428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		86FDD0DA82514F8514F170D6C9461BBB /* NetswiftRequestPerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C77CA5F1A3209DC2D53B7AEC1B249 /* NetswiftRequestPerformable.swift */; };
+		8D7EF47F26CFD0A300BF1C00 /* NetswiftEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7EF47E26CFD0A200BF1C00 /* NetswiftEncoder.swift */; };
 		94EE8F86D9B54D9417B1DC47EE393568 /* NetswiftHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D402C98E33E41EEB1D44F64D1C8642B0 /* NetswiftHTTPResponse.swift */; };
 		A38B60054A64BF0FA6BC6D886ABE5E50 /* NetswiftSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B24296BE65BF329FEC356C529A5ED /* NetswiftSession.swift */; };
 		AFEFF561F4668BC834F7D5E07FE5BFB0 /* NetswiftHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE9C0ACFB1BFCA8CB6A365CDF7B2 /* NetswiftHandler.swift */; };
@@ -90,6 +91,7 @@
 		7874CB7EAE6D6F6CDCA3CCA9A6037747 /* NetswiftRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetswiftRoute.swift; sourceTree = "<group>"; };
 		8227C74EF1C1917818C2DAA6D069AB51 /* NetswiftHTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetswiftHTTPPerformer.swift; path = Sources/Netswift/NetswiftHTTPPerformer.swift; sourceTree = "<group>"; };
 		86010421169BDF66FA1CF1DB811100A9 /* HTTPPerformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPPerformer.swift; sourceTree = "<group>"; };
+		8D7EF47E26CFD0A200BF1C00 /* NetswiftEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetswiftEncoder.swift; sourceTree = "<group>"; };
 		8EFB10C10BC61C3BEFD6ED45AD11C580 /* RequestHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
 		9040AA413D18BE035A095B93765A3C6E /* Pods-Netswift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Netswift_Example-dummy.m"; sourceTree = "<group>"; };
 		9579485B31CB8A3F4ECC0345FE5DFB65 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -234,6 +236,8 @@
 				86010421169BDF66FA1CF1DB811100A9 /* HTTPPerformer.swift */,
 				B89693C0D03B805C8DED1201E2F710BF /* MimeType.swift */,
 				4C7934E75082414F512F8AAB862E4539 /* NetswiftAuthorizationType.swift */,
+				8D7EF47E26CFD0A200BF1C00 /* NetswiftEncoder.swift */,
+				BF63A9701A377621690664E54A6EAE6F /* NetswiftError */,
 				3967CE9C0ACFB1BFCA8CB6A365CDF7B2 /* NetswiftHandler.swift */,
 				6F12C04402B60ED432F8EE557110CE6E /* NetswiftHTTPMethod.swift */,
 				D402C98E33E41EEB1D44F64D1C8642B0 /* NetswiftHTTPResponse.swift */,
@@ -246,7 +250,6 @@
 				0C342544D3836ADD27D398FDE606AA1F /* NetswiftTask.swift */,
 				8EFB10C10BC61C3BEFD6ED45AD11C580 /* RequestHeader.swift */,
 				0121F46CB6FD09408E0650E597275D5D /* URLRequestExtension.swift */,
-				BF63A9701A377621690664E54A6EAE6F /* NetswiftError */,
 			);
 			name = Core;
 			path = Sources/Netswift/Core;
@@ -467,6 +470,7 @@
 				F2CF46355BD030BB6BA3E042BAFA3498 /* NetswiftResult.swift in Sources */,
 				D42A9999139FBE4989EC1F20B0512C39 /* NetswiftRoute.swift in Sources */,
 				A38B60054A64BF0FA6BC6D886ABE5E50 /* NetswiftSession.swift in Sources */,
+				8D7EF47F26CFD0A300BF1C00 /* NetswiftEncoder.swift in Sources */,
 				5BA7F42231423FE3AA76644380085B41 /* NetswiftTask.swift in Sources */,
 				46B147D541CCE3A63370C3131871BA30 /* RequestHeader.swift in Sources */,
 				CECDA0634E990CB0BA84BD9707361BF3 /* URLRequestExtension.swift in Sources */,
@@ -764,7 +768,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 20200824;
+				CURRENT_PROJECT_VERSION = 20210820;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -774,7 +778,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.5.0;
 				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
 				PRODUCT_MODULE_NAME = Netswift;
 				PRODUCT_NAME = Netswift;
@@ -797,7 +801,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 20200824;
+				CURRENT_PROJECT_VERSION = 20210820;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -807,7 +811,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.5.0;
 				MODULEMAP_FILE = "Target Support Files/Netswift/Netswift.modulemap";
 				PRODUCT_MODULE_NAME = Netswift;
 				PRODUCT_NAME = Netswift;
