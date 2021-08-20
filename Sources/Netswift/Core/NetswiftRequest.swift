@@ -130,7 +130,9 @@ public extension NetswiftRequest where Self: NetswiftRoute {
         headers.append(.contentType(contentType))
         headers.append(.accept(accept))
         
-        request.httpBody = body
+        if let encoder = bodyEncoder {
+            request.httpBody = body(encodedBy: encoder)
+        }
         
         request.addHeaders(headers)
         
