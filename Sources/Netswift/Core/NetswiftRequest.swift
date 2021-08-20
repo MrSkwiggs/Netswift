@@ -35,6 +35,20 @@ public protocol NetswiftRequest {
     var contentType: MimeType { get }
     
     /**
+     Specifies which encoder should be used for encoding this request's body
+     
+     - important: Defaults to `JSONEncoder()`
+     */
+    var bodyEncoder: NetswiftEncoder? { get }
+    
+    /**
+     Encodes any arbitrary data defined by this request with the given encoder to be used as the request's body.
+     
+     - important: Returns `nil` by default
+     */
+    func body(encodedBy encoder: NetswiftEncoder?) -> Data?
+    
+    /**
      Specifies what type of content this request expects back.
      
      - important: Defaults to `.json`
@@ -68,7 +82,6 @@ public protocol NetswiftRequest {
      */
     func deserialise(_ incomingData: IncomingType) -> NetswiftResult<Response>
     
-    
     /**
      Tries to intercept and handle an error thrown while the Request is being performed.
      
@@ -86,6 +99,14 @@ public extension NetswiftRequest {
     
     var contentType: MimeType {
         return .json
+    }
+    
+    var bodyEncoder: NetswiftEncoder? {
+        return JSONEncoder()
+    }
+    
+    func body(encodedBy encoder: NetswiftEncoder?) -> Data? {
+        return nil
     }
     
     var accept: MimeType {
@@ -108,6 +129,10 @@ public extension NetswiftRequest where Self: NetswiftRoute {
         
         headers.append(.contentType(contentType))
         headers.append(.accept(accept))
+        
+        if let encoder = bodyEncoder {
+            request.httpBody = body(encodedBy: encoder)
+        }
         
         request.addHeaders(headers)
         
