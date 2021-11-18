@@ -19,4 +19,7 @@ public protocol NetswiftNetworkPerformer {
      - parameter handler: A completion block that takes in a `NetswiftResult` that either contains a value of type `NetswiftRequest.Response` or an error of type `NetswiftError`
      */
     func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask?
+
+    @available(iOS 15, *)
+    func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response>
 }
