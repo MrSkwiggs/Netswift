@@ -22,6 +22,15 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
             completion(self.validate(response))
         }
     }
+
+    @available(iOS 15, *)
+    open func perform(_ request: URLRequest) async -> NetswiftResult<Data?> {
+        await withCheckedContinuation { continuation in
+            _ = session.perform(request) { response in
+                continuation.resume(returning: self.validate(response))
+            }
+        }
+    }
     
     open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         let dispatchGroup = DispatchGroup()
@@ -35,6 +44,23 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
             dispatchGroup.leave()
             
             completion(result)
+        }
+    }
+
+    @available(iOS 15, *)
+    open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5)) async -> NetswiftResult<Data?> {
+        await withCheckedContinuation{ continuation in
+            let dispatchGroup = DispatchGroup()
+
+            if dispatchGroup.wait(timeout: timeOut) == .timedOut {
+                continuation.resume(returning: .failure(.init(category: .timedOut, payload: nil)))
+            }
+
+            dispatchGroup.enter()
+            _ = self.perform(request) { result in
+                dispatchGroup.leave()
+                continuation.resume(returning: result)
+            }
         }
     }
     
