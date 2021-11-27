@@ -20,7 +20,7 @@ public protocol HTTPPerformer {
     func perform (_ request: URLRequest, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask
 
     /**
-     Performs a standard URL request and returns the results asyncronously
+     Performs a standard URL request and returns the results asynchronously
      - note: Potentially long wait times if something goes wrong.
 
      - parameter request: Any URLRequest that has already been initialised and configured.
@@ -40,7 +40,7 @@ public protocol HTTPPerformer {
     func perform (_ request: URLRequest, waitUpTo timeOut: DispatchTime, completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask
 
     /**
-     Performs a standard URL request and returns the results asyncronusly
+     Performs a standard URL request and returns the results asynchronously
      - note: Always returns within defined time-out interval
 
      - parameter request: Any URLRequest that has already been initialised and configured.
