@@ -204,7 +204,7 @@ public extension NetswiftRequest where Self: NetswiftRoute {
      
      Use during debugging:
      
-     `po print(<urlRequest>.curl)`
+     `po print(<request>.curl)`
      */
     var curl: String {
         guard let request = serialise().value,
