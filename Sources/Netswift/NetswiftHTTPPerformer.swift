@@ -25,11 +25,8 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
 
     @available(iOS 15, *)
     open func perform(_ request: URLRequest) async -> NetswiftResult<Data?> {
-        await withCheckedContinuation { continuation in
-            _ = session.perform(request) { response in
-                continuation.resume(returning: self.validate(response))
-            }
-        }
+        let response: NetswiftHTTPResponse = await session.perform(request)
+        return validate(response)
     }
     
     open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
