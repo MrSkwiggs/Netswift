@@ -20,6 +20,11 @@ public protocol NetswiftNetworkPerformer {
      */
     func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask?
 
+    /**
+     Performs all the necessary work a NetswiftRequest defines in order to generate a `NetswiftResult` that either succeeds or fails.
+     - parameter request: `NetswiftRequest` of specific type
+     - returns: An asynchronous `NetswiftResult` with the type specified within the `NetswiftRequest` argument.
+     */
     @available(iOS 15, *)
     func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response>
 }
