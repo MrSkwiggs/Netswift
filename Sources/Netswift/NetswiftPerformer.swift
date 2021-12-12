@@ -40,7 +40,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         return nil
     }
 
-    @available(iOS 15.0.0, *)
+    @available(iOS 15, *)
     open func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
         await withCheckedContinuation { continuation in
             switch request.serialise() {

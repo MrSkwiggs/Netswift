@@ -23,7 +23,7 @@ struct API {
         return performer.perform(request, handler: handler)
     }
 
-    @available(iOS 15.0.0, *)
+    @available(iOS 15, *)
     fileprivate func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
         return await performer.perform(request)
     }
