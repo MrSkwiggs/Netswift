@@ -42,25 +42,21 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
 
     @available(iOS 15, *)
     open func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
-        await withCheckedContinuation { continuation in
-            switch request.serialise() {
-            case .success(let url):
-                _ = self.requestPerformer.perform(url) { response in
-
-                    switch response {
-                    case .success:
-                        let networkResponse = response
-                            .flatMap(request.decode)
-                            .flatMap(request.cast)
-                            .flatMap(request.deserialise)
-                        continuation.resume(returning: networkResponse)
-                    case .failure(let error):
-                        continuation.resume(returning: .failure(error))
-                    }
-                }
+        switch request.serialise() {
+        case .success(let url):
+            let response = await requestPerformer.perform(url)
+            switch response {
+            case .success:
+                let networkResponse = response
+                    .flatMap(request.decode)
+                    .flatMap(request.cast)
+                    .flatMap(request.deserialise)
+                return networkResponse
             case .failure(let error):
-                continuation.resume(returning: .failure(error))
+                return .failure(error)
             }
+        case .failure(let error):
+            return .failure(error)
         }
     }
 }
