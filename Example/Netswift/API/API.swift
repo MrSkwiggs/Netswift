@@ -19,8 +19,8 @@ struct API {
     }
     
     /// Convenience bridge function between NetswiftRequestPerformable & NetswiftPerformer
-    fileprivate func perform<T: NetswiftRequest>(_ request: T, _ handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
-        return performer.perform(request, handler: handler)
+    fileprivate func perform<T: NetswiftRequest>(_ request: T, deadline: DispatchTime? = nil, _ handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
+        return performer.perform(request, deadline: deadline, handler: handler)
     }
 
     @available(iOS 15, *)
@@ -32,6 +32,10 @@ struct API {
 extension NetswiftRequestPerformable {
     @discardableResult func perform(_ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask? {
         return API.shared.perform(self, handler)
+    }
+    
+    @discardableResult func perform(deadline: DispatchTime, _ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask? {
+        return API.shared.perform(self, deadline: deadline, handler)
     }
 
     @available(iOS 15, *)
