@@ -16,4 +16,11 @@ public protocol NetswiftRequestPerformable: NetswiftRequest {
      - parameter handler: Called when the request returns
      */
     func perform(_ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask?
+    
+    /**
+     Performs the request with its own, self-defined NetswiftNetworkPerformer, asynchronously.
+     - returns: The result of this request, either a failure with an error, or a success with an instance of type `Self.Response`.
+     */
+    @available(iOS 15, *)
+    func perform() async -> NetswiftResult<Self.Response>
 }

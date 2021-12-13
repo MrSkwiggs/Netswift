@@ -11,7 +11,7 @@ import Foundation
 /// Generic structure that defines its own Response type. Comes with a few convenience extensions for common types such as JSON
 public protocol NetswiftRequest {
     
-    /// Defines the data type of the request's response (if it succeeeded)
+    /// Defines the data type of the request's response (if it succeeded)
     associatedtype Response = Decodable
     
     /// Defines the expected raw type the request expects from the back end. Data by default

@@ -39,4 +39,24 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         }
         return nil
     }
+
+    @available(iOS 15, *)
+    open func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
+        switch request.serialise() {
+        case .success(let url):
+            let response = await requestPerformer.perform(url)
+            switch response {
+            case .success:
+                let networkResponse = response
+                    .flatMap(request.decode)
+                    .flatMap(request.cast)
+                    .flatMap(request.deserialise)
+                return networkResponse
+            case .failure(let error):
+                return .failure(error)
+            }
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
 }

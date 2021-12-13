@@ -22,11 +22,21 @@ struct API {
     fileprivate func perform<T: NetswiftRequest>(_ request: T, _ handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask? {
         return performer.perform(request, handler: handler)
     }
+
+    @available(iOS 15, *)
+    fileprivate func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
+        return await performer.perform(request)
+    }
 }
 
 extension NetswiftRequestPerformable {
     @discardableResult func perform(_ handler: @escaping NetswiftHandler<Self.Response>) -> NetswiftTask? {
         return API.shared.perform(self, handler)
+    }
+
+    @available(iOS 15, *)
+    func perform() async -> NetswiftResult<Self.Response> {
+        return await API.shared.perform(self)
     }
 }
 

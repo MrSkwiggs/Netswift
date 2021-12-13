@@ -20,7 +20,7 @@ public extension NetswiftResult {
     }
 }
 
-// MARK: - Convience providers
+// MARK: - Convenience providers
 
 public extension NetswiftResult {
 
