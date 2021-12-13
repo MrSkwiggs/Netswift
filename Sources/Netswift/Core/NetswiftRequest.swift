@@ -195,3 +195,43 @@ public extension NetswiftRequest {
         return .failure(.init(category: .responseCastingError, payload: any as? Data))
     }
 }
+
+// MARK: - cURL
+
+public extension NetswiftRequest where Self: NetswiftRoute {
+    /**
+     Returns a cURL command representation of this request.
+     
+     Use during debugging:
+     
+     `po print(<request>.curl)`
+     */
+    var curl: String {
+        guard let request = serialise().value,
+              let url = request.url else { return "Unable to serialise request" }
+        
+        var baseCommand = #"curl "\#(url.absoluteString)""#
+        
+        if method == .head {
+            baseCommand += " --head"
+        }
+        
+        var command = [baseCommand]
+        
+        if method != .get && method != .head {
+            command.append("-X \(method)")
+        }
+        
+        if let headers = request.allHTTPHeaderFields {
+            for (key, value) in headers where key != "Cookie" {
+                command.append("-H '\(key): \(value)'")
+            }
+        }
+        
+        if let data = request.httpBody, let body = String(data: data, encoding: .utf8) {
+            command.append("-d '\(body)'")
+        }
+        
+        return command.joined(separator: " \\\n\t")
+    }
+}

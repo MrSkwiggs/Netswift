@@ -14,7 +14,6 @@ class JSONTodosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         API.JSONPlaceholder.getAll.perform { result in
             self.todos = result.value
@@ -27,12 +26,10 @@ class JSONTodosTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return todos?.count ?? 0
     }
     

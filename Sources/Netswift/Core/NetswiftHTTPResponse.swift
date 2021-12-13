@@ -10,14 +10,14 @@ import Foundation
 
 /// Convenience wrapper for URLResponses
 public struct NetswiftHTTPResponse {
-    let data: Data?
-    var statusCode: Int? {
+    public let data: Data?
+    public var statusCode: Int? {
         return (URLResponse as? HTTPURLResponse)?.statusCode
     }
-    let URLResponse: URLResponse?
-    let error: Swift.Error?
+    public let URLResponse: URLResponse?
+    public let error: Swift.Error?
 
-    init(data: Data?, response: URLResponse?, error: Swift.Error?) {
+    public  init(data: Data?, response: URLResponse?, error: Swift.Error?) {
         self.data = data
         self.URLResponse = response
         self.error = error
