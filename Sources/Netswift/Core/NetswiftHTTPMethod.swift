@@ -16,6 +16,7 @@ public enum NetswiftHTTPMethod: String, CustomStringConvertible {
     case options = "OPTIONS"
     case put = "PUT"
     case patch = "PATCH"
+    case head = "HEAD"
     
     public var description: String {
         return self.rawValue

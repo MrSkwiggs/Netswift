@@ -15,13 +15,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.YourEndpoint.example.perform { result in
-            guard let html = result.value else {
-                return
-            }
-            
-            DispatchQueue.main.async {
+        if #available(iOS 15, *) {
+            Task {
+                let result = await API.YourEndpoint.example.perform()
+                guard let html = result.value else { return }
                 self.webView.loadHTMLString(html, baseURL: nil)
+            }
+        } else {
+            API.YourEndpoint.example.perform { result in
+                guard let html = result.value else {
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    self.webView.loadHTMLString(html, baseURL: nil)
+                }
             }
         }
     }
