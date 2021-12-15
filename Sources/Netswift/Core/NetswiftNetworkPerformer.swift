@@ -22,8 +22,6 @@ public protocol NetswiftNetworkPerformer {
     func perform<Request: NetswiftRequest>(_ request: Request,
                                            deadline: DispatchTime?,
                                            handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask?
-    
-    func perform<T: NetswiftRequest>(_ request: T, handler: @escaping NetswiftHandler<T.Response>) -> NetswiftTask?
 
     /**
      Performs all the necessary work a NetswiftRequest defines in order to generate a `NetswiftResult` that either succeeds or fails.
