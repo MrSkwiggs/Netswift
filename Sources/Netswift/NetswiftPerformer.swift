@@ -25,7 +25,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         }
         switch request.serialise() {
         case .success(let url):
-            return self.requestPerformer.perform(url, waitUpTo: deadline) { response in
+            return self.requestPerformer.perform(url, deadline: deadline) { response in
                 handler(Self.validateResponse(response, from: request))
             }
             
@@ -37,7 +37,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     
     @discardableResult
     open func perform<Request: NetswiftRequest>(_ request: Request,
-                                                   handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask? {
+                                                handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask? {
         switch request.serialise() {
         case .success(let url):
             return self.requestPerformer.perform(url) { response in
@@ -51,7 +51,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     }
     
     @available(iOS 15, *)
-    open func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
+    open func perform<Request: NetswiftRequest>(_ request: Request) async -> NetswiftResult<Request.Response> {
         switch request.serialise() {
         case .success(let url):
             return await Self.validateResponse(requestPerformer.perform(url),
