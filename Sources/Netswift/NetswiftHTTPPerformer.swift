@@ -28,10 +28,10 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
         return await validate(session.perform(request))
     }
     
-    open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
+    open func perform(_ request: URLRequest, deadline: DispatchTime = .now() + .seconds(5), completion: @escaping (NetswiftResult<Data?>) -> Void) -> NetswiftTask {
         let dispatchGroup = DispatchGroup()
         
-        if dispatchGroup.wait(timeout: timeOut) == .timedOut {
+        if dispatchGroup.wait(timeout: deadline) == .timedOut {
             completion(.failure(.init(category: .timedOut, payload: nil)))
         }
         
@@ -44,11 +44,11 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
     }
 
     @available(iOS 15, *)
-    open func perform(_ request: URLRequest, waitUpTo timeOut: DispatchTime = .now() + .seconds(5)) async -> NetswiftResult<Data?> {
+    open func perform(_ request: URLRequest, deadline: DispatchTime = .now() + .seconds(5)) async -> NetswiftResult<Data?> {
         await withCheckedContinuation{ continuation in
             let dispatchGroup = DispatchGroup()
 
-            if dispatchGroup.wait(timeout: timeOut) == .timedOut {
+            if dispatchGroup.wait(timeout: deadline) == .timedOut {
                 continuation.resume(returning: .failure(.init(category: .timedOut, payload: nil)))
             }
 
