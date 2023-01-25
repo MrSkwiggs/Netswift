@@ -50,7 +50,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         return nil
     }
     
-    @available(iOS 15, *)
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     open func perform<Request: NetswiftRequest>(_ request: Request) async -> NetswiftResult<Request.Response> {
         switch request.serialise() {
         case .success(let url):
@@ -58,6 +58,21 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
                                           from: request)
         case .failure(let error):
             return .failure(error)
+        }
+    }
+    
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    open func perform<Request: NetswiftRequest>(_ request: Request) async throws -> Request.Response {
+        switch request.serialise() {
+        case .success(let url):
+            let result = await Self.validateResponse(requestPerformer.perform(url),
+                                                     from: request)
+            switch result {
+            case let .success(response): return response
+            case let .failure(error): throw error
+            }
+        case .failure(let error):
+            throw error
         }
     }
     

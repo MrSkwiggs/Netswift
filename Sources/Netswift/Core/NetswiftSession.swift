@@ -14,7 +14,7 @@ public protocol NetswiftSession {
     
     func perform(_ urlRequest: URLRequest, handler: @escaping RequestHandler) -> NetswiftTask
 
-    @available(iOS 15, *)
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse
 }
 
@@ -32,7 +32,7 @@ extension URLSession: NetswiftSession {
     }
 
     /// Asynchronous data call made via NetswiftSession Protocol
-    @available(iOS 15, *)
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
         do {
             let (data, response) = try await data(for: urlRequest)
