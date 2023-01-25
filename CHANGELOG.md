@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file
 
+## [0.6.2 (20220826)]
+
+### Changed
+
+- Made variables under `NetswiftNetworkPerformer` & `NetswiftHTTPPerformer` public
+
 ## [0.6.0 (20211213)]
 
 ### Added

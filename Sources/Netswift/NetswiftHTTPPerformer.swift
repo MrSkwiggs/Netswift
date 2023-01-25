@@ -11,7 +11,7 @@ import Foundation
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
 open class NetswiftHTTPPerformer: HTTPPerformer {
     
-    private let session: NetswiftSession
+    public let session: NetswiftSession
     
     public init(session: NetswiftSession = URLSession(configuration: .default)) {
         self.session = session
