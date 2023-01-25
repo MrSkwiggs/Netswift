@@ -18,21 +18,9 @@ public protocol NetswiftRequest {
     associatedtype IncomingType = Data
     
     /**
-     Specifies additional HTTP headers to use for this request.
-     
-     These headers will be concatenated with any other already specified header (such as Content-Type or Accept).
-     
-     - note: Set Content-Type or Accept headers through `contentType` or `accept` protocol vars.
-     - important: Defaults to empty array.
+     Specifies HTTP headers to use for this request.
      */
-    var additionalHeaders: [RequestHeader] { get }
-    
-    /**
-     Specifies what type of content this request emits.
-     
-     - important: Defaults to `.json`
-     */
-    var contentType: MimeType { get }
+    var headers: NetswiftHeaders { get }
     
     /**
      Specifies which encoder should be used for encoding this request's body
@@ -47,13 +35,6 @@ public protocol NetswiftRequest {
      - important: Returns `nil` by default
      */
     func body(encodedBy encoder: NetswiftEncoder?) throws -> Data?
-    
-    /**
-     Specifies what type of content this request expects back.
-     
-     - important: Defaults to `.json`
-     */
-    var accept: MimeType { get }
     
     /**
      Tries to generate a URLRequest given the specific internals of the NetswiftRequest. Might fail.
@@ -93,12 +74,8 @@ public protocol NetswiftRequest {
 }
 
 public extension NetswiftRequest {
-    var additionalHeaders: [RequestHeader] {
-        return []
-    }
-    
-    var contentType: MimeType {
-        return .json
+    var headers: NetswiftHeaders {
+        return .init()
     }
     
     var bodyEncoder: NetswiftEncoder? {
@@ -107,10 +84,6 @@ public extension NetswiftRequest {
     
     func body(encodedBy encoder: NetswiftEncoder?) -> Data? {
         return nil
-    }
-    
-    var accept: MimeType {
-        return .json
     }
     
     func intercept(_ error: NetswiftError) -> NetswiftResult<Response> {
@@ -125,11 +98,6 @@ public extension NetswiftRequest where Self: NetswiftRoute {
         var request = URLRequest(url: self.url)
         request.setHTTPMethod(self.method)
         
-        var headers = additionalHeaders
-        
-        headers.append(.contentType(contentType))
-        headers.append(.accept(accept))
-        
         do {
             if let encoder = bodyEncoder {
                 request.httpBody = try body(encodedBy: encoder)
@@ -138,7 +106,7 @@ public extension NetswiftRequest where Self: NetswiftRoute {
             return .failure(.init(.requestSerialisationError))
         }
         
-        request.addHeaders(headers)
+        request.addHeaders(headers.all)
         
         return .success(request)
     }

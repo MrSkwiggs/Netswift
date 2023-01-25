@@ -10,7 +10,7 @@ import Foundation
 /**
  An HTTP Request header field. Defines its identifier & its value.
  */
-public enum RequestHeader {
+public enum RequestHeader: Hashable {
     /// Content-Type
     case contentType(MimeType)
     
