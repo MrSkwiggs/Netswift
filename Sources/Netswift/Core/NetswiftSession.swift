@@ -36,7 +36,7 @@ extension URLSession: NetswiftSession {
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
         do {
             let (data, response) = try await data(for: urlRequest)
-            return NetswiftHTTPResponse(data: data, response: response, error: nil)
+            return NetswiftHTTPResponse(data: data, response: response)
         } catch {
             return NetswiftHTTPResponse(data: nil, response: nil, error: error)
         }
