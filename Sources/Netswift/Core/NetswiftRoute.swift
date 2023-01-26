@@ -30,6 +30,15 @@ public protocol NetswiftRoute {
     var host: String? { get }
     
     /**
+     The port
+     
+     Example: `80`
+     
+     - note: `80` by default
+     */
+    var port: Int { get }
+    
+    /**
      The specific resource on the host
      
      Example: `/get/some/resource.html`
@@ -58,7 +67,7 @@ public protocol NetswiftRoute {
     /**
      A fully qualified URL
      
-     - note: Uses the following format by default: `<scheme><host><path><query><fragment>`
+     - note: Uses the following format by default: `<scheme><host><port><path><query><fragment>`
      */
     var url: URL { get }
 }
@@ -69,6 +78,10 @@ public extension NetswiftRoute {
     
     var scheme: String {
         return GenericScheme.https.rawValue
+    }
+    
+    var port: Int {
+        return 80
     }
     
     var path: String? {
@@ -90,11 +103,12 @@ public extension NetswiftRoute {
     var url: URL {
         let scheme = self.scheme
         let host = (self.host ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let port = self.port == 80 ? "" : ":\(port)"
         let path = (self.path ?? "").addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
         let query = (self.query ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         var fragment = ""
         if let unwrappedFragment = self.fragment { fragment = "#\(unwrappedFragment)" }
         fragment = fragment.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
-        return URL(string: "\(scheme)\(host)\(path)\(query)\(fragment)")!
+        return URL(string: "\(scheme)\(host)\(port)\(path)\(query)\(fragment)")!
     }
 }
