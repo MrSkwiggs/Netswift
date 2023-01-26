@@ -17,7 +17,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     }
     
     @discardableResult
-    open func perform<Request: NetswiftRequest>(_ request: Request,
+    public func perform<Request: NetswiftRequest>(_ request: Request,
                                                 deadline: DispatchTime? = nil,
                                                 handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask? {
         guard let deadline = deadline else {
@@ -36,7 +36,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     }
     
     @discardableResult
-    open func perform<Request: NetswiftRequest>(_ request: Request,
+    public func perform<Request: NetswiftRequest>(_ request: Request,
                                                 handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask? {
         switch request.serialise() {
         case .success(let url):
@@ -51,9 +51,10 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     }
     
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-    open func perform<Request: NetswiftRequest>(_ request: Request) async -> NetswiftResult<Request.Response> {
+    public func perform<Request: NetswiftRequest>(_ request: Request) async -> NetswiftResult<Request.Response> {
         switch request.serialise() {
-        case .success(let url):
+        case .success(var url):
+            hook(into: &url)
             return await Self.validateResponse(requestPerformer.perform(url),
                                           from: request)
         case .failure(let error):
@@ -62,7 +63,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     }
     
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-    open func perform<Request: NetswiftRequest>(_ request: Request) async throws -> Request.Response {
+    public func perform<Request: NetswiftRequest>(_ request: Request) async throws -> Request.Response {
         switch request.serialise() {
         case .success(let url):
             let result = await Self.validateResponse(requestPerformer.perform(url),
@@ -74,6 +75,13 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         case .failure(let error):
             throw error
         }
+    }
+    
+    /**
+     Override this function to perform extra configuration on the outgoing URLRequest, before it is sent out.
+     */
+    open func hook(into urlRequest: inout URLRequest) {
+        // overridable, empty default
     }
     
     private static func validateResponse<Request: NetswiftRequest>(_ result: NetswiftResult<Data?>,
