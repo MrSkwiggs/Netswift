@@ -9,7 +9,7 @@ import Foundation
 
 public struct NetswiftHeaders {
     
-    init(
+    public init(
         authorization: NetswiftAuthorizationType? = nil,
         accept: MimeType = .json,
         contentType: MimeType = .json,
@@ -26,21 +26,21 @@ public struct NetswiftHeaders {
      
      - important: Defaults to `nil`
      */
-    var authorization: NetswiftAuthorizationType?
+    public var authorization: NetswiftAuthorizationType?
     
     /**
      Specifies what type of content a request expects back.
      
      - important: Defaults to `.json`
      */
-    var accept: MimeType
+    public var accept: MimeType
     
     /**
      Specifies what type of content a request emits.
      
      - important: Defaults to `.json`
      */
-    var contentType: MimeType
+    public var contentType: MimeType
     
     /**
      Specifies additional HTTP headers to use for a request.
@@ -50,9 +50,14 @@ public struct NetswiftHeaders {
      - note: Set **Content-Type** or **Accept** headers through `contentType` or `accept` protocol vars.
      - important: Defaults to empty array.
      */
-    var additionalHeaders: Set<RequestHeader> = []
+    public var additionalHeaders: Set<RequestHeader> = []
     
-    var all: Set<RequestHeader> {
+    /**
+     A set constructed from all headers defined in this object.
+     
+     - warning: Headers defined under `additionalHeaders` are overwritten by existing struct members such as `accept`, `contentType` or `authorization`.
+     */
+    public var all: Set<RequestHeader> {
         var all = additionalHeaders
         all.update(with: .accept(accept))
         all.update(with: .contentType(contentType))
