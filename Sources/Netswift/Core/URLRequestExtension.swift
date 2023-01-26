@@ -14,7 +14,7 @@ public extension URLRequest {
         self.httpMethod = method.rawValue
     }
     
-    mutating func setHeaders(_ headers: [RequestHeader]) {
+    mutating func setHeaders(_ headers: Set<RequestHeader>) {
         headers.forEach {
             setValue($0.value, forHTTPHeaderField: $0.key)
         }
