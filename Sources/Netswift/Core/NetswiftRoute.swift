@@ -101,14 +101,13 @@ public extension NetswiftRoute {
     }
     
     var url: URL {
-        let scheme = self.scheme
-        let host = (self.host ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        let port = self.port == 80 ? "" : ":\(port)"
-        let path = (self.path ?? "").addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        let query = (self.query ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        var fragment = ""
-        if let unwrappedFragment = self.fragment { fragment = "#\(unwrappedFragment)" }
-        fragment = fragment.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
-        return URL(string: "\(scheme)\(host)\(port)\(path)\(query)\(fragment)")!
+        var components = URLComponents()
+        components.scheme = self.scheme
+        components.host = self.host
+        components.port = self.port
+        components.path = self.path ?? "/"
+        components.query = self.query
+        components.fragment = self.fragment
+        return components.url!
     }
 }
