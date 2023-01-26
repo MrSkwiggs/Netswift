@@ -18,6 +18,9 @@ public enum NetswiftAuthorizationType: Hashable {
     /// Basic \<token\>
     case basic(token: String)
     
+    /// \<Header\> \<token\>
+    case custom(header: String, token: String)
+    
     var rawValue: String {
         switch self {
         case .bearer(let token):
@@ -25,6 +28,9 @@ public enum NetswiftAuthorizationType: Hashable {
             
         case let .basic(token):
             return "Basic \(token)"
+            
+        case let .custom(header, token):
+            return "\(header) \(token)"
         }
     }
 }
