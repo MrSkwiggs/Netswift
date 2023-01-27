@@ -20,7 +20,7 @@ public protocol NetswiftRoute {
      Which scheme to use
      - note: HTTPS by default
      */
-    var scheme: String { get }
+    var scheme: NetswiftScheme { get }
     
     /**
      The host
@@ -76,8 +76,8 @@ public protocol NetswiftRoute {
 
 public extension NetswiftRoute {
     
-    var scheme: String {
-        return GenericScheme.https.rawValue
+    var scheme: NetswiftScheme {
+        return .https
     }
     
     var port: Int {
@@ -102,9 +102,9 @@ public extension NetswiftRoute {
     
     var url: URL {
         var components = URLComponents()
-        components.scheme = self.scheme
+        components.scheme = self.scheme.value
         components.host = self.host
-        components.port = self.port
+        components.port = self.port == 80 ? nil : self.port // Omit including port when it's 80
         components.path = self.path ?? "/"
         components.query = self.query
         components.fragment = self.fragment
