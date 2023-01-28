@@ -24,7 +24,8 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
             return perform(request, handler: handler)
         }
         switch request.serialise() {
-        case .success(let url):
+        case .success(var url):
+            hook(into: &url)
             return self.requestPerformer.perform(url, deadline: deadline) { response in
                 handler(Self.validateResponse(response, from: request))
             }
@@ -39,7 +40,8 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     public func perform<Request: NetswiftRequest>(_ request: Request,
                                                 handler: @escaping NetswiftHandler<Request.Response>) -> NetswiftTask? {
         switch request.serialise() {
-        case .success(let url):
+        case .success(var url):
+            hook(into: &url)
             return self.requestPerformer.perform(url) { response in
                 handler(Self.validateResponse(response, from: request))
             }
@@ -65,7 +67,8 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     public func perform<Request: NetswiftRequest>(_ request: Request) async throws -> Request.Response {
         switch request.serialise() {
-        case .success(let url):
+        case .success(var url):
+            hook(into: &url)
             let result = await Self.validateResponse(requestPerformer.perform(url),
                                                      from: request)
             switch result {
