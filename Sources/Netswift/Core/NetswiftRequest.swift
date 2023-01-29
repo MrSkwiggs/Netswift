@@ -138,6 +138,12 @@ public extension NetswiftRequest where IncomingType == Data, Response == String 
     }
 }
 
+public extension NetswiftRequest where IncomingType == Data, Response == Data {
+    func deserialise(_ incomingData: Data) -> NetswiftResult<Response> {
+        .success(incomingData)
+    }
+}
+
 // MARK: - Convenience Decoding for common types
 
 /// When the request expects freeform data, decoding is done during deserialisation
