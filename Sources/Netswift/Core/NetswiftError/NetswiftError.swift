@@ -30,20 +30,21 @@ extension NetswiftError: Equatable {
     public static func == (lhs: NetswiftError, rhs: NetswiftError) -> Bool {
         switch (lhs.category, rhs.category) {
         case (.requestSerialisationError, .requestSerialisationError),
-             (.requestError, .requestError),
-             (.unexpectedResponseError, .unexpectedResponseError),
-             (.noResponseError, .noResponseError),
-             (.responseCastingError, .responseCastingError),
-             (.notAuthenticated, .notAuthenticated),
-             (.notPermitted, .notPermitted),
-             (.timedOut, .timedOut),
-             (.preconditionFailed, .preconditionFailed),
-             (.methodNotAllowed, .methodNotAllowed),
-             (.tooManyRequests, .tooManyRequests),
-             (.serverError, .serverError),
-             (.paymentRequired, .paymentRequired),
-             (.resourceNotFound, .resourceNotFound),
-             (.resourceRemoved, .resourceRemoved):
+            (.requestError, .requestError),
+            (.unexpectedResponseError, .unexpectedResponseError),
+            (.noResponseError, .noResponseError),
+            (.responseCastingError, .responseCastingError),
+            (.notAuthenticated, .notAuthenticated),
+            (.notPermitted, .notPermitted),
+            (.timedOut, .timedOut),
+            (.preconditionFailed, .preconditionFailed),
+            (.methodNotAllowed, .methodNotAllowed),
+            (.tooManyRequests, .tooManyRequests),
+            (.serverError, .serverError),
+            (.paymentRequired, .paymentRequired),
+            (.resourceNotFound, .resourceNotFound),
+            (.resourceRemoved, .resourceRemoved),
+            (.unprocessableEntity, .unprocessableEntity):
             return true
             
         case (.responseDecodingError(let lhsError), .responseDecodingError(let rhsError)):
@@ -90,6 +91,8 @@ extension NetswiftError: CustomDebugStringConvertible {
             return "A request method is not supported for the requested resource"
         case .tooManyRequests:
             return "The user has sent too many requests in a given amount of time"
+        case .unprocessableEntity:
+            return "The server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions. The client should not repeat this request without modification."
         case .generic(let error):
             return error.localizedDescription
         case .unknown:

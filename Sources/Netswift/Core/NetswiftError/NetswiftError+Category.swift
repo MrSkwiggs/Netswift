@@ -60,6 +60,10 @@ public extension NetswiftError {
         /// The user has sent too many requests in a given amount of time
         case tooManyRequests
         
+        /// The server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions.
+        /// - warning: The client should not repeat this request without modification.
+        case unprocessableEntity
+        
         /// A generic error with a provided error object
         case generic(error: Swift.Error)
         
@@ -102,6 +106,8 @@ public extension NetswiftError {
                 return "Too Many Requests"
             case .unexpectedResponseError:
                 return "Unexpected Response"
+            case .unprocessableEntity:
+                return "Unprocessable Entity"
             case .unknown:
                 return "Unknown"
             }
@@ -127,6 +133,8 @@ extension NetswiftError.Category {
             return 405
         case .preconditionFailed:
             return 412
+        case .unprocessableEntity:
+            return 422
         case .tooManyRequests:
             return 429
         case .serverError:
@@ -171,6 +179,8 @@ extension NetswiftError.Category {
             return .methodNotAllowed
         case 412:
             return .preconditionFailed
+        case 422:
+            return .unprocessableEntity
         case 429:
             return .tooManyRequests
         case 500:
