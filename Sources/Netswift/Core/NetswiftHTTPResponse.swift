@@ -17,7 +17,9 @@ public struct NetswiftHTTPResponse {
     public let URLResponse: URLResponse?
     public let error: Swift.Error?
 
-    public  init(data: Data?, response: URLResponse?, error: Swift.Error?) {
+    public init(data: Data?,
+                response: URLResponse?,
+                error: Swift.Error? = nil) {
         self.data = data
         self.URLResponse = response
         self.error = error

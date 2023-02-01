@@ -28,6 +28,15 @@ public protocol NetswiftNetworkPerformer {
      - parameter request: `NetswiftRequest` of specific type
      - returns: An asynchronous `NetswiftResult` with the type specified within the `NetswiftRequest` argument.
      */
-    @available(iOS 15, *)
-    func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response>
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func perform<Request: NetswiftRequest>(_ request: Request) async -> NetswiftResult<Request.Response>
+    
+    /**
+     Performs all the necessary work a NetswiftRequest defines in order to generate a `NetswiftResult` that either succeeds or fails.
+     - parameter request: `NetswiftRequest` of specific type
+     - throws: Any networking-related error.
+     - returns: An asynchronous `Response` type.
+     */
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func perform<Request: NetswiftRequest>(_ request: Request) async throws -> Request.Response
 }

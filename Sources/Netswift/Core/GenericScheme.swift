@@ -11,10 +11,29 @@ import Foundation
 /**
  A generic, all-purpose scheme provider.
  */
-public enum GenericScheme: String {
-    case http = "http://"
-    case https = "https://"
-    case ftp = "ftp://"
-    case ldap = "ldap://"
-    case mailto = "mailto:"
+public enum NetswiftScheme {
+    
+    case http
+    case https
+    case ftp
+    case ldap
+    case mailto
+    case custom(scheme: String)
+    
+    public var value: String {
+        switch self {
+        case .http:
+            return "http"
+        case .https:
+            return "https"
+        case .ftp:
+            return "ftp"
+        case .ldap:
+            return "ldap"
+        case .mailto:
+            return "mailto"
+        case .custom(let scheme):
+            return scheme
+        }
+    }
 }
