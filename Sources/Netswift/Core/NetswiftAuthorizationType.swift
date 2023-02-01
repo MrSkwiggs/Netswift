@@ -10,15 +10,27 @@ import Foundation
 /**
  An Authorization HTTP Request header field.
  */
-public enum NetswiftAuthorizationType {
+public enum NetswiftAuthorizationType: Hashable {
     
     /// Bearer \<token\>
     case bearer(token: String)
+    
+    /// Basic \<token\>
+    case basic(token: String)
+    
+    /// \<Header\> \<token\>
+    case custom(header: String, token: String)
     
     var rawValue: String {
         switch self {
         case .bearer(let token):
             return "Bearer \(token)"
+            
+        case let .basic(token):
+            return "Basic \(token)"
+            
+        case let .custom(header, token):
+            return "\(header) \(token)"
         }
     }
 }

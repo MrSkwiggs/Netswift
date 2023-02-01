@@ -20,7 +20,7 @@ public protocol NetswiftRoute {
      Which scheme to use
      - note: HTTPS by default
      */
-    var scheme: String { get }
+    var scheme: NetswiftScheme { get }
     
     /**
      The host
@@ -28,6 +28,15 @@ public protocol NetswiftRoute {
      Example: `google`
      */
     var host: String? { get }
+    
+    /**
+     The port
+     
+     Example: `80`
+     
+     - note: `80` by default
+     */
+    var port: Int { get }
     
     /**
      The specific resource on the host
@@ -58,7 +67,7 @@ public protocol NetswiftRoute {
     /**
      A fully qualified URL
      
-     - note: Uses the following format by default: `<scheme><host><path><query><fragment>`
+     - note: Uses the following format by default: `<scheme><host><port><path><query><fragment>`
      */
     var url: URL { get }
 }
@@ -67,8 +76,12 @@ public protocol NetswiftRoute {
 
 public extension NetswiftRoute {
     
-    var scheme: String {
-        return GenericScheme.https.rawValue
+    var scheme: NetswiftScheme {
+        return .https
+    }
+    
+    var port: Int {
+        return 80
     }
     
     var path: String? {
@@ -88,13 +101,13 @@ public extension NetswiftRoute {
     }
     
     var url: URL {
-        let scheme = self.scheme
-        let host = (self.host ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        let path = (self.path ?? "").addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        let query = (self.query ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        var fragment = ""
-        if let unwrappedFragment = self.fragment { fragment = "#\(unwrappedFragment)" }
-        fragment = fragment.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
-        return URL(string: "\(scheme)\(host)\(path)\(query)\(fragment)")!
+        var components = URLComponents()
+        components.scheme = self.scheme.value
+        components.host = self.host
+        components.port = self.port == 80 ? nil : self.port // Omit including port when it's 80
+        components.path = self.path ?? "/"
+        components.query = self.query
+        components.fragment = self.fragment
+        return components.url!
     }
 }
