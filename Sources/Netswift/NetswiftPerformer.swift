@@ -52,7 +52,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         return nil
     }
     
-    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     public func perform<Request: NetswiftRequest>(_ request: Request) async -> NetswiftResult<Request.Response> {
         switch request.serialise() {
         case .success(var url):
@@ -64,7 +64,7 @@ open class NetswiftPerformer: NetswiftNetworkPerformer {
         }
     }
     
-    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     public func perform<Request: NetswiftRequest>(_ request: Request) async throws -> Request.Response {
         switch request.serialise() {
         case .success(var url):

@@ -23,7 +23,7 @@ struct API {
         return performer.perform(request, deadline: deadline, handler: handler)
     }
 
-    @available(iOS 15, *)
+    @available(iOS 13, *)
     fileprivate func perform<T: NetswiftRequest>(_ request: T) async -> NetswiftResult<T.Response> {
         return await performer.perform(request)
     }
@@ -38,7 +38,7 @@ extension NetswiftRequestPerformable {
         return API.shared.perform(self, deadline: deadline, handler)
     }
 
-    @available(iOS 15, *)
+    @available(iOS 13, *)
     func perform() async -> NetswiftResult<Self.Response> {
         return await API.shared.perform(self)
     }
