@@ -9,7 +9,7 @@
 import Foundation
 
 public struct NetswiftError: Swift.Error {
-    
+
     /// The category for the error
     public let category: Category
     /// Additonal information about the error
@@ -58,45 +58,72 @@ extension NetswiftError: Equatable {
 
 extension NetswiftError: CustomDebugStringConvertible {
     public var debugDescription: String {
+        let description: String
         switch self.category {
         case .requestSerialisationError:
-            return "The request couldn't be serialised before being sent out"
+            description = "The request couldn't be serialised before being sent out"
         case .requestError:
-            return "The request couldn't be processed by the server"
+            description = "The request couldn't be processed by the server"
         case .serverError:
-            return "The server encountered an internal error while processing the request"
+            description = "The server encountered an internal error while processing the request"
         case .resourceNotFound:
-            return "The specified resource could not be found on the server (404)"
+            description = "The specified resource could not be found on the server (404)"
         case .resourceRemoved:
-            return "The specified resource has been permanently removed"
+            description = "The specified resource has been permanently removed"
         case .unexpectedResponseError:
-            return "The response returned by the server does not conform to expected type"
+            description = "The response returned by the server does not conform to expected type"
         case .noResponseError:
-            return "The response returned by the server is empty / nil"
+            description = "The response returned by the server is empty / nil"
         case .responseDecodingError:
-            return "The response's raw data could not be understood"
+            description = "The response's raw data could not be understood"
         case .responseCastingError:
-            return "The response could not be casted to the Request's IncomingType"
+            description = "The response could not be casted to the Request's IncomingType"
         case .notAuthenticated:
-            return "Cannot authenticate the request; authentication needed"
+            description = "Cannot authenticate the request; authentication needed"
         case .paymentRequired:
-            return "The server requires payment data before it can process the request"
+            description = "The server requires payment data before it can process the request"
         case .notPermitted:
-            return "The server didn't allow this request for this user"
+            description = "The server didn't allow this request for this user"
         case .timedOut:
-            return "The request took too long to return."
+            description = "The request took too long to return."
         case .preconditionFailed:
-            return "The server does not meet one of the preconditions that the requester put on the request"
+            description = "The server does not meet one of the preconditions that the requester put on the request"
         case .methodNotAllowed:
-            return "A request method is not supported for the requested resource"
+            description = "A request method is not supported for the requested resource"
         case .tooManyRequests:
-            return "The user has sent too many requests in a given amount of time"
+            description = "The user has sent too many requests in a given amount of time"
         case .unprocessableEntity:
-            return "The server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions. The client should not repeat this request without modification."
+            description = "The server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions. The client should not repeat this request without modification."
         case .generic(let error):
-            return error.localizedDescription
+            description = error.localizedDescription
         case .unknown:
-            return "An unknown error occured"
+            description = "An unknown error occured"
+        }
+
+        return """
+        Netswift Error: \(description)
+
+        Payload:
+        \(payload?.prettyPrinted ?? "None")
+        """
+    }
+}
+
+private extension Data {
+    var prettyPrinted: String {
+        let plainString = String(data: self, encoding: .utf8)
+        let plainDescription = "Data with \(count) bytes"
+
+        if let json = try? JSONSerialization.jsonObject(with: self) {
+            guard let data = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted]),
+                  let prettyString = String(data: data, encoding: .utf8) else {
+                return "Invalid JSON\n\(plainString ?? plainDescription)"
+            }
+            return prettyString
+        } else if let plainString {
+            return plainString
+        } else {
+            return plainDescription
         }
     }
 }
