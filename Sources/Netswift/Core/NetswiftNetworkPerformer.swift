@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /**
  A `NetswiftNetworkPerformer` is the link between low-level url requests and high-level api requests

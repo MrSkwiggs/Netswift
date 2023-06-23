@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// Protocol that allows to mock URLSessions
 public protocol NetswiftSession {
@@ -31,14 +34,35 @@ extension URLSession: NetswiftSession {
         return task
     }
 
+    #if os(Linux)
     /// Asynchronous data call made via NetswiftSession Protocol
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
         do {
-            let (data, response) = try await data(for: urlRequest)
+            let response: (Data?, URLResponse?) = try await withCheckedThrowingContinuation { continuation in
+                dataTask(with: urlRequest) { data, response, error in
+                    if let error = error {
+                        continuation.resume(throwing: error)
+                    }
+                    continuation.resume(returning: (data, response))
+                }
+            }
+
+            return NetswiftHTTPResponse(data: response.0, response: response.1)
+        } catch {
+            return NetswiftHTTPResponse(data: nil, response: nil, error: error)
+        }
+    }
+    #else
+    /// Asynchronous data call made via NetswiftSession Protocol
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
+        do {
+            let (data, response) = try await self.data(for: urlRequest)
             return NetswiftHTTPResponse(data: data, response: response)
         } catch {
             return NetswiftHTTPResponse(data: nil, response: nil, error: error)
         }
     }
+    #endif
 }

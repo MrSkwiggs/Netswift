@@ -8,6 +8,9 @@
 //  swiftlint:disable force_unwrapping
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /**
  Protocol defining URL Routes for APIs.

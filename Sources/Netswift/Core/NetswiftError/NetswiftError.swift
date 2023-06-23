@@ -120,7 +120,7 @@ private extension Data {
                 return "Invalid JSON\n\(plainString ?? plainDescription)"
             }
             return prettyString
-        } else if let plainString {
+        } else if let plainString = plainString {
             return plainString
         } else {
             return plainDescription
