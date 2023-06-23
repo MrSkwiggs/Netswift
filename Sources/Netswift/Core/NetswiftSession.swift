@@ -34,6 +34,26 @@ extension URLSession: NetswiftSession {
         return task
     }
 
+    #if os(Linux)
+    /// Asynchronous data call made via NetswiftSession Protocol
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
+        do {
+            let response: (Data?, URLResponse?) = try await withCheckedThrowingContinuation { continuation in
+                dataTask(with: urlRequest) { data, response, error in
+                    if let error = error {
+                        continuation.resume(throwing: error)
+                    }
+                    continuation.resume(returning: (data, response))
+                }
+            }
+
+            return NetswiftHTTPResponse(data: response.0, response: response.1)
+        } catch {
+            return NetswiftHTTPResponse(data: nil, response: nil, error: error)
+        }
+    }
+    #else
     /// Asynchronous data call made via NetswiftSession Protocol
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
@@ -44,4 +64,5 @@ extension URLSession: NetswiftSession {
             return NetswiftHTTPResponse(data: nil, response: nil, error: error)
         }
     }
+    #endif
 }
