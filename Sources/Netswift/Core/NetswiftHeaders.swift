@@ -61,8 +61,10 @@ public struct NetswiftHeaders {
         var all = additionalHeaders
         all.update(with: .accept(accept))
         all.update(with: .contentType(contentType))
-        if let authorization { all.update(with: .authorization(authorization)) }
-        
+        if let authorization = authorization {
+            all.update(with: .authorization(authorization))
+        }
+
         return all
     }
 }
