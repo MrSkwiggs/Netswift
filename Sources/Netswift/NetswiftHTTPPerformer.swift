@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// A generic HTTP Performer. For detailed doc please refer to HTTPPerformer protocol
 open class NetswiftHTTPPerformer: HTTPPerformer {

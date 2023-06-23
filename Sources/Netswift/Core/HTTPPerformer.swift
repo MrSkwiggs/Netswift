@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// An HTTP Performer works with low-level URLRequests and validates the response's status code
 public protocol HTTPPerformer {

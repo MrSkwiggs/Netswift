@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// Generic NetswiftRequest performer. For detailed doc please refer to NetswiftNetworkPerformer protocol
 open class NetswiftPerformer: NetswiftNetworkPerformer {

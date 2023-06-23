@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// Generic structure that defines its own Response type. Comes with a few convenience extensions for common types such as JSON
 public protocol NetswiftRequest {
