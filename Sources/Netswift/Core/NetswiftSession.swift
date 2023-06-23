@@ -38,7 +38,7 @@ extension URLSession: NetswiftSession {
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
         do {
-            let (data, response) = try await data(for: urlRequest)
+            let (data, response) = try await self.data(for: urlRequest)
             return NetswiftHTTPResponse(data: data, response: response)
         } catch {
             return NetswiftHTTPResponse(data: nil, response: nil, error: error)
