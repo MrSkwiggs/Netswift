@@ -13,13 +13,21 @@ import FoundationNetworking
 
 /// Generic structure that defines its own Response type. Comes with a few convenience extensions for common types such as JSON
 public protocol NetswiftRequest {
-    
+
+    /// Defines the data type of the request's outgoing body. `Never` by default
+    associatedtype Body = Never
+
     /// Defines the data type of the request's response (if it succeeded)
     associatedtype Response = Decodable
     
     /// Defines the expected raw type the request expects from the back end. Data by default
     associatedtype IncomingType = Data
-    
+
+    /// Specifies the request's outgoing body
+    ///
+    /// - important: Defaults to `nil`
+    var body: Body? { get }
+
     /**
      Specifies HTTP headers to use for this request.
      */
@@ -31,14 +39,7 @@ public protocol NetswiftRequest {
      - important: Defaults to `JSONEncoder()`
      */
     var bodyEncoder: NetswiftEncoder? { get }
-    
-    /**
-     Encodes any arbitrary data defined by this request with the given encoder to be used as the request's body.
-     
-     - important: Returns `nil` by default
-     */
-    func body(encodedBy encoder: NetswiftEncoder?) throws -> Data?
-    
+
     /**
      Tries to generate a URLRequest given the specific internals of the NetswiftRequest. Might fail.
      - parameter completion: A completion block that takes in a NetswiftResult that either succeeds with a useable URLRequest, or fails with a NetswiftError
@@ -84,10 +85,8 @@ public extension NetswiftRequest {
     var bodyEncoder: NetswiftEncoder? {
         return JSONEncoder()
     }
-    
-    func body(encodedBy encoder: NetswiftEncoder?) -> Data? {
-        return nil
-    }
+
+    var body: Never? { nil }
     
     func intercept(_ error: NetswiftError) -> NetswiftResult<Response> {
         return .failure(error)
@@ -100,17 +99,27 @@ public extension NetswiftRequest where Self: NetswiftRoute {
     func serialise() -> NetswiftResult<URLRequest> {
         var request = URLRequest(url: self.url)
         request.setHTTPMethod(self.method)
-        
-        do {
-            if let encoder = bodyEncoder {
-                request.httpBody = try body(encodedBy: encoder)
-            }
-        } catch {
-            return .failure(.init(.requestSerialisationError))
-        }
-        
         request.addHeaders(headers.all)
         
+        return .success(request)
+    }
+}
+
+public extension NetswiftRequest where Self: NetswiftRoute, Body: Encodable {
+    func serialise() -> NetswiftResult<URLRequest> {
+        var request = URLRequest(url: self.url)
+        request.setHTTPMethod(self.method)
+
+        if let body, let bodyEncoder {
+            do {
+                request.httpBody = try bodyEncoder.encode(body)
+            } catch {
+                return .failure(.init(.requestSerialisationError))
+            }
+        }
+
+        request.addHeaders(headers.all)
+
         return .success(request)
     }
 }
