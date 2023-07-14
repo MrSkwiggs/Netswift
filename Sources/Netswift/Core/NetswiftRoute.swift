@@ -52,8 +52,8 @@ public protocol NetswiftRoute {
      An optional query (eg. `?byName=Dorian?limitResults=50`)
      - important: nil by default
      */
-    var query: String? { get }
-    
+    var queryItems: [URLQueryItem]? { get }
+
     /**
      An optional fragment (eg. `#section3`)
      - important: nil by default
@@ -91,7 +91,7 @@ public extension NetswiftRoute {
         return nil
     }
     
-    var query: String? {
+    var queryItems: [URLQueryItem]? {
         return nil
     }
     
@@ -109,7 +109,7 @@ public extension NetswiftRoute {
         components.host = self.host
         components.port = self.port == 80 ? nil : self.port // Omit including port when it's 80
         components.path = self.path ?? "/"
-        components.query = self.query
+        components.queryItems = self.queryItems
         components.fragment = self.fragment
         return components.url!
     }
