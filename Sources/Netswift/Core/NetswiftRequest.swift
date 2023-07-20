@@ -110,7 +110,7 @@ public extension NetswiftRequest where Self: NetswiftRoute, Body: Encodable {
         var request = URLRequest(url: self.url)
         request.setHTTPMethod(self.method)
 
-        if let body, let bodyEncoder {
+        if let body = body, let bodyEncoder = bodyEncoder {
             do {
                 request.httpBody = try bodyEncoder.encode(body)
             } catch {
