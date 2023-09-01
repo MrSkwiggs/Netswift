@@ -17,7 +17,7 @@ public protocol NetswiftSession {
     
     func perform(_ urlRequest: URLRequest, handler: @escaping RequestHandler) -> NetswiftTask
 
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse
 }
 
@@ -36,7 +36,7 @@ extension URLSession: NetswiftSession {
 
     #if os(Linux)
     /// Asynchronous data call made via NetswiftSession Protocol
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
         do {
             let response: (Data?, URLResponse?) = try await withCheckedThrowingContinuation { continuation in
@@ -55,7 +55,7 @@ extension URLSession: NetswiftSession {
     }
     #else
     /// Asynchronous data call made via NetswiftSession Protocol
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     public func perform(_ urlRequest: URLRequest) async -> NetswiftHTTPResponse {
         do {
             let (data, response) = try await self.data(for: urlRequest)

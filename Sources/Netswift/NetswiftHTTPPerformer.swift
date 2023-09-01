@@ -26,7 +26,7 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
         }
     }
 
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     open func perform(_ request: URLRequest) async -> NetswiftResult<Data?> {
         return await validate(session.perform(request))
     }
@@ -46,7 +46,7 @@ open class NetswiftHTTPPerformer: HTTPPerformer {
         }
     }
 
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     open func perform(_ request: URLRequest, deadline: DispatchTime = .now() + .seconds(5)) async -> NetswiftResult<Data?> {
         await withCheckedContinuation{ continuation in
             let dispatchGroup = DispatchGroup()
