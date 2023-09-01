@@ -29,7 +29,7 @@ public protocol HTTPPerformer {
      - parameter request: Any URLRequest that has already been initialised and configured.
      - returns: The Requests result
      */
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     func perform(_ request: URLRequest) async -> NetswiftResult<Data?>
     
     /**
@@ -50,6 +50,6 @@ public protocol HTTPPerformer {
      - parameter deadline: The maximum amount of seconds before the task is considered as timed-out, forcing a call to completion with a `.timedOut` NetswiftError.
      - returns: The Requests result
      */
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 12.0, *)
     func perform(_ request: URLRequest, deadline: DispatchTime) async -> NetswiftResult<Data?>
 }
