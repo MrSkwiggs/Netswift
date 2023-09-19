@@ -74,8 +74,8 @@ extension NetswiftError: CustomDebugStringConvertible {
             description = "The response returned by the server does not conform to expected type"
         case .noResponseError:
             description = "The response returned by the server is empty / nil"
-        case .responseDecodingError:
-            description = "The response's raw data could not be understood"
+        case let .responseDecodingError(decodingError):
+            description = decodingError.fullDescription
         case .responseCastingError:
             description = "The response could not be casted to the Request's IncomingType"
         case .notAuthenticated:
@@ -101,7 +101,7 @@ extension NetswiftError: CustomDebugStringConvertible {
         }
 
         return """
-        Netswift Error: \(description)
+        \(description)
 
         Payload:
         \(payload?.prettyPrinted ?? "None")
@@ -124,6 +124,23 @@ private extension Data {
             return plainString
         } else {
             return plainDescription
+        }
+    }
+}
+
+private extension DecodingError {
+    var fullDescription: String {
+        switch self {
+        case .typeMismatch(let any, let context):
+            return context.debugDescription
+        case .valueNotFound(let any, let context):
+            return context.debugDescription
+        case .keyNotFound(let codingKey, let context):
+            return context.debugDescription
+        case .dataCorrupted(let context):
+            return context.debugDescription
+        @unknown default:
+            return "Unknown default decoding error"
         }
     }
 }
